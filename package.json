@@ -1,0 +1,9 @@
+{
+  "name": "vk-mini-apps-sdk",
+  "version": "0.0.1",
+  "description": "VK Mini Apps SDK",
+  "main": "dist/index.js",
+  "repository": "https://github.com/vkcom/vk-mini-apps-sdk",
+  "author": "vk.com",
+  "license": "MIT"
+}
