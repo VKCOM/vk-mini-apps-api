@@ -1,9 +1,33 @@
 {
-  "name": "vk-mini-apps-sdk",
+  "name": "vk-mini-apps-api",
   "version": "0.0.1",
-  "description": "VK Mini Apps SDK",
+  "description": "VK Mini Apps API",
   "main": "dist/index.js",
-  "repository": "https://github.com/vkcom/vk-mini-apps-sdk",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "doc": "typedoc --options ./typedoc.json ./src"
+  },
+  "repository": "https://github.com/vkcom/vk-mini-apps-api",
   "author": "vk.com",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@vkontakte/vk-connect": "^1.5.6-beta.13-promise"
+  },
+  "devDependencies": {
+    "@types/html-webpack-plugin": "^3.2.1",
+    "@types/node": "^12.7.2",
+    "@types/webpack": "^4.32.1",
+    "@types/webpack-dev-server": "^3.1.7",
+    "awesome-typescript-loader": "^5.2.1",
+    "html-webpack-plugin": "^3.2.0",
+    "microbundle": "^0.11.0",
+    "prettier": "^1.18.2",
+    "ts-node": "^8.3.0",
+    "typedoc": "^0.15.0",
+    "typedoc-plugin-markdown": "^2.1.4",
+    "typescript": "^3.6.2",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.8.0"
+  }
 }
