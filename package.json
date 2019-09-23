@@ -7,7 +7,7 @@
   "module": "dist/index.es.js",
   "jsxnext:main": "dist/index.es.js",
   "umdName": "vkMiniAppsAPI",
-  "type": "dist/types/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "scripts": {
     "watch": "rollup -c -w",
     "build": "rimraf dist && NODE_ENV=production rollup -c",
