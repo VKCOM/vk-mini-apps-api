@@ -159,10 +159,10 @@ export class Common extends VKConnectProvider {
    * @event VKWebAppGetEmail
    * @platform iOS, Android, Web
    *
-   * @returns User email
+   * @returns User email and sign of received data
    */
-  public getEmail = async (): Promise<string> => {
-    return this.connect.sendPromise('VKWebAppGetEmail').then(data => data.email);
+  public getEmail = async (): Promise<{ email: string; sign: string }> => {
+    return this.connect.sendPromise('VKWebAppGetEmail');
   };
 
   /**

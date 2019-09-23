@@ -35,7 +35,7 @@ function __rest(s, e) {
 
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
 
-  if (s != null && typeof Object.getOwnPropertySymbols === 'function') for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
   return t;
@@ -49,7 +49,7 @@ function __spreadArrays() {
   return r;
 }
 
-var version = '1.6.0-beta.0';
+var version = "1.6.1";
 /**
  * Creates counter interface
  */
@@ -123,7 +123,7 @@ var promisifySend = function (send, subscribe) {
 
     var _a = event.detail.data,
         requestId = _a.request_id,
-        data = __rest(_a, ['request_id']);
+        data = __rest(_a, ["request_id"]);
 
     if (requestId) {
       requestResolver.resolve(requestId, data, function (data) {
@@ -201,7 +201,7 @@ if (isBrowser) {
       var _a = args[0].data,
           _ = _a.webFrameId,
           connectVersion_1 = _a.connectVersion,
-          data_1 = __rest(_a, ['webFrameId', 'connectVersion']); // FIXME
+          data_1 = __rest(_a, ["webFrameId", "connectVersion"]); // FIXME
 
 
       if (data_1.type && data_1.type === 'VKWebAppSettings') {
@@ -641,11 +641,11 @@ var Common = /** @class */ (function (_super) {
          * @event VKWebAppGetEmail
          * @platform iOS, Android, Web
          *
-         * @returns User email
+         * @returns User email and sign of received data
          */
         _this.getEmail = function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                return [2 /*return*/, this.connect.sendPromise('VKWebAppGetEmail').then(function (data) { return data.email; })];
+                return [2 /*return*/, this.connect.sendPromise('VKWebAppGetEmail')];
             });
         }); };
         /**

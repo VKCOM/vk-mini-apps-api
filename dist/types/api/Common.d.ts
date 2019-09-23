@@ -109,9 +109,12 @@ export declare class Common extends VKConnectProvider {
      * @event VKWebAppGetEmail
      * @platform iOS, Android, Web
      *
-     * @returns User email
+     * @returns User email and sign of received data
      */
-    getEmail: () => Promise<string>;
+    getEmail: () => Promise<{
+        email: string;
+        sign: string;
+    }>;
     /**
      * Displays modal with friend select
      *
