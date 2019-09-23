@@ -13,16 +13,16 @@ export class AppStorage extends VKConnectProvider {
    * @param key Keys for getting ([a-zA-Z_\-0-9])
    * @param [isGlobal] Is global value. Default: false
    *
-   * @return The stored value or `null` if the value is not found
+   * @returns The stored value or empty string if the value is not found
    */
-  public get = async (key: string, isGlobal: boolean = false): Promise<string | null> => {
+  public get = async (key: string, isGlobal: boolean = false): Promise<string> => {
     const data = await this.connect.sendPromise('VKWebAppStorageGet', {
       keys: [key],
       global: isGlobal
     });
 
     if (!data || !Array.isArray(data.keys) || data.keys.length === 0) {
-      return null;
+      return '';
     }
 
     return data.keys[0].value;
