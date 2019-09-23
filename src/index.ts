@@ -15,7 +15,7 @@ type VKMiniAppAPIOptions = {
  * Creates instance of VK Mini App API
  * @param options Options of the instance
  */
-export const createVKMiniAppAPI = (options: VKMiniAppAPIOptions) => {
+export const createVKMiniAppAPI = (options: VKMiniAppAPIOptions = {}) => {
   const connect = options.customConnect == null ? vkConnect : options.customConnect;
 
   return new VKMiniAppAPI(connect);
