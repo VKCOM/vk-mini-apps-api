@@ -13,5 +13,5 @@ declare type VKMiniAppAPIOptions = {
  * Creates instance of VK Mini App API
  * @param options Options of the instance
  */
-export declare const createVKMiniAppAPI: (options: VKMiniAppAPIOptions) => VKMiniAppAPI;
+export declare const createVKMiniAppAPI: (options?: VKMiniAppAPIOptions) => VKMiniAppAPI;
 export {};

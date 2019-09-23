@@ -12,9 +12,9 @@ export declare class AppStorage extends VKConnectProvider {
      * @param key Keys for getting ([a-zA-Z_\-0-9])
      * @param [isGlobal] Is global value. Default: false
      *
-     * @return The stored value or `null` if the value is not found
+     * @returns The stored value or empty string if the value is not found
      */
-    get: (key: string, isGlobal?: boolean) => Promise<string | null>;
+    get: (key: string, isGlobal?: boolean) => Promise<string>;
     /**
      * Requests multiple values from the storage
      *
