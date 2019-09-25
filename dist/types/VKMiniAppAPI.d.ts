@@ -301,7 +301,7 @@ export declare class VKMiniAppAPI extends VKConnectProvider {
      *
      * @returns {Promise<number>} ID of group to which the app was added
      */
-    addApp: () => Promise<number>;
+    addAppToCommunity: () => Promise<number>;
     /**
      * Asks user for permission to send messages from a the community
      *
@@ -314,7 +314,7 @@ export declare class VKMiniAppAPI extends VKConnectProvider {
      * the user. Its value will be returned in the message_allow Callback API
      * event.
      */
-    allowMessages: (communityId: number, key?: string | undefined) => Promise<void>;
+    allowCommunityMessages: (communityId: number, key?: string | undefined) => Promise<void>;
     /**
      * Asks the user for permission to send messages from a the community
      *
@@ -322,7 +322,7 @@ export declare class VKMiniAppAPI extends VKConnectProvider {
      * @event VKWebAppAllowNotifications
      * @platform iOS, Android, Web
      */
-    allowNotifications: () => Promise<void>;
+    allowCommunityNotifications: () => Promise<void>;
     /**
      * Requests community access for working with API on behalf of the community.
      * The community access token can only be received by its admin.
@@ -343,7 +343,7 @@ export declare class VKMiniAppAPI extends VKConnectProvider {
      * @param [scope] List of scopes to request access
      * @returns Community access token
      */
-    getToken: (communityId: number, appId: number, scope?: CommunityAccessScope[] | undefined) => Promise<{
+    getCommunityToken: (communityId: number, appId: number, scope?: CommunityAccessScope[] | undefined) => Promise<{
         accessToken: string;
     }>;
     /**
@@ -353,9 +353,9 @@ export declare class VKMiniAppAPI extends VKConnectProvider {
      * @event VKWebAppJoinGroup
      * @platform iOS, Android, Web
      */
-    join: (communityId: number) => Promise<void>;
+    joinCommunity: (communityId: number) => Promise<void>;
     /**
-     * Sends event to a community.
+     * Sends event to a community
      *
      * @remarks
      * Dispatches the `app_payload` event, which you can receive through
@@ -369,7 +369,7 @@ export declare class VKMiniAppAPI extends VKConnectProvider {
      * @param communityId Community ID
      * @param payload Any data to send as JSON
      */
-    sendPayload: (communityId: number, payload: any) => Promise<void>;
+    sendPayloadToCommunity: (communityId: number, payload: any) => Promise<void>;
     /**
      * Sens request to open a screen with a preview of the widget for a
      * community
@@ -377,7 +377,7 @@ export declare class VKMiniAppAPI extends VKConnectProvider {
      * @category Community
      * @event VKWebAppShowCommunityWidgetPreviewBox
      */
-    showWidgetPreviewBox: (communityId: number, type: VKConnect.WidgetType, code: string) => Promise<void>;
+    showCommunityWidgetPreviewBox: (communityId: number, type: VKConnect.WidgetType, code: string) => Promise<void>;
     /**
      * Resizes iframe size in web
      *
@@ -571,7 +571,18 @@ export declare class VKMiniAppAPI extends VKConnectProvider {
      */
     onAudioTrackChanged: (callback: (data: {
         type: string;
-        id: string;
+        id: string; /**
+         * Resizes iframe size in web
+         *
+         * @category Interface
+         * @event VKWebAppResizeWindow
+         * @platform Web
+         *
+         * @param width Width of iframe
+         * @param [height] Height of iframe
+         *
+         * @returns Result size of the iframe
+         */
     }) => void) => () => void;
     /**
      * Subscribes a function for listening the `VKWebAppAudioUnpaused` event.

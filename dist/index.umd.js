@@ -944,7 +944,7 @@
              *
              * @returns {Promise<number>} ID of group to which the app was added
              */
-            _this.addApp = function () { return __awaiter(_this, void 0, void 0, function () {
+            _this.addAppToCommunity = function () { return __awaiter(_this, void 0, void 0, function () {
                 var data;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
@@ -967,7 +967,7 @@
              * the user. Its value will be returned in the message_allow Callback API
              * event.
              */
-            _this.allowMessages = function (communityId, key) { return __awaiter(_this, void 0, void 0, function () {
+            _this.allowCommunityMessages = function (communityId, key) { return __awaiter(_this, void 0, void 0, function () {
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppAllowMessagesFromGroup', {
@@ -987,7 +987,7 @@
              * @event VKWebAppAllowNotifications
              * @platform iOS, Android, Web
              */
-            _this.allowNotifications = function () { return __awaiter(_this, void 0, void 0, function () {
+            _this.allowCommunityNotifications = function () { return __awaiter(_this, void 0, void 0, function () {
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppAllowNotifications')];
@@ -1017,7 +1017,7 @@
              * @param [scope] List of scopes to request access
              * @returns Community access token
              */
-            _this.getToken = function (communityId, appId, scope) { return __awaiter(_this, void 0, void 0, function () {
+            _this.getCommunityToken = function (communityId, appId, scope) { return __awaiter(_this, void 0, void 0, function () {
                 var strScope, availableMethod, data;
                 var _this = this;
                 return __generator(this, function (_a) {
@@ -1053,7 +1053,7 @@
              * @event VKWebAppJoinGroup
              * @platform iOS, Android, Web
              */
-            _this.join = function (communityId) { return __awaiter(_this, void 0, void 0, function () {
+            _this.joinCommunity = function (communityId) { return __awaiter(_this, void 0, void 0, function () {
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppJoinGroup', { group_id: communityId })];
@@ -1064,7 +1064,7 @@
                 });
             }); };
             /**
-             * Sends event to a community.
+             * Sends event to a community
              *
              * @remarks
              * Dispatches the `app_payload` event, which you can receive through
@@ -1078,7 +1078,7 @@
              * @param communityId Community ID
              * @param payload Any data to send as JSON
              */
-            _this.sendPayload = function (communityId, payload) { return __awaiter(_this, void 0, void 0, function () {
+            _this.sendPayloadToCommunity = function (communityId, payload) { return __awaiter(_this, void 0, void 0, function () {
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppSendPayload', {
@@ -1098,7 +1098,7 @@
              * @category Community
              * @event VKWebAppShowCommunityWidgetPreviewBox
              */
-            _this.showWidgetPreviewBox = function (communityId, type, code) { return __awaiter(_this, void 0, void 0, function () {
+            _this.showCommunityWidgetPreviewBox = function (communityId, type, code) { return __awaiter(_this, void 0, void 0, function () {
                 var data;
                 return __generator(this, function (_a) {
                     switch (_a.label) {

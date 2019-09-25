@@ -427,7 +427,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    *
    * @returns {Promise<number>} ID of group to which the app was added
    */
-  public addApp = async (): Promise<number> => {
+  public addAppToCommunity = async (): Promise<number> => {
     const data = await this.connect.sendPromise('VKWebAppAddToCommunity');
 
     return data.group_id;
@@ -445,7 +445,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * the user. Its value will be returned in the message_allow Callback API
    * event.
    */
-  public allowMessages = async (communityId: number, key?: string): Promise<void> => {
+  public allowCommunityMessages = async (communityId: number, key?: string): Promise<void> => {
     await this.connect.sendPromise('VKWebAppAllowMessagesFromGroup', {
       group_id: communityId,
       key
@@ -459,7 +459,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @event VKWebAppAllowNotifications
    * @platform iOS, Android, Web
    */
-  public allowNotifications = async (): Promise<void> => {
+  public allowCommunityNotifications = async (): Promise<void> => {
     await this.connect.sendPromise('VKWebAppAllowNotifications');
   };
 
@@ -483,7 +483,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param [scope] List of scopes to request access
    * @returns Community access token
    */
-  public getToken = async (
+  public getCommunityToken = async (
     communityId: number,
     appId: number,
     scope?: CommunityAccessScope[]
@@ -524,12 +524,12 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @event VKWebAppJoinGroup
    * @platform iOS, Android, Web
    */
-  public join = async (communityId: number): Promise<void> => {
+  public joinCommunity = async (communityId: number): Promise<void> => {
     await this.connect.sendPromise('VKWebAppJoinGroup', { group_id: communityId });
   };
 
   /**
-   * Sends event to a community.
+   * Sends event to a community
    *
    * @remarks
    * Dispatches the `app_payload` event, which you can receive through
@@ -543,7 +543,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param communityId Community ID
    * @param payload Any data to send as JSON
    */
-  public sendPayload = async (communityId: number, payload: any) => {
+  public sendPayloadToCommunity = async (communityId: number, payload: any) => {
     await this.connect.sendPromise('VKWebAppSendPayload', {
       group_id: communityId,
       payload
@@ -557,7 +557,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @category Community
    * @event VKWebAppShowCommunityWidgetPreviewBox
    */
-  public showWidgetPreviewBox = async (communityId: number, type: VKConnect.WidgetType, code: string) => {
+  public showCommunityWidgetPreviewBox = async (communityId: number, type: VKConnect.WidgetType, code: string) => {
     const data = await this.connect.sendPromise('VKWebAppShowCommunityWidgetPreviewBox', {
       type,
       group_id: communityId,
