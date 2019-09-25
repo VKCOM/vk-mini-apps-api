@@ -1508,7 +1508,7 @@ var VKMiniAppAPI = /** @class */ (function (_super) {
       
          * @returns The stored value or empty string if the value is not found
          */
-        _this.get = function (key) { return __awaiter(_this, void 0, void 0, function () {
+        _this.storageGet = function (key) { return __awaiter(_this, void 0, void 0, function () {
             var data;
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -1533,7 +1533,7 @@ var VKMiniAppAPI = /** @class */ (function (_super) {
          *
          * @returns Map of key-value
          */
-        _this.getMultiple = function (keys) { return __awaiter(_this, void 0, void 0, function () {
+        _this.storageGetMultiple = function (keys) { return __awaiter(_this, void 0, void 0, function () {
             var data;
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -1560,7 +1560,7 @@ var VKMiniAppAPI = /** @class */ (function (_super) {
          * @param [offset] The offset required to fetch a specific subset of keys.
          * Default: 0
          */
-        _this.getKeys = function (count, offset) {
+        _this.storageGetKeys = function (count, offset) {
             if (offset === void 0) { offset = 0; }
             return __awaiter(_this, void 0, void 0, function () {
                 var data;
@@ -1584,7 +1584,7 @@ var VKMiniAppAPI = /** @class */ (function (_super) {
          * @param key The key of value ([a-zA-Z_\-0-9])
          * @param value Value
          */
-        _this.set = function (key, value) { return __awaiter(_this, void 0, void 0, function () {
+        _this.storageSet = function (key, value) { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppStorageSet', { key: key, value: value })];

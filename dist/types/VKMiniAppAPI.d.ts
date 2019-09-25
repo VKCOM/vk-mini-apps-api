@@ -646,7 +646,7 @@ export declare class VKMiniAppAPI extends VKConnectProvider {
   
      * @returns The stored value or empty string if the value is not found
      */
-    get: (key: string) => Promise<string>;
+    storageGet: (key: string) => Promise<string>;
     /**
      * Requests multiple values from the storage
      *
@@ -658,7 +658,7 @@ export declare class VKMiniAppAPI extends VKConnectProvider {
      *
      * @returns Map of key-value
      */
-    getMultiple: (keys: string[]) => Promise<Record<string, string>>;
+    storageGetMultiple: (keys: string[]) => Promise<Record<string, string>>;
     /**
      * Request list of keys of some stored values
      *
@@ -670,7 +670,7 @@ export declare class VKMiniAppAPI extends VKConnectProvider {
      * @param [offset] The offset required to fetch a specific subset of keys.
      * Default: 0
      */
-    getKeys: (count: number, offset?: number) => Promise<string[]>;
+    storageGetKeys: (count: number, offset?: number) => Promise<string[]>;
     /**
      * Stores value in storage
      *
@@ -681,7 +681,7 @@ export declare class VKMiniAppAPI extends VKConnectProvider {
      * @param key The key of value ([a-zA-Z_\-0-9])
      * @param value Value
      */
-    set: (key: string, value: string) => Promise<void>;
+    storageSet: (key: string, value: string) => Promise<void>;
     /**
      * Triggers impact feedback in Taptic Engine
      *

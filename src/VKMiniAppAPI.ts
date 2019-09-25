@@ -918,7 +918,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
 
    * @returns The stored value or empty string if the value is not found
    */
-  public get = async (key: string): Promise<string> => {
+  public storageGet = async (key: string): Promise<string> => {
     const data = await this.connect.sendPromise('VKWebAppStorageGet', { keys: [key] });
 
     if (!data || !Array.isArray(data.keys) || data.keys.length === 0) {
@@ -939,7 +939,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    *
    * @returns Map of key-value
    */
-  public getMultiple = async (keys: string[]): Promise<Record<string, string>> => {
+  public storageGetMultiple = async (keys: string[]): Promise<Record<string, string>> => {
     const data = await this.connect.sendPromise('VKWebAppStorageGet', { keys });
 
     return data && Array.isArray(data.keys) && data.keys.length > 0
@@ -958,7 +958,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param [offset] The offset required to fetch a specific subset of keys.
    * Default: 0
    */
-  public getKeys = async (count: number, offset: number = 0): Promise<string[]> => {
+  public storageGetKeys = async (count: number, offset: number = 0): Promise<string[]> => {
     const data = await this.connect.sendPromise('VKWebAppStorageGetKeys', { count, offset });
 
     return (data && data.keys) || [];
@@ -974,7 +974,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param key The key of value ([a-zA-Z_\-0-9])
    * @param value Value
    */
-  public set = async (key: string, value: string) => {
+  public storageSet = async (key: string, value: string) => {
     await this.connect.sendPromise('VKWebAppStorageSet', { key, value });
   };
 
