@@ -8,6 +8,7 @@ import { TapticEngine } from './api/TapticEngine';
 import { Communities } from './api/Community';
 import { Interface } from './api/Interface';
 import { Ads } from './api/Ads';
+import { Audio } from './api/Audio';
 
 /**
  * VK Mini apps API. Contains all VK Connect methods separated by categories
@@ -41,4 +42,7 @@ export class VKMiniAppAPI {
 
   /** Advertisement methods */
   public ads = new Ads(this.connect);
+
+  /** Common Mini App methods */
+  public audio = new Audio(this.connect);
 }
