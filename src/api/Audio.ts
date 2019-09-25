@@ -8,6 +8,8 @@ export class Audio extends VKConnectProvider {
   /**
    * Subscribes a function for listening the `VKWebAppAudioPaused` event.
    *
+   * @category Audio
+   * @event VKWebAppAudioPaused
    * @platform iOS, Android
    *
    * @param callback Function to pass received data
@@ -19,6 +21,8 @@ export class Audio extends VKConnectProvider {
   /**
    * Subscribes a function for listening the `VKWebAppAudioStopped` event.
    *
+   * @category Audio
+   * @event VKWebAppAudioStopped
    * @platform iOS, Android
    *
    * @param callback Function to pass received data
@@ -30,6 +34,8 @@ export class Audio extends VKConnectProvider {
   /**
    * Subscribes a function for listening the `VKWebAppAudioTrackChanged` event.
    *
+   * @category Audio
+   * @event VKWebAppAudioTrackChanged
    * @platform iOS, Android
    *
    * @param callback Function to pass received data
@@ -41,6 +47,8 @@ export class Audio extends VKConnectProvider {
   /**
    * Subscribes a function for listening the `VKWebAppAudioUnpaused` event.
    *
+   * @category Audio
+   * @event VKWebAppAudioUnpaused
    * @platform iOS, Android
    *
    * @param callback Function to pass received data

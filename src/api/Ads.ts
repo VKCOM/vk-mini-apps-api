@@ -5,6 +5,8 @@ export class Ads extends VKConnectProvider {
   /**
    * Subscribes a function for listening the `VKWebAppInitAds` event.
    *
+   * @category Advertisement
+   * @event VKWebAppInitAds
    * @platform iOS, Android, Web
    *
    * @param callback Function to pass received data
@@ -16,6 +18,8 @@ export class Ads extends VKConnectProvider {
   /**
    * Subscribes a function for listening the `VKWebAppLoadAds` event.
    *
+   * @category Advertisement
+   * @event VKWebAppLoadAds
    * @platform iOS, Android, Web
    *
    * @param callback Function to pass received data

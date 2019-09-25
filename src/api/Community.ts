@@ -46,8 +46,9 @@ export class Communities extends VKConnectProvider {
   /**
    * Asks the user for permission to send messages from a the community
    *
-   * @event VKWebAppAllowNotifications
    * @platform iOS, Android, Web
+   *
+   * @event VKWebAppAllowNotifications
    */
   public allowNotifications = async (): Promise<void> => {
     await this.connect.sendPromise('VKWebAppAllowNotifications');
@@ -61,14 +62,11 @@ export class Communities extends VKConnectProvider {
    * and make a request to the `groups.get` method with the `filter=admin`
    * parameter to get a list of identifiers of the administrated communities.
    *
-   * New universal event
-   * @event VKWebAppGetCommunityToken
-   *
-   * Legacy events
-   * @event VKWebAppCommunityAccessToken iOS
-   * @event VKWebAppCommunityToken Android
-   * @event VKWebAppGetCommunityAuthToken Web
-   *
+   * @category Community
+   * @event VKWebAppGetCommunityToken New universal event
+   * @event VKWebAppCommunityAccessToken Legacy events for iOS
+   * @event VKWebAppCommunityToken Legacy events for Android
+   * @event VKWebAppGetCommunityAuthToken Legacy events for Web
    * @platform iOS, Android, Web
    *
    * @param communityId Community ID

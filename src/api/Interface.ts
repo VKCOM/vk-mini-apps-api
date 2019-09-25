@@ -5,6 +5,7 @@ export class Interface extends VKConnectProvider {
   /**
    * Resizes iframe size in web
    *
+   * @category Interface
    * @event VKWebAppResizeWindow
    * @platform Web
    *
@@ -20,6 +21,7 @@ export class Interface extends VKConnectProvider {
   /**
    * Scrolls window to specified point
    *
+   * @category Interface
    * @event VKWebAppScroll
    * @platform Web
    *
@@ -35,6 +37,7 @@ export class Interface extends VKConnectProvider {
   /**
    * Sets location hash to the app (vk.com/app123#hash)
    *
+   * @category Interface
    * @event VKWebAppSetLocation
    */
   public setLocationHash = async (hash: string): Promise<void> => {
@@ -44,6 +47,7 @@ export class Interface extends VKConnectProvider {
   /**
    * Changes the appearance of the mini app interface in mobile clients
    *
+   * @category Interface
    * @event VKWebAppSetViewSettings
    * @platform iOS, Android
    *

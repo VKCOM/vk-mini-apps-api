@@ -7,6 +7,7 @@ export class Storage extends VKConnectProvider {
   /**
    * Requests a value from the storage
    *
+   * @category Storage
    * @event VKWebAppStorageGet
    * @platform iOS, Android, Web
    *
@@ -27,6 +28,7 @@ export class Storage extends VKConnectProvider {
   /**
    * Requests multiple values from the storage
    *
+   * @category Storage
    * @event VKWebAppStorageGet
    * @platform iOS, Android, Web
    *
@@ -45,6 +47,7 @@ export class Storage extends VKConnectProvider {
   /**
    * Request list of keys of some stored values
    *
+   * @category Storage
    * @event VKWebAppStorageGetKeys
    * @platform iOS, Android, Web
    *
@@ -61,6 +64,7 @@ export class Storage extends VKConnectProvider {
   /**
    * Stores value in storage
    *
+   * @category Storage
    * @event VKWebAppStorageSet
    * @platform iOS, Android, Web
    *

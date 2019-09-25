@@ -8,6 +8,7 @@ export class TapticEngine extends VKConnectProvider {
   /**
    * Triggers impact feedback in Taptic Engine
    *
+   * @category Taptic Engine
    * @event VKWebAppTapticImpactOccurred
    * @platform iOS
    */
@@ -18,6 +19,7 @@ export class TapticEngine extends VKConnectProvider {
   /**
    * Triggers notification feedback in Taptic Engine
    *
+   * @category Taptic Engine
    * @event VKWebAppTapticNotificationOccurred
    * @platform iOS
    */
@@ -28,6 +30,7 @@ export class TapticEngine extends VKConnectProvider {
   /**
    * Triggers selection feedback in Taptic Engine
    *
+   * @category Taptic Engine
    * @event VKWebAppTapticSelectionChanged
    * @platform iOS
    */

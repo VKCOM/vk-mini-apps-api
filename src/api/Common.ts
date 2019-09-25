@@ -24,6 +24,8 @@ const prepareAttachments = (attachments: (string | Attachment)[]): string =>
 export class Common extends VKConnectProvider {
   /**
    * Initializes the VK Mini App. Must be called before using any API method
+   *
+   * @event VKWebAppInit
    */
   public initApp(): void {
     this.connect.send('VKWebAppInit', {});
@@ -32,6 +34,8 @@ export class Common extends VKConnectProvider {
   /**
    * Subscribes a function for listening the `VKWebAppUpdateConfig` event.
    *
+   * @category Common
+   * @event VKWebAppUpdateConfig
    * @platform iOS, Android
    *
    * @param callback Function to pass received data
@@ -43,6 +47,8 @@ export class Common extends VKConnectProvider {
   /**
    * Subscribes a function for listening the `VKWebAppViewHide` event.
    *
+   * @category Common
+   * @event VKWebAppViewHide
    * @platform iOS, Android
    *
    * @param callback Function to pass received data
@@ -54,6 +60,8 @@ export class Common extends VKConnectProvider {
   /**
    * Subscribes a function for listening the `VKWebAppViewRestore` event.
    *
+   * @category Common
+   * @event VKWebAppViewRestore
    * @platform iOS, Android
    *
    * @param callback Function to pass received data
@@ -65,6 +73,7 @@ export class Common extends VKConnectProvider {
   /**
    * Disallows notifications
    *
+   * @category Common
    * @event VKWebAppDenyNotifications
    * @platform iOS, Android, Web
    */
@@ -80,6 +89,7 @@ export class Common extends VKConnectProvider {
    * user access key with the appropriate rights obtained using `getAuthToken`
    * @see {@link getAuthToken}.
    *
+   * @category Common
    * @event VKWebAppCallAPIMethod
    * @platform iOS, Android, Web
    *
@@ -99,6 +109,7 @@ export class Common extends VKConnectProvider {
    * Closes sub app opened via the `openApp` method. Sends data to the parent
    * app if needed.
    *
+   * @category Common
    * @event VKWebAppClose
    * @platform iOS
    */
@@ -114,6 +125,7 @@ export class Common extends VKConnectProvider {
    * Please note: the location from which the token is requested must match
    * the URL specified in the app settings.
    *
+   * @category Common
    * @event VKWebAppGetAuthToken
    * @platform iOS, Android, Web
    *
@@ -140,6 +152,7 @@ export class Common extends VKConnectProvider {
   /**
    * Returns client's platform and version
    *
+   * @category Common
    * @event VKWebAppGetClientVersion
    * @platform iOS, Android, Web
    */
@@ -150,6 +163,7 @@ export class Common extends VKConnectProvider {
   /**
    * Opens sub app
    *
+   * @category Common
    * @event VKWebAppOpenApp
    * @platform iOS, Android, Web
    *
@@ -166,6 +180,7 @@ export class Common extends VKConnectProvider {
   /**
    * Requests user email
    *
+   * @category Common
    * @event VKWebAppGetEmail
    * @platform iOS, Android, Web
    *
@@ -178,6 +193,7 @@ export class Common extends VKConnectProvider {
   /**
    * Displays modal with friend select
    *
+   * @category Common
    * @event VKWebAppGetFriends
    * @platform iOS, Android
    *
@@ -193,6 +209,7 @@ export class Common extends VKConnectProvider {
   /**
    * Requests user geodata
    *
+   * @category Common
    * @event VKWebAppGetGeodata
    * @platform iOS, Android, Web
    *
@@ -214,6 +231,7 @@ export class Common extends VKConnectProvider {
    *
    * @param types Array of required data types: `phone`, `email`, `address`
    *
+   * @category Common
    * @event VKWebAppGetPersonalCard
    * @platform iOS >= 5.4, Android >= 5.24
    *
@@ -226,6 +244,7 @@ export class Common extends VKConnectProvider {
   /**
    * Requests user's phone number
    *
+   * @category Common
    * @event VKWebAppGetPhoneNumber
    * @platform iOS, Android, Web
    *
@@ -246,6 +265,7 @@ export class Common extends VKConnectProvider {
   /**
    * Requests the main user data
    *
+   * @category Common
    * @event VKWebAppGetUserInfo
    * @platform iOS, Android, Web
    *
@@ -258,6 +278,7 @@ export class Common extends VKConnectProvider {
   /**
    * Opens QR codes and barcodes reader
    *
+   * @category Common
    * @event VKWebAppOpenCodeReader
    * @platform iOS, Android
    *
@@ -272,8 +293,9 @@ export class Common extends VKConnectProvider {
   /**
    * Opens a selecting contact from the contact list on the user's device.
    * If user has closed the contact list, called the `VKWebAppContactsClosed`
-   * event.
    *
+   * event.
+   * @category Common
    * @event VKWebAppOpenContacts
    * @platform iOS, Android
    *
@@ -292,6 +314,7 @@ export class Common extends VKConnectProvider {
   /**
    * Requests the user to share a link on their wall
    *
+   * @category Common
    * @event VKWebAppShare
    * @platform iOS, Android, Web
    *
@@ -307,6 +330,7 @@ export class Common extends VKConnectProvider {
   /**
    * Shows specified photos to user
    *
+   * @category Common
    * @event VKWebAppShowImages
    * @platform iOS, Android
    */
@@ -317,6 +341,7 @@ export class Common extends VKConnectProvider {
   /**
    * Requests adding the app to favorites
    *
+   * @category Common
    * @event VKWebAppAddToFavorites
    * @platform iOS, Android
    */
@@ -327,6 +352,7 @@ export class Common extends VKConnectProvider {
   /**
    * Requests the user to post to the wall
    *
+   * @category Common
    * @event VKWebAppShowWallPostBox
    * @platform iOS, Android, Web
    *

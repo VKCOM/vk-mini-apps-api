@@ -8,6 +8,7 @@ export class DirectGames extends VKConnectProvider {
   /**
    * Opens friends list for inviting to the app
    *
+   * @category Direct Games
    * @event VKWebAppShowInviteBox
    * @platform iOS, Android
    */
@@ -23,6 +24,7 @@ export class DirectGames extends VKConnectProvider {
    * (the type of leaderboard is selected in the application settings). To add
    * a level or points to users, use the `secure.addAppEvent` method.
    *
+   * @category Direct Games
    * @event VKWebAppShowLeaderBoardBox
    * @platform iOS, Android
    *
@@ -37,6 +39,7 @@ export class DirectGames extends VKConnectProvider {
   /**
    * Shows item order box
    *
+   * @category Direct Games
    * @event VKWebAppShowOrderBox
    *
    * @param itemName Name of product. Will be transmitted in the notification
@@ -55,6 +58,7 @@ export class DirectGames extends VKConnectProvider {
   /**
    * Shows box for sending request to the user
    *
+   * @category Direct Games
    * @event VKWebAppShowRequestBox
    *
    * @param userId User Id

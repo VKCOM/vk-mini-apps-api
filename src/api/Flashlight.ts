@@ -7,6 +7,7 @@ export class Flashlight extends VKConnectProvider {
   /**
    * Requests device's flashlight information
    *
+   * @category Flashlight
    * @event VKWebAppFlashGetInfo
    * @platform iOS, Android
    *
@@ -24,6 +25,7 @@ export class Flashlight extends VKConnectProvider {
   /**
    * Sets device's flashlight level
    *
+   * @category Flashlight
    * @event VKWebAppFlashSetLevel
    * @platform iOS, Android
    *

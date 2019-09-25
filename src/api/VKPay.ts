@@ -8,6 +8,7 @@ export class VKPay extends VKConnectProvider {
   /**
    * Requests payment to a specified user of the specified amount via VK Pay
    *
+   * @category VK Pay
    * @event VKWebAppOpenPayForm
    * @platform iOS, Android, Web
    *
@@ -36,6 +37,7 @@ export class VKPay extends VKConnectProvider {
    * Requests payment to a specified community of the specified amount
    * via VK Pay
    *
+   * @category VK Pay
    * @event VKWebAppOpenPayForm
    * @platform iOS, Android, Web
    *
@@ -71,6 +73,7 @@ export class VKPay extends VKConnectProvider {
   /**
    * Requests transfer an arbitrary amount to a specified user
    *
+   * @category VK Pay
    * @event VKWebAppOpenPayForm
    * @platform iOS, Android, Web
    *
@@ -91,6 +94,7 @@ export class VKPay extends VKConnectProvider {
   /**
    * Requests transfer an arbitrary amount to a specified community
    *
+   * @category VK Pay
    * @event VKWebAppOpenPayForm
    * @platform iOS, Android, Web
    *
