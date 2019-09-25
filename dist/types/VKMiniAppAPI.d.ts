@@ -3,7 +3,7 @@ import { Common } from './api/Common';
 import { VKPay } from './api/VKPay';
 import { Flashlight } from './api/Flashlight';
 import { DirectGames } from './api/DirectGames';
-import { AppStorage } from './api/AppStorage';
+import { Storage } from './api/Storage';
 import { TapticEngine } from './api/TapticEngine';
 import { Communities } from './api/Community';
 import { Interface } from './api/Interface';
@@ -23,7 +23,7 @@ export declare class VKMiniAppAPI {
     /** DirectGames methods */
     directGames: DirectGames;
     /** Storage methods */
-    storage: AppStorage;
+    storage: Storage;
     /** Taptic Engine methods */
     tapticEngine: TapticEngine;
     /** Interface methods */

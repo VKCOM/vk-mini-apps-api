@@ -45,7 +45,7 @@ function __spreadArrays() {
   return r;
 }
 
-var version = "1.6.1";
+var version = "1.6.5";
 /**
  * Creates counter interface
  */
@@ -1165,9 +1165,9 @@ var DirectGames = /** @class */ (function (_super) {
 /**
  * Storage API
  */
-var AppStorage = /** @class */ (function (_super) {
-    __extends(AppStorage, _super);
-    function AppStorage() {
+var Storage = /** @class */ (function (_super) {
+    __extends(Storage, _super);
+    function Storage() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         /**
          * Requests a value from the storage
@@ -1176,30 +1176,23 @@ var AppStorage = /** @class */ (function (_super) {
          * @platform iOS, Android, Web
          *
          * @param key Keys for getting ([a-zA-Z_\-0-9])
-         * @param [isGlobal] Is global value. Default: false
-         *
+      
          * @returns The stored value or empty string if the value is not found
          */
-        _this.get = function (key, isGlobal) {
-            if (isGlobal === void 0) { isGlobal = false; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var data;
-                return __generator(this, function (_a) {
-                    switch (_a.label) {
-                        case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppStorageGet', {
-                                keys: [key],
-                                global: isGlobal
-                            })];
-                        case 1:
-                            data = _a.sent();
-                            if (!data || !Array.isArray(data.keys) || data.keys.length === 0) {
-                                return [2 /*return*/, ''];
-                            }
-                            return [2 /*return*/, data.keys[0].value];
-                    }
-                });
+        _this.get = function (key) { return __awaiter(_this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppStorageGet', { keys: [key] })];
+                    case 1:
+                        data = _a.sent();
+                        if (!data || !Array.isArray(data.keys) || data.keys.length === 0) {
+                            return [2 /*return*/, ''];
+                        }
+                        return [2 /*return*/, data.keys[0].value];
+                }
             });
-        };
+        }); };
         /**
          * Requests multiple values from the storage
          *
@@ -1207,32 +1200,25 @@ var AppStorage = /** @class */ (function (_super) {
          * @platform iOS, Android, Web
          *
          * @param keys List of keys for getting ([a-zA-Z_\-0-9])
-         * @param [isGlobal] Is global value. Default: false
          *
          * @returns Map of key-value
          */
-        _this.getMultiple = function (keys, isGlobal) {
-            if (isGlobal === void 0) { isGlobal = false; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var data;
-                return __generator(this, function (_a) {
-                    switch (_a.label) {
-                        case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppStorageGet', {
-                                keys: keys,
-                                global: isGlobal
-                            })];
-                        case 1:
-                            data = _a.sent();
-                            return [2 /*return*/, data && Array.isArray(data.keys) && data.keys.length > 0
-                                    ? data.keys.reduce(function (acc, item) {
-                                        var _a;
-                                        return (__assign$1(__assign$1({}, acc), (_a = {}, _a[item.key] = item.value, _a)));
-                                    }, {})
-                                    : {}];
-                    }
-                });
+        _this.getMultiple = function (keys) { return __awaiter(_this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppStorageGet', { keys: keys })];
+                    case 1:
+                        data = _a.sent();
+                        return [2 /*return*/, data && Array.isArray(data.keys) && data.keys.length > 0
+                                ? data.keys.reduce(function (acc, item) {
+                                    var _a;
+                                    return (__assign$1(__assign$1({}, acc), (_a = {}, _a[item.key] = item.value, _a)));
+                                }, {})
+                                : {}];
+                }
             });
-        };
+        }); };
         /**
          * Request list of keys of some stored values
          *
@@ -1242,20 +1228,14 @@ var AppStorage = /** @class */ (function (_super) {
          * @param count Count of keys to get. Max value is 1000
          * @param [offset] The offset required to fetch a specific subset of keys.
          * Default: 0
-         * @param [isGlobal] Is global value. Default: false
          */
-        _this.getKeys = function (count, offset, isGlobal) {
+        _this.getKeys = function (count, offset) {
             if (offset === void 0) { offset = 0; }
-            if (isGlobal === void 0) { isGlobal = false; }
             return __awaiter(_this, void 0, void 0, function () {
                 var data;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
-                        case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppStorageGetKeys', {
-                                count: count,
-                                offset: offset,
-                                global: isGlobal
-                            })];
+                        case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppStorageGetKeys', { count: count, offset: offset })];
                         case 1:
                             data = _a.sent();
                             return [2 /*return*/, (data && data.keys) || []];
@@ -1271,28 +1251,20 @@ var AppStorage = /** @class */ (function (_super) {
          *
          * @param key The key of value ([a-zA-Z_\-0-9])
          * @param value Value
-         * @param [isGlobal] Is global value. Default: false
          */
-        _this.set = function (key, value, isGlobal) {
-            if (isGlobal === void 0) { isGlobal = false; }
-            return __awaiter(_this, void 0, void 0, function () {
-                return __generator(this, function (_a) {
-                    switch (_a.label) {
-                        case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppStorageSet', {
-                                key: key,
-                                value: value,
-                                global: isGlobal
-                            })];
-                        case 1:
-                            _a.sent();
-                            return [2 /*return*/];
-                    }
-                });
+        _this.set = function (key, value) { return __awaiter(_this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppStorageSet', { key: key, value: value })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
             });
-        };
+        }); };
         return _this;
     }
-    return AppStorage;
+    return Storage;
 }(VKConnectProvider));
 
 /**
@@ -1673,7 +1645,7 @@ var VKMiniAppAPI = /** @class */ (function () {
         /** DirectGames methods */
         this.directGames = new DirectGames(this.connect);
         /** Storage methods */
-        this.storage = new AppStorage(this.connect);
+        this.storage = new Storage(this.connect);
         /** Taptic Engine methods */
         this.tapticEngine = new TapticEngine(this.connect);
         /** Interface methods */
