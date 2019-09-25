@@ -10,39 +10,63 @@
 
 ## Index
 
-### Properties
+### Methods
 
 * [onInitAds](ads.md#oninitads)
 * [onLoadAds](ads.md#onloadads)
 
-## Properties
+## Methods
 
 ###  onInitAds
 
-• **onInitAds**: *(Anonymous function)* =  this.createEventListener('VKWebAppInitAds')
+▸ **onInitAds**(`callback`: function): *(Anonymous function)*
 
-*Defined in [api/Ads.ts:12](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Ads.ts#L12)*
+*Defined in [api/Ads.ts:13](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/api/Ads.ts#L13)*
 
 Subscribes a function for listening the `VKWebAppInitAds` event.
 
-**`platform`** iOS, Android, Web
+**Parameters:**
 
-**`param`** Function to pass received data
+▪ **callback**: *function*
 
-**`returns`** function for unsubscribe
+Function to pass received data
+
+▸ (`data`: ReceiveData‹"VKWebAppInitAds"›): *void*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`data` | ReceiveData‹"VKWebAppInitAds"› |
+
+**Returns:** *(Anonymous function)*
+
+function for unsubscribe
 
 ___
 
 ###  onLoadAds
 
-• **onLoadAds**: *(Anonymous function)* =  this.createEventListener('VKWebAppLoadAds')
+▸ **onLoadAds**(`callback`: function): *(Anonymous function)*
 
-*Defined in [api/Ads.ts:22](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Ads.ts#L22)*
+*Defined in [api/Ads.ts:24](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/api/Ads.ts#L24)*
 
-Subscribes a function for listening the `VKWebAppInitAds` event.
+Subscribes a function for listening the `VKWebAppLoadAds` event.
 
-**`platform`** iOS, Android, Web
+**Parameters:**
 
-**`param`** Function to pass received data
+▪ **callback**: *function*
 
-**`returns`** function for unsubscribe
+Function to pass received data
+
+▸ (`data`: ReceiveData‹"VKWebAppLoadAds"›): *void*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`data` | ReceiveData‹"VKWebAppLoadAds"› |
+
+**Returns:** *(Anonymous function)*
+
+function for unsubscribe

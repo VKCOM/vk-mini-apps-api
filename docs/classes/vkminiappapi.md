@@ -17,6 +17,7 @@ VK Mini apps API. Contains all VK Connect methods separated by categories
 ### Properties
 
 * [ads](vkminiappapi.md#ads)
+* [audio](vkminiappapi.md#audio)
 * [common](vkminiappapi.md#common)
 * [communities](vkminiappapi.md#communities)
 * [directGames](vkminiappapi.md#directgames)
@@ -32,7 +33,7 @@ VK Mini apps API. Contains all VK Connect methods separated by categories
 
 \+ **new VKMiniAppAPI**(`connect`: VKConnect): *[VKMiniAppAPI](vkminiappapi.md)*
 
-*Defined in [VKMiniAppAPI.ts:15](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/VKMiniAppAPI.ts#L15)*
+*Defined in [VKMiniAppAPI.ts:16](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/VKMiniAppAPI.ts#L16)*
 
 **Parameters:**
 
@@ -48,9 +49,19 @@ Name | Type |
 
 • **ads**: *[Ads](ads.md)* =  new Ads(this.connect)
 
-*Defined in [VKMiniAppAPI.ts:43](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/VKMiniAppAPI.ts#L43)*
+*Defined in [VKMiniAppAPI.ts:44](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/VKMiniAppAPI.ts#L44)*
 
 Advertisement methods
+
+___
+
+###  audio
+
+• **audio**: *[Audio](audio.md)* =  new Audio(this.connect)
+
+*Defined in [VKMiniAppAPI.ts:47](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/VKMiniAppAPI.ts#L47)*
+
+Common Mini App methods
 
 ___
 
@@ -58,7 +69,7 @@ ___
 
 • **common**: *[Common](common.md)* =  new Common(this.connect)
 
-*Defined in [VKMiniAppAPI.ts:19](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/VKMiniAppAPI.ts#L19)*
+*Defined in [VKMiniAppAPI.ts:20](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/VKMiniAppAPI.ts#L20)*
 
 Common Mini App methods
 
@@ -68,7 +79,7 @@ ___
 
 • **communities**: *[Communities](communities.md)* =  new Communities(this.connect)
 
-*Defined in [VKMiniAppAPI.ts:40](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/VKMiniAppAPI.ts#L40)*
+*Defined in [VKMiniAppAPI.ts:41](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/VKMiniAppAPI.ts#L41)*
 
 Communities methods
 
@@ -78,7 +89,7 @@ ___
 
 • **directGames**: *[DirectGames](directgames.md)* =  new DirectGames(this.connect)
 
-*Defined in [VKMiniAppAPI.ts:28](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/VKMiniAppAPI.ts#L28)*
+*Defined in [VKMiniAppAPI.ts:29](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/VKMiniAppAPI.ts#L29)*
 
 DirectGames methods
 
@@ -88,7 +99,7 @@ ___
 
 • **flashlight**: *[Flashlight](flashlight.md)* =  new Flashlight(this.connect)
 
-*Defined in [VKMiniAppAPI.ts:25](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/VKMiniAppAPI.ts#L25)*
+*Defined in [VKMiniAppAPI.ts:26](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/VKMiniAppAPI.ts#L26)*
 
 Flashlights methods
 
@@ -98,7 +109,7 @@ ___
 
 • **interface**: *[Interface](interface.md)* =  new Interface(this.connect)
 
-*Defined in [VKMiniAppAPI.ts:37](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/VKMiniAppAPI.ts#L37)*
+*Defined in [VKMiniAppAPI.ts:38](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/VKMiniAppAPI.ts#L38)*
 
 Interface methods
 
@@ -108,7 +119,7 @@ ___
 
 • **storage**: *[Storage](storage.md)* =  new Storage(this.connect)
 
-*Defined in [VKMiniAppAPI.ts:31](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/VKMiniAppAPI.ts#L31)*
+*Defined in [VKMiniAppAPI.ts:32](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/VKMiniAppAPI.ts#L32)*
 
 Storage methods
 
@@ -118,7 +129,7 @@ ___
 
 • **tapticEngine**: *[TapticEngine](tapticengine.md)* =  new TapticEngine(this.connect)
 
-*Defined in [VKMiniAppAPI.ts:34](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/VKMiniAppAPI.ts#L34)*
+*Defined in [VKMiniAppAPI.ts:35](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/VKMiniAppAPI.ts#L35)*
 
 Taptic Engine methods
 
@@ -128,6 +139,6 @@ ___
 
 • **vkPay**: *[VKPay](vkpay.md)* =  new VKPay(this.connect)
 
-*Defined in [VKMiniAppAPI.ts:22](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/VKMiniAppAPI.ts#L22)*
+*Defined in [VKMiniAppAPI.ts:23](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/VKMiniAppAPI.ts#L23)*
 
 VK Pay methods

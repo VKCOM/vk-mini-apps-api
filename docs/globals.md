@@ -7,6 +7,7 @@
 ### Classes
 
 * [Ads](classes/ads.md)
+* [Audio](classes/audio.md)
 * [Common](classes/common.md)
 * [Communities](classes/communities.md)
 * [DirectGames](classes/directgames.md)
@@ -32,7 +33,7 @@
 
 Ƭ **Attachment**: *object*
 
-*Defined in [types.ts:78](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/types.ts#L78)*
+*Defined in [types.ts:78](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/types.ts#L78)*
 
 Attachment object interface
 
@@ -44,7 +45,7 @@ ___
 
 Ƭ **AttachmentType**: *"photo" | "video" | "audio" | "doc" | "page" | "note" | "poll" | "album" | "market" | "market_album" | "audio_playlist"*
 
-*Defined in [types.ts:62](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/types.ts#L62)*
+*Defined in [types.ts:62](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/types.ts#L62)*
 
 Type of an attachment
 
@@ -54,7 +55,7 @@ ___
 
 Ƭ **CloseStatus**: *"success" | "failed"*
 
-*Defined in [types.ts:31](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/types.ts#L31)*
+*Defined in [types.ts:31](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/types.ts#L31)*
 
 Status of sub app closing
 
@@ -64,7 +65,7 @@ ___
 
 Ƭ **CommunityAccessScope**: *"stories" | "photos" | "app_widget" | "messages" | "docs" | "manage"*
 
-*Defined in [types.ts:20](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/types.ts#L20)*
+*Defined in [types.ts:20](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/types.ts#L20)*
 
 Community access scopes
 
@@ -74,7 +75,7 @@ ___
 
 Ƭ **UserAccessScope**: *"friends" | "photos" | "video" | "pages" | "status" | "notes" | "wall" | "docs" | "groups" | "stats" | "market"*
 
-*Defined in [types.ts:4](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/types.ts#L4)*
+*Defined in [types.ts:4](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/types.ts#L4)*
 
 User access scopes
 
@@ -84,7 +85,7 @@ ___
 
 Ƭ **WallPostOptions**: *object*
 
-*Defined in [types.ts:36](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/types.ts#L36)*
+*Defined in [types.ts:36](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/types.ts#L36)*
 
 Options of wall post publish
 

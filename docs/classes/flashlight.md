@@ -23,7 +23,7 @@ Device's flashlight API
 
 ▸ **flashGetInfo**(): *Promise‹object›*
 
-*Defined in [api/Flashlight.ts:15](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Flashlight.ts#L15)*
+*Defined in [api/Flashlight.ts:15](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/api/Flashlight.ts#L15)*
 
 Requests device's flashlight information
 
@@ -37,7 +37,7 @@ ___
 
 ▸ **flashSetLevel**(`level`: number): *Promise‹void›*
 
-*Defined in [api/Flashlight.ts:32](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Flashlight.ts#L32)*
+*Defined in [api/Flashlight.ts:32](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/api/Flashlight.ts#L32)*
 
 Sets device's flashlight level
 

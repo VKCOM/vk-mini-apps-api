@@ -28,7 +28,7 @@ Communities interactions methods
 
 ▸ **addApp**(): *Promise‹number›*
 
-*Defined in [api/Community.ts:22](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Community.ts#L22)*
+*Defined in [api/Community.ts:22](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/api/Community.ts#L22)*
 
 Request to add the app to a community. Opens a community selection dialog
 
@@ -42,7 +42,7 @@ ___
 
 ▸ **allowMessages**(`communityId`: number, `key?`: undefined | string): *Promise‹void›*
 
-*Defined in [api/Community.ts:39](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Community.ts#L39)*
+*Defined in [api/Community.ts:39](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/api/Community.ts#L39)*
 
 Asks user for permission to send messages from a the community
 
@@ -61,7 +61,7 @@ ___
 
 ▸ **allowNotifications**(): *Promise‹void›*
 
-*Defined in [api/Community.ts:52](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Community.ts#L52)*
+*Defined in [api/Community.ts:52](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/api/Community.ts#L52)*
 
 Asks the user for permission to send messages from a the community
 
@@ -73,7 +73,7 @@ ___
 
 ▸ **getToken**(`communityId`: number, `appId`: number, `scope?`: [CommunityAccessScope](../globals.md#communityaccessscope)[]): *Promise‹object›*
 
-*Defined in [api/Community.ts:79](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Community.ts#L79)*
+*Defined in [api/Community.ts:79](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/api/Community.ts#L79)*
 
 Requests community access for working with API on behalf of the community.
 The community access token can only be received by its admin.
@@ -102,7 +102,7 @@ ___
 
 ▸ **join**(`communityId`: number): *Promise‹void›*
 
-*Defined in [api/Community.ts:119](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Community.ts#L119)*
+*Defined in [api/Community.ts:119](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/api/Community.ts#L119)*
 
 Requests for join a community
 
@@ -120,7 +120,7 @@ ___
 
 ▸ **sendPayload**(`communityId`: number, `payload`: any): *Promise‹void›*
 
-*Defined in [api/Community.ts:137](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Community.ts#L137)*
+*Defined in [api/Community.ts:137](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/api/Community.ts#L137)*
 
 Sends event to a community.
 
@@ -139,7 +139,7 @@ ___
 
 ▸ **showWidgetPreviewBox**(`communityId`: number, `type`: WidgetType, `code`: string): *Promise‹void›*
 
-*Defined in [api/Community.ts:150](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Community.ts#L150)*
+*Defined in [api/Community.ts:150](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/api/Community.ts#L150)*
 
 Sens request to open a screen with a preview of the widget for a
 community

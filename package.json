@@ -11,7 +11,7 @@
   "scripts": {
     "watch": "rollup -c -w",
     "build": "rimraf dist && NODE_ENV=production rollup -c",
-    "doc": "typedoc --options ./typedoc.json ./src"
+    "doc": "typedoc --out ./docs ./src/VKMiniAppAPI.ts --mode file"
   },
   "repository": "https://github.com/vkcom/vk-mini-apps-api",
   "author": "vk.com",

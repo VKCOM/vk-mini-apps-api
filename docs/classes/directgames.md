@@ -25,7 +25,7 @@ DirectGames API
 
 ▸ **showInviteBox**(): *Promise‹void›*
 
-*Defined in [api/DirectGames.ts:14](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/DirectGames.ts#L14)*
+*Defined in [api/DirectGames.ts:14](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/api/DirectGames.ts#L14)*
 
 Opens friends list for inviting to the app
 
@@ -37,7 +37,7 @@ ___
 
 ▸ **showLeaderBoardBox**(`userResult`: number): *Promise‹void›*
 
-*Defined in [api/DirectGames.ts:31](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/DirectGames.ts#L31)*
+*Defined in [api/DirectGames.ts:31](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/api/DirectGames.ts#L31)*
 
 Shows leaderboard
 
@@ -55,7 +55,7 @@ ___
 
 ▸ **showOrderBox**(`itemName`: string): *Promise‹OrderBoxShowingStatus›*
 
-*Defined in [api/DirectGames.ts:46](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/DirectGames.ts#L46)*
+*Defined in [api/DirectGames.ts:46](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/api/DirectGames.ts#L46)*
 
 Shows item order box
 
@@ -75,7 +75,7 @@ ___
 
 ▸ **showRequestBox**(`userId`: number, `message`: string, `requestKey?`: undefined | string): *Promise‹object›*
 
-*Defined in [api/DirectGames.ts:67](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/DirectGames.ts#L67)*
+*Defined in [api/DirectGames.ts:67](https://github.com/VKCOM/vk-mini-apps-api/blob/434adad/src/api/DirectGames.ts#L67)*
 
 Shows box for sending request to the user
 
