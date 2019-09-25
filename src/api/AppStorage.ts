@@ -11,15 +11,11 @@ export class AppStorage extends VKConnectProvider {
    * @platform iOS, Android, Web
    *
    * @param key Keys for getting ([a-zA-Z_\-0-9])
-   * @param [isGlobal] Is global value. Default: false
-   *
+
    * @returns The stored value or empty string if the value is not found
    */
-  public get = async (key: string, isGlobal: boolean = false): Promise<string> => {
-    const data = await this.connect.sendPromise('VKWebAppStorageGet', {
-      keys: [key],
-      global: isGlobal
-    });
+  public get = async (key: string): Promise<string> => {
+    const data = await this.connect.sendPromise('VKWebAppStorageGet', { keys: [key] });
 
     if (!data || !Array.isArray(data.keys) || data.keys.length === 0) {
       return '';
@@ -35,24 +31,14 @@ export class AppStorage extends VKConnectProvider {
    * @platform iOS, Android, Web
    *
    * @param keys List of keys for getting ([a-zA-Z_\-0-9])
-   * @param [isGlobal] Is global value. Default: false
    *
    * @returns Map of key-value
    */
-  public getMultiple = async (keys: string[], isGlobal: boolean = false): Promise<Record<string, string>> => {
-    const data = await this.connect.sendPromise('VKWebAppStorageGet', {
-      keys,
-      global: isGlobal
-    });
+  public getMultiple = async (keys: string[]): Promise<Record<string, string>> => {
+    const data = await this.connect.sendPromise('VKWebAppStorageGet', { keys });
 
     return data && Array.isArray(data.keys) && data.keys.length > 0
-      ? data.keys.reduce(
-          (acc, item) => ({
-            ...acc,
-            [item.key]: item.value
-          }),
-          {} as Record<string, string>
-        )
+      ? data.keys.reduce((acc, item) => ({ ...acc, [item.key]: item.value }), {} as Record<string, string>)
       : {};
   };
 
@@ -65,14 +51,9 @@ export class AppStorage extends VKConnectProvider {
    * @param count Count of keys to get. Max value is 1000
    * @param [offset] The offset required to fetch a specific subset of keys.
    * Default: 0
-   * @param [isGlobal] Is global value. Default: false
    */
-  public getKeys = async (count: number, offset: number = 0, isGlobal: boolean = false): Promise<string[]> => {
-    const data = await this.connect.sendPromise('VKWebAppStorageGetKeys', {
-      count,
-      offset,
-      global: isGlobal
-    });
+  public getKeys = async (count: number, offset: number = 0): Promise<string[]> => {
+    const data = await this.connect.sendPromise('VKWebAppStorageGetKeys', { count, offset });
 
     return (data && data.keys) || [];
   };
@@ -85,13 +66,8 @@ export class AppStorage extends VKConnectProvider {
    *
    * @param key The key of value ([a-zA-Z_\-0-9])
    * @param value Value
-   * @param [isGlobal] Is global value. Default: false
    */
-  public set = async (key: string, value: string, isGlobal: boolean = false) => {
-    await this.connect.sendPromise('VKWebAppStorageSet', {
-      key,
-      value,
-      global: isGlobal
-    });
+  public set = async (key: string, value: string) => {
+    await this.connect.sendPromise('VKWebAppStorageSet', { key, value });
   };
 }
