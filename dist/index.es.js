@@ -467,15 +467,17 @@ var prepareAttachments = function (attachments) {
     return attachments.map(function (item) { return (typeof item === 'string' ? item : item.type + item.ownerId + '_' + item.mediaId); }).join(',');
 };
 /**
- * Common VK Mini App methods
+ * VK Mini apps API. Contains all VK Connect methods separated by categories
  */
-var Common = /** @class */ (function (_super) {
-    __extends(Common, _super);
-    function Common() {
+var VKMiniAppAPI = /** @class */ (function (_super) {
+    __extends(VKMiniAppAPI, _super);
+    function VKMiniAppAPI() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         /**
          * Subscribes a function for listening the `VKWebAppUpdateConfig` event.
          *
+         * @category Common
+         * @event VKWebAppUpdateConfig
          * @platform iOS, Android
          *
          * @param callback Function to pass received data
@@ -487,6 +489,8 @@ var Common = /** @class */ (function (_super) {
         /**
          * Subscribes a function for listening the `VKWebAppViewHide` event.
          *
+         * @category Common
+         * @event VKWebAppViewHide
          * @platform iOS, Android
          *
          * @param callback Function to pass received data
@@ -498,6 +502,8 @@ var Common = /** @class */ (function (_super) {
         /**
          * Subscribes a function for listening the `VKWebAppViewRestore` event.
          *
+         * @category Common
+         * @event VKWebAppViewRestore
          * @platform iOS, Android
          *
          * @param callback Function to pass received data
@@ -509,6 +515,7 @@ var Common = /** @class */ (function (_super) {
         /**
          * Disallows notifications
          *
+         * @category Common
          * @event VKWebAppDenyNotifications
          * @platform iOS, Android, Web
          */
@@ -530,6 +537,7 @@ var Common = /** @class */ (function (_super) {
          * user access key with the appropriate rights obtained using `getAuthToken`
          * @see {@link getAuthToken}.
          *
+         * @category Common
          * @event VKWebAppCallAPIMethod
          * @platform iOS, Android, Web
          *
@@ -554,6 +562,7 @@ var Common = /** @class */ (function (_super) {
          * Closes sub app opened via the `openApp` method. Sends data to the parent
          * app if needed.
          *
+         * @category Common
          * @event VKWebAppClose
          * @platform iOS
          */
@@ -577,6 +586,7 @@ var Common = /** @class */ (function (_super) {
          * Please note: the location from which the token is requested must match
          * the URL specified in the app settings.
          *
+         * @category Common
          * @event VKWebAppGetAuthToken
          * @platform iOS, Android, Web
          *
@@ -605,6 +615,7 @@ var Common = /** @class */ (function (_super) {
         /**
          * Returns client's platform and version
          *
+         * @category Common
          * @event VKWebAppGetClientVersion
          * @platform iOS, Android, Web
          */
@@ -616,6 +627,7 @@ var Common = /** @class */ (function (_super) {
         /**
          * Opens sub app
          *
+         * @category Common
          * @event VKWebAppOpenApp
          * @platform iOS, Android, Web
          *
@@ -638,6 +650,7 @@ var Common = /** @class */ (function (_super) {
         /**
          * Requests user email
          *
+         * @category Common
          * @event VKWebAppGetEmail
          * @platform iOS, Android, Web
          *
@@ -651,6 +664,7 @@ var Common = /** @class */ (function (_super) {
         /**
          * Displays modal with friend select
          *
+         * @category Common
          * @event VKWebAppGetFriends
          * @platform iOS, Android
          *
@@ -671,6 +685,7 @@ var Common = /** @class */ (function (_super) {
         /**
          * Requests user geodata
          *
+         * @category Common
          * @event VKWebAppGetGeodata
          * @platform iOS, Android, Web
          *
@@ -697,6 +712,7 @@ var Common = /** @class */ (function (_super) {
          *
          * @param types Array of required data types: `phone`, `email`, `address`
          *
+         * @category Common
          * @event VKWebAppGetPersonalCard
          * @platform iOS >= 5.4, Android >= 5.24
          *
@@ -710,6 +726,7 @@ var Common = /** @class */ (function (_super) {
         /**
          * Requests user's phone number
          *
+         * @category Common
          * @event VKWebAppGetPhoneNumber
          * @platform iOS, Android, Web
          *
@@ -735,6 +752,7 @@ var Common = /** @class */ (function (_super) {
         /**
          * Requests the main user data
          *
+         * @category Common
          * @event VKWebAppGetUserInfo
          * @platform iOS, Android, Web
          *
@@ -748,6 +766,7 @@ var Common = /** @class */ (function (_super) {
         /**
          * Opens QR codes and barcodes reader
          *
+         * @category Common
          * @event VKWebAppOpenCodeReader
          * @platform iOS, Android
          *
@@ -767,8 +786,9 @@ var Common = /** @class */ (function (_super) {
         /**
          * Opens a selecting contact from the contact list on the user's device.
          * If user has closed the contact list, called the `VKWebAppContactsClosed`
-         * event.
          *
+         * event.
+         * @category Common
          * @event VKWebAppOpenContacts
          * @platform iOS, Android
          *
@@ -792,6 +812,7 @@ var Common = /** @class */ (function (_super) {
         /**
          * Requests the user to share a link on their wall
          *
+         * @category Common
          * @event VKWebAppShare
          * @platform iOS, Android, Web
          *
@@ -812,6 +833,7 @@ var Common = /** @class */ (function (_super) {
         /**
          * Shows specified photos to user
          *
+         * @category Common
          * @event VKWebAppShowImages
          * @platform iOS, Android
          */
@@ -828,6 +850,7 @@ var Common = /** @class */ (function (_super) {
         /**
          * Requests adding the app to favorites
          *
+         * @category Common
          * @event VKWebAppAddToFavorites
          * @platform iOS, Android
          */
@@ -844,6 +867,7 @@ var Common = /** @class */ (function (_super) {
         /**
          * Requests the user to post to the wall
          *
+         * @category Common
          * @event VKWebAppShowWallPostBox
          * @platform iOS, Android, Web
          *
@@ -880,6 +904,9 @@ var Common = /** @class */ (function (_super) {
         }); };
         /**
          *
+         * @category Common
+         *
+         * @todo Describe me
          * @param peerId
          * @param message
          * @param attachments
@@ -897,450 +924,6 @@ var Common = /** @class */ (function (_super) {
                     })];
             });
         }); };
-        return _this;
-    }
-    /**
-     * Initializes the VK Mini App. Must be called before using any API method
-     */
-    Common.prototype.initApp = function () {
-        this.connect.send('VKWebAppInit', {});
-    };
-    return Common;
-}(VKConnectProvider));
-
-/**
- * VK Pay methods
- */
-var VKPay = /** @class */ (function (_super) {
-    __extends(VKPay, _super);
-    function VKPay() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        /**
-         * Requests payment to a specified user of the specified amount via VK Pay
-         *
-         * @event VKWebAppOpenPayForm
-         * @platform iOS, Android, Web
-         *
-         * @param amount The amount of payment in rubles. The minimum value is 1₽
-         * @param userId User ID
-         * @param appId App ID
-         * @param [description] Description of the payment for user. The text will
-         * be shown in payment dialog
-         * @returns Payment result data
-         */
-        _this.payToUser = function (amount, userId, appId, description) { return __awaiter(_this, void 0, void 0, function () {
-            var props;
-            return __generator(this, function (_a) {
-                props = {
-                    action: 'pay-to-user',
-                    app_id: appId,
-                    params: {
-                        amount: amount,
-                        user_id: userId,
-                        description: description
-                    }
-                };
-                return [2 /*return*/, this.connect.sendPromise('VKWebAppOpenPayForm', props)];
-            });
-        }); };
-        /**
-         * Requests payment to a specified community of the specified amount
-         * via VK Pay
-         *
-         * @event VKWebAppOpenPayForm
-         * @platform iOS, Android, Web
-         *
-         * @param amount The amount of payment in rubles. The minimum value is 1₽
-         * @param communityId Community ID
-         * @param appId App ID
-         * @param [description] Description of the payment for user. The text will
-         * be shown in payment dialog
-         * @param [data] Dictionary with arbitrary parameters
-         * @returns Payment result data
-         */
-        _this.payToCommunity = function (amount, communityId, appId, description, data) { return __awaiter(_this, void 0, void 0, function () {
-            var props;
-            return __generator(this, function (_a) {
-                props = {
-                    action: 'pay-to-group',
-                    app_id: appId,
-                    params: {
-                        amount: amount,
-                        group_id: communityId,
-                        description: description,
-                        data: data
-                    }
-                };
-                return [2 /*return*/, this.connect.sendPromise('VKWebAppOpenPayForm', props)];
-            });
-        }); };
-        /**
-         * Requests transfer an arbitrary amount to a specified user
-         *
-         * @event VKWebAppOpenPayForm
-         * @platform iOS, Android, Web
-         *
-         * @param userId User ID to transfer
-         * @param appId App ID
-         * @returns Payment result data
-         */
-        _this.transferToUser = function (userId, appId) { return __awaiter(_this, void 0, void 0, function () {
-            var props;
-            return __generator(this, function (_a) {
-                props = {
-                    action: 'transfer-to-user',
-                    app_id: appId,
-                    params: { user_id: userId }
-                };
-                return [2 /*return*/, this.connect.sendPromise('VKWebAppOpenPayForm', props)];
-            });
-        }); };
-        /**
-         * Requests transfer an arbitrary amount to a specified community
-         *
-         * @event VKWebAppOpenPayForm
-         * @platform iOS, Android, Web
-         *
-         * @param communityId Community ID
-         * @param appId App ID
-         * @returns Payment result data
-         */
-        _this.transferToCommunity = function (communityId, appId) { return __awaiter(_this, void 0, void 0, function () {
-            var props;
-            return __generator(this, function (_a) {
-                props = {
-                    action: 'transfer-to-group',
-                    app_id: appId,
-                    params: { group_id: communityId }
-                };
-                return [2 /*return*/, this.connect.sendPromise('VKWebAppOpenPayForm', props)];
-            });
-        }); };
-        return _this;
-    }
-    return VKPay;
-}(VKConnectProvider));
-
-/**
- * Device's flashlight API
- */
-var Flashlight = /** @class */ (function (_super) {
-    __extends(Flashlight, _super);
-    function Flashlight() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        /**
-         * Requests device's flashlight information
-         *
-         * @event VKWebAppFlashGetInfo
-         * @platform iOS, Android
-         *
-         * @returns Availability and level of the flashlight
-         */
-        _this.flashGetInfo = function () { return __awaiter(_this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppFlashGetInfo', {})];
-                    case 1:
-                        data = _a.sent();
-                        return [2 /*return*/, {
-                                isAvailable: data.is_available,
-                                level: data.level
-                            }];
-                }
-            });
-        }); };
-        /**
-         * Sets device's flashlight level
-         *
-         * @event VKWebAppFlashSetLevel
-         * @platform iOS, Android
-         *
-         * @param level The flashlight level from 0 to 1
-         */
-        _this.flashSetLevel = function (level) { return __awaiter(_this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppFlashSetLevel', { level: level })];
-                    case 1:
-                        _a.sent();
-                        return [2 /*return*/];
-                }
-            });
-        }); };
-        return _this;
-    }
-    return Flashlight;
-}(VKConnectProvider));
-
-/**
- * DirectGames API
- */
-var DirectGames = /** @class */ (function (_super) {
-    __extends(DirectGames, _super);
-    function DirectGames() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        /**
-         * Opens friends list for inviting to the app
-         *
-         * @event VKWebAppShowInviteBox
-         * @platform iOS, Android
-         */
-        _this.showInviteBox = function () { return __awaiter(_this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppShowInviteBox')];
-                    case 1:
-                        _a.sent();
-                        return [2 /*return*/];
-                }
-            });
-        }); };
-        /**
-         * Shows leaderboard
-         *
-         * @remarks
-         * The leaderboard can display the progress of users by points or levels
-         * (the type of leaderboard is selected in the application settings). To add
-         * a level or points to users, use the `secure.addAppEvent` method.
-         *
-         * @event VKWebAppShowLeaderBoardBox
-         * @platform iOS, Android
-         *
-         * @param userResult User result
-         */
-        _this.showLeaderBoardBox = function (userResult) { return __awaiter(_this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppShowLeaderBoardBox', {
-                            user_result: userResult
-                        })];
-                    case 1:
-                        _a.sent();
-                        return [2 /*return*/];
-                }
-            });
-        }); };
-        /**
-         * Shows item order box
-         *
-         * @event VKWebAppShowOrderBox
-         *
-         * @param itemName Name of product. Will be transmitted in the notification
-         * of receipt of product information
-         * @returns Status of ordering
-         */
-        _this.showOrderBox = function (itemName) { return __awaiter(_this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppShowOrderBox', {
-                            type: 'item',
-                            item: itemName
-                        })];
-                    case 1:
-                        data = _a.sent();
-                        return [2 /*return*/, data.status];
-                }
-            });
-        }); };
-        /**
-         * Shows box for sending request to the user
-         *
-         * @event VKWebAppShowRequestBox
-         *
-         * @param userId User Id
-         * @param message Request test
-         * @param [requestKey] Optional parameter. Custom string to track conversion.
-         * It is passed in the application launch parameters in case of launch from
-         * the request.
-         * @returns Success flag and request key
-         */
-        _this.showRequestBox = function (userId, message, requestKey) { return __awaiter(_this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                return [2 /*return*/, this.connect.sendPromise('VKWebAppShowRequestBox', { uid: userId, message: message, requestKey: requestKey })];
-            });
-        }); };
-        return _this;
-    }
-    return DirectGames;
-}(VKConnectProvider));
-
-/**
- * Storage API
- */
-var Storage = /** @class */ (function (_super) {
-    __extends(Storage, _super);
-    function Storage() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        /**
-         * Requests a value from the storage
-         *
-         * @event VKWebAppStorageGet
-         * @platform iOS, Android, Web
-         *
-         * @param key Keys for getting ([a-zA-Z_\-0-9])
-      
-         * @returns The stored value or empty string if the value is not found
-         */
-        _this.get = function (key) { return __awaiter(_this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppStorageGet', { keys: [key] })];
-                    case 1:
-                        data = _a.sent();
-                        if (!data || !Array.isArray(data.keys) || data.keys.length === 0) {
-                            return [2 /*return*/, ''];
-                        }
-                        return [2 /*return*/, data.keys[0].value];
-                }
-            });
-        }); };
-        /**
-         * Requests multiple values from the storage
-         *
-         * @event VKWebAppStorageGet
-         * @platform iOS, Android, Web
-         *
-         * @param keys List of keys for getting ([a-zA-Z_\-0-9])
-         *
-         * @returns Map of key-value
-         */
-        _this.getMultiple = function (keys) { return __awaiter(_this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppStorageGet', { keys: keys })];
-                    case 1:
-                        data = _a.sent();
-                        return [2 /*return*/, data && Array.isArray(data.keys) && data.keys.length > 0
-                                ? data.keys.reduce(function (acc, item) {
-                                    var _a;
-                                    return (__assign$1(__assign$1({}, acc), (_a = {}, _a[item.key] = item.value, _a)));
-                                }, {})
-                                : {}];
-                }
-            });
-        }); };
-        /**
-         * Request list of keys of some stored values
-         *
-         * @event VKWebAppStorageGetKeys
-         * @platform iOS, Android, Web
-         *
-         * @param count Count of keys to get. Max value is 1000
-         * @param [offset] The offset required to fetch a specific subset of keys.
-         * Default: 0
-         */
-        _this.getKeys = function (count, offset) {
-            if (offset === void 0) { offset = 0; }
-            return __awaiter(_this, void 0, void 0, function () {
-                var data;
-                return __generator(this, function (_a) {
-                    switch (_a.label) {
-                        case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppStorageGetKeys', { count: count, offset: offset })];
-                        case 1:
-                            data = _a.sent();
-                            return [2 /*return*/, (data && data.keys) || []];
-                    }
-                });
-            });
-        };
-        /**
-         * Stores value in storage
-         *
-         * @event VKWebAppStorageSet
-         * @platform iOS, Android, Web
-         *
-         * @param key The key of value ([a-zA-Z_\-0-9])
-         * @param value Value
-         */
-        _this.set = function (key, value) { return __awaiter(_this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppStorageSet', { key: key, value: value })];
-                    case 1:
-                        _a.sent();
-                        return [2 /*return*/];
-                }
-            });
-        }); };
-        return _this;
-    }
-    return Storage;
-}(VKConnectProvider));
-
-/**
- * Taptic Engine methods
- */
-var TapticEngine = /** @class */ (function (_super) {
-    __extends(TapticEngine, _super);
-    function TapticEngine() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        /**
-         * Triggers impact feedback in Taptic Engine
-         *
-         * @event VKWebAppTapticImpactOccurred
-         * @platform iOS
-         */
-        _this.impactOccurred = function (power) {
-            if (power === void 0) { power = 'medium'; }
-            return __awaiter(_this, void 0, void 0, function () {
-                return __generator(this, function (_a) {
-                    switch (_a.label) {
-                        case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppTapticImpactOccurred', { style: power })];
-                        case 1:
-                            _a.sent();
-                            return [2 /*return*/];
-                    }
-                });
-            });
-        };
-        /**
-         * Triggers notification feedback in Taptic Engine
-         *
-         * @event VKWebAppTapticNotificationOccurred
-         * @platform iOS
-         */
-        _this.notificationOccurred = function (type) { return __awaiter(_this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppTapticNotificationOccurred', { type: type })];
-                    case 1:
-                        _a.sent();
-                        return [2 /*return*/];
-                }
-            });
-        }); };
-        /**
-         * Triggers selection feedback in Taptic Engine
-         *
-         * @event VKWebAppTapticSelectionChanged
-         * @platform iOS
-         */
-        _this.selectionChanged = function () { return __awaiter(_this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppTapticSelectionChanged')];
-                    case 1:
-                        _a.sent();
-                        return [2 /*return*/];
-                }
-            });
-        }); };
-        return _this;
-    }
-    return TapticEngine;
-}(VKConnectProvider));
-
-/**
- * Communities interactions methods
- */
-var Communities = /** @class */ (function (_super) {
-    __extends(Communities, _super);
-    function Communities() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
         /**
          * Request to add the app to a community. Opens a community selection dialog
          *
@@ -1349,6 +932,7 @@ var Communities = /** @class */ (function (_super) {
          * "Allow installation in communities". Also, the app must be accessible to
          * everyone.
          *
+         * @category Community
          * @event VKWebAppAddToCommunity
          * @platform iOS, Android, Web
          *
@@ -1368,6 +952,7 @@ var Communities = /** @class */ (function (_super) {
         /**
          * Asks user for permission to send messages from a the community
          *
+         * @category Community
          * @event VKWebAppAllowMessagesFromGroup
          * @platform iOS, Android, Web
          *
@@ -1392,6 +977,7 @@ var Communities = /** @class */ (function (_super) {
         /**
          * Asks the user for permission to send messages from a the community
          *
+         * @category Community
          * @event VKWebAppAllowNotifications
          * @platform iOS, Android, Web
          */
@@ -1413,14 +999,11 @@ var Communities = /** @class */ (function (_super) {
          * and make a request to the `groups.get` method with the `filter=admin`
          * parameter to get a list of identifiers of the administrated communities.
          *
-         * New universal event
-         * @event VKWebAppGetCommunityToken
-         *
-         * Legacy events
-         * @event VKWebAppCommunityAccessToken iOS
-         * @event VKWebAppCommunityToken Android
-         * @event VKWebAppGetCommunityAuthToken Web
-         *
+         * @category Community
+         * @event VKWebAppGetCommunityToken New universal event
+         * @event VKWebAppCommunityAccessToken Legacy events for iOS
+         * @event VKWebAppCommunityToken Legacy events for Android
+         * @event VKWebAppGetCommunityAuthToken Legacy events for Web
          * @platform iOS, Android, Web
          *
          * @param communityId Community ID
@@ -1460,6 +1043,7 @@ var Communities = /** @class */ (function (_super) {
         /**
          * Requests for join a community
          *
+         * @category Community
          * @event VKWebAppJoinGroup
          * @platform iOS, Android, Web
          */
@@ -1481,6 +1065,7 @@ var Communities = /** @class */ (function (_super) {
          * `Bots Longpoll` or `callback_api`. The application from which the event is
          * dispatched must be installed in the community.
          *
+         * @category Community
          * @event VKWebAppSendPayload
          * @platform iOS, Android, Web
          *
@@ -1504,6 +1089,7 @@ var Communities = /** @class */ (function (_super) {
          * Sens request to open a screen with a preview of the widget for a
          * community
          *
+         * @category Community
          * @event VKWebAppShowCommunityWidgetPreviewBox
          */
         _this.showWidgetPreviewBox = function (communityId, type, code) { return __awaiter(_this, void 0, void 0, function () {
@@ -1521,18 +1107,10 @@ var Communities = /** @class */ (function (_super) {
                 }
             });
         }); };
-        return _this;
-    }
-    return Communities;
-}(VKConnectProvider));
-
-var Interface = /** @class */ (function (_super) {
-    __extends(Interface, _super);
-    function Interface() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
         /**
          * Resizes iframe size in web
          *
+         * @category Interface
          * @event VKWebAppResizeWindow
          * @platform Web
          *
@@ -1549,6 +1127,7 @@ var Interface = /** @class */ (function (_super) {
         /**
          * Scrolls window to specified point
          *
+         * @category Interface
          * @event VKWebAppScroll
          * @platform Web
          *
@@ -1568,6 +1147,7 @@ var Interface = /** @class */ (function (_super) {
         /**
          * Sets location hash to the app (vk.com/app123#hash)
          *
+         * @category Interface
          * @event VKWebAppSetLocation
          */
         _this.setLocationHash = function (hash) { return __awaiter(_this, void 0, void 0, function () {
@@ -1583,6 +1163,7 @@ var Interface = /** @class */ (function (_super) {
         /**
          * Changes the appearance of the mini app interface in mobile clients
          *
+         * @category Interface
          * @event VKWebAppSetViewSettings
          * @platform iOS, Android
          *
@@ -1602,18 +1183,11 @@ var Interface = /** @class */ (function (_super) {
                 }
             });
         }); };
-        return _this;
-    }
-    return Interface;
-}(VKConnectProvider));
-
-var Ads = /** @class */ (function (_super) {
-    __extends(Ads, _super);
-    function Ads() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
         /**
          * Subscribes a function for listening the `VKWebAppInitAds` event.
          *
+         * @category Advertisement
+         * @event VKWebAppInitAds
          * @platform iOS, Android, Web
          *
          * @param callback Function to pass received data
@@ -1625,6 +1199,8 @@ var Ads = /** @class */ (function (_super) {
         /**
          * Subscribes a function for listening the `VKWebAppLoadAds` event.
          *
+         * @category Advertisement
+         * @event VKWebAppLoadAds
          * @platform iOS, Android, Web
          *
          * @param callback Function to pass received data
@@ -1633,38 +1209,455 @@ var Ads = /** @class */ (function (_super) {
         _this.onLoadAds = function (callback) {
             return _this.subscribeEvent('VKWebAppLoadAds', callback);
         };
+        /**
+         * Requests payment to a specified user of the specified amount via VK Pay
+         *
+         * @category VK Pay
+         * @event VKWebAppOpenPayForm
+         * @platform iOS, Android, Web
+         *
+         * @param amount The amount of payment in rubles. The minimum value is 1₽
+         * @param userId User ID
+         * @param appId App ID
+         * @param [description] Description of the payment for user. The text will
+         * be shown in payment dialog
+         * @returns Payment result data
+         */
+        _this.payToUser = function (amount, userId, appId, description) { return __awaiter(_this, void 0, void 0, function () {
+            var props;
+            return __generator(this, function (_a) {
+                props = {
+                    action: 'pay-to-user',
+                    app_id: appId,
+                    params: {
+                        amount: amount,
+                        user_id: userId,
+                        description: description
+                    }
+                };
+                return [2 /*return*/, this.connect.sendPromise('VKWebAppOpenPayForm', props)];
+            });
+        }); };
+        /**
+         * Requests payment to a specified community of the specified amount
+         * via VK Pay
+         *
+         * @category VK Pay
+         * @event VKWebAppOpenPayForm
+         * @platform iOS, Android, Web
+         *
+         * @param amount The amount of payment in rubles. The minimum value is 1₽
+         * @param communityId Community ID
+         * @param appId App ID
+         * @param [description] Description of the payment for user. The text will
+         * be shown in payment dialog
+         * @param [data] Dictionary with arbitrary parameters
+         * @returns Payment result data
+         */
+        _this.payToCommunity = function (amount, communityId, appId, description, data) { return __awaiter(_this, void 0, void 0, function () {
+            var props;
+            return __generator(this, function (_a) {
+                props = {
+                    action: 'pay-to-group',
+                    app_id: appId,
+                    params: {
+                        amount: amount,
+                        group_id: communityId,
+                        description: description,
+                        data: data
+                    }
+                };
+                return [2 /*return*/, this.connect.sendPromise('VKWebAppOpenPayForm', props)];
+            });
+        }); };
+        /**
+         * Requests transfer an arbitrary amount to a specified user
+         *
+         * @category VK Pay
+         * @event VKWebAppOpenPayForm
+         * @platform iOS, Android, Web
+         *
+         * @param userId User ID to transfer
+         * @param appId App ID
+         * @returns Payment result data
+         */
+        _this.transferToUser = function (userId, appId) { return __awaiter(_this, void 0, void 0, function () {
+            var props;
+            return __generator(this, function (_a) {
+                props = {
+                    action: 'transfer-to-user',
+                    app_id: appId,
+                    params: { user_id: userId }
+                };
+                return [2 /*return*/, this.connect.sendPromise('VKWebAppOpenPayForm', props)];
+            });
+        }); };
+        /**
+         * Requests transfer an arbitrary amount to a specified community
+         *
+         * @category VK Pay
+         * @event VKWebAppOpenPayForm
+         * @platform iOS, Android, Web
+         *
+         * @param communityId Community ID
+         * @param appId App ID
+         * @returns Payment result data
+         */
+        _this.transferToCommunity = function (communityId, appId) { return __awaiter(_this, void 0, void 0, function () {
+            var props;
+            return __generator(this, function (_a) {
+                props = {
+                    action: 'transfer-to-group',
+                    app_id: appId,
+                    params: { group_id: communityId }
+                };
+                return [2 /*return*/, this.connect.sendPromise('VKWebAppOpenPayForm', props)];
+            });
+        }); };
+        /**
+         * Requests device's flashlight information
+         *
+         * @category Flashlight
+         * @event VKWebAppFlashGetInfo
+         * @platform iOS, Android
+         *
+         * @returns Availability and level of the flashlight
+         */
+        _this.flashGetInfo = function () { return __awaiter(_this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppFlashGetInfo', {})];
+                    case 1:
+                        data = _a.sent();
+                        return [2 /*return*/, {
+                                isAvailable: data.is_available,
+                                level: data.level
+                            }];
+                }
+            });
+        }); };
+        /**
+         * Sets device's flashlight level
+         *
+         * @category Flashlight
+         * @event VKWebAppFlashSetLevel
+         * @platform iOS, Android
+         *
+         * @param level The flashlight level from 0 to 1
+         */
+        _this.flashSetLevel = function (level) { return __awaiter(_this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppFlashSetLevel', { level: level })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        }); };
+        /**
+         * Subscribes a function for listening the `VKWebAppAudioPaused` event.
+         *
+         * @category Audio
+         * @event VKWebAppAudioPaused
+         * @platform iOS, Android
+         *
+         * @param callback Function to pass received data
+         * @returns function for unsubscribe
+         */
+        _this.onAudioPaused = function (callback) {
+            return _this.subscribeEvent('VKWebAppAudioPaused', callback);
+        };
+        /**
+         * Subscribes a function for listening the `VKWebAppAudioStopped` event.
+         *
+         * @category Audio
+         * @event VKWebAppAudioStopped
+         * @platform iOS, Android
+         *
+         * @param callback Function to pass received data
+         * @returns function for unsubscribe
+         */
+        _this.onAudioStopped = function (callback) {
+            return _this.subscribeEvent('VKWebAppAudioStopped', callback);
+        };
+        /**
+         * Subscribes a function for listening the `VKWebAppAudioTrackChanged` event.
+         *
+         * @category Audio
+         * @event VKWebAppAudioTrackChanged
+         * @platform iOS, Android
+         *
+         * @param callback Function to pass received data
+         * @returns function for unsubscribe
+         */
+        _this.onAudioTrackChanged = function (callback) {
+            return _this.subscribeEvent('VKWebAppAudioTrackChanged', callback);
+        };
+        /**
+         * Subscribes a function for listening the `VKWebAppAudioUnpaused` event.
+         *
+         * @category Audio
+         * @event VKWebAppAudioUnpaused
+         * @platform iOS, Android
+         *
+         * @param callback Function to pass received data
+         * @returns function for unsubscribe
+         */
+        _this.onAudioUnpaused = function (callback) {
+            return _this.subscribeEvent('VKWebAppAudioUnpaused', callback);
+        };
+        /**
+         * Opens friends list for inviting to the app
+         *
+         * @category Direct Games
+         * @event VKWebAppShowInviteBox
+         * @platform iOS, Android
+         */
+        _this.showInviteBox = function () { return __awaiter(_this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppShowInviteBox')];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        }); };
+        /**
+         * Shows leaderboard
+         *
+         * @remarks
+         * The leaderboard can display the progress of users by points or levels
+         * (the type of leaderboard is selected in the application settings). To add
+         * a level or points to users, use the `secure.addAppEvent` method.
+         *
+         * @category Direct Games
+         * @event VKWebAppShowLeaderBoardBox
+         * @platform iOS, Android
+         *
+         * @param userResult User result
+         */
+        _this.showLeaderBoardBox = function (userResult) { return __awaiter(_this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppShowLeaderBoardBox', {
+                            user_result: userResult
+                        })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        }); };
+        /**
+         * Shows item order box
+         *
+         * @category Direct Games
+         * @event VKWebAppShowOrderBox
+         *
+         * @param itemName Name of product. Will be transmitted in the notification
+         * of receipt of product information
+         * @returns Status of ordering
+         */
+        _this.showOrderBox = function (itemName) { return __awaiter(_this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppShowOrderBox', {
+                            type: 'item',
+                            item: itemName
+                        })];
+                    case 1:
+                        data = _a.sent();
+                        return [2 /*return*/, data.status];
+                }
+            });
+        }); };
+        /**
+         * Shows box for sending request to the user
+         *
+         * @category Direct Games
+         * @event VKWebAppShowRequestBox
+         *
+         * @param userId User Id
+         * @param message Request test
+         * @param [requestKey] Optional parameter. Custom string to track conversion.
+         * It is passed in the application launch parameters in case of launch from
+         * the request.
+         * @returns Success flag and request key
+         */
+        _this.showRequestBox = function (userId, message, requestKey) { return __awaiter(_this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, this.connect.sendPromise('VKWebAppShowRequestBox', { uid: userId, message: message, requestKey: requestKey })];
+            });
+        }); };
+        /**
+         * Requests a value from the storage
+         *
+         * @category Storage
+         * @event VKWebAppStorageGet
+         * @platform iOS, Android, Web
+         *
+         * @param key Keys for getting ([a-zA-Z_\-0-9])
+      
+         * @returns The stored value or empty string if the value is not found
+         */
+        _this.get = function (key) { return __awaiter(_this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppStorageGet', { keys: [key] })];
+                    case 1:
+                        data = _a.sent();
+                        if (!data || !Array.isArray(data.keys) || data.keys.length === 0) {
+                            return [2 /*return*/, ''];
+                        }
+                        return [2 /*return*/, data.keys[0].value];
+                }
+            });
+        }); };
+        /**
+         * Requests multiple values from the storage
+         *
+         * @category Storage
+         * @event VKWebAppStorageGet
+         * @platform iOS, Android, Web
+         *
+         * @param keys List of keys for getting ([a-zA-Z_\-0-9])
+         *
+         * @returns Map of key-value
+         */
+        _this.getMultiple = function (keys) { return __awaiter(_this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppStorageGet', { keys: keys })];
+                    case 1:
+                        data = _a.sent();
+                        return [2 /*return*/, data && Array.isArray(data.keys) && data.keys.length > 0
+                                ? data.keys.reduce(function (acc, item) {
+                                    var _a;
+                                    return (__assign$1(__assign$1({}, acc), (_a = {}, _a[item.key] = item.value, _a)));
+                                }, {})
+                                : {}];
+                }
+            });
+        }); };
+        /**
+         * Request list of keys of some stored values
+         *
+         * @category Storage
+         * @event VKWebAppStorageGetKeys
+         * @platform iOS, Android, Web
+         *
+         * @param count Count of keys to get. Max value is 1000
+         * @param [offset] The offset required to fetch a specific subset of keys.
+         * Default: 0
+         */
+        _this.getKeys = function (count, offset) {
+            if (offset === void 0) { offset = 0; }
+            return __awaiter(_this, void 0, void 0, function () {
+                var data;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppStorageGetKeys', { count: count, offset: offset })];
+                        case 1:
+                            data = _a.sent();
+                            return [2 /*return*/, (data && data.keys) || []];
+                    }
+                });
+            });
+        };
+        /**
+         * Stores value in storage
+         *
+         * @category Storage
+         * @event VKWebAppStorageSet
+         * @platform iOS, Android, Web
+         *
+         * @param key The key of value ([a-zA-Z_\-0-9])
+         * @param value Value
+         */
+        _this.set = function (key, value) { return __awaiter(_this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppStorageSet', { key: key, value: value })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        }); };
+        /**
+         * Triggers impact feedback in Taptic Engine
+         *
+         * @category Taptic Engine
+         * @event VKWebAppTapticImpactOccurred
+         * @platform iOS
+         */
+        _this.impactOccurred = function (power) {
+            if (power === void 0) { power = 'medium'; }
+            return __awaiter(_this, void 0, void 0, function () {
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppTapticImpactOccurred', { style: power })];
+                        case 1:
+                            _a.sent();
+                            return [2 /*return*/];
+                    }
+                });
+            });
+        };
+        /**
+         * Triggers notification feedback in Taptic Engine
+         *
+         * @category Taptic Engine
+         * @event VKWebAppTapticNotificationOccurred
+         * @platform iOS
+         */
+        _this.notificationOccurred = function (type) { return __awaiter(_this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppTapticNotificationOccurred', { type: type })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        }); };
+        /**
+         * Triggers selection feedback in Taptic Engine
+         *
+         * @category Taptic Engine
+         * @event VKWebAppTapticSelectionChanged
+         * @platform iOS
+         */
+        _this.selectionChanged = function () { return __awaiter(_this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.connect.sendPromise('VKWebAppTapticSelectionChanged')];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        }); };
         return _this;
     }
-    return Ads;
-}(VKConnectProvider));
-
-/**
- * VK Mini apps API. Contains all VK Connect methods separated by categories
- */
-var VKMiniAppAPI = /** @class */ (function () {
-    function VKMiniAppAPI(connect) {
-        this.connect = connect;
-        /** Common Mini App methods */
-        this.common = new Common(this.connect);
-        /** VK Pay methods */
-        this.vkPay = new VKPay(this.connect);
-        /** Flashlights methods */
-        this.flashlight = new Flashlight(this.connect);
-        /** DirectGames methods */
-        this.directGames = new DirectGames(this.connect);
-        /** Storage methods */
-        this.storage = new Storage(this.connect);
-        /** Taptic Engine methods */
-        this.tapticEngine = new TapticEngine(this.connect);
-        /** Interface methods */
-        this.interface = new Interface(this.connect);
-        /** Communities methods */
-        this.communities = new Communities(this.connect);
-        /** Advertisement methods */
-        this.ads = new Ads(this.connect);
-    }
+    /**
+     * Initializes the VK Mini App. Must be called before using any API method
+     *
+     * @category Common
+     * @event VKWebAppInit
+     * @platform iOS, Android, Web
+     */
+    VKMiniAppAPI.prototype.initApp = function () {
+        this.connect.send('VKWebAppInit', {});
+    };
     return VKMiniAppAPI;
-}());
+}(VKConnectProvider));
 
 /**
  * Creates instance of VK Mini App API
