@@ -7,5 +7,6 @@
   "excludeNotExported": true,
   "includeDeclarations": true,
   "exclude": "**/+(*test*|node_modules)/**",
-  "includes": "node_modules/@vkontakte/vk-connect"
+  "includes": "node_modules/@vkontakte/vk-connect",
+  "categoryOrder": ["Common", "*"]
 }
