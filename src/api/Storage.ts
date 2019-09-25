@@ -3,7 +3,7 @@ import { VKConnectProvider } from '../VKConnectProvider';
 /**
  * Storage API
  */
-export class AppStorage extends VKConnectProvider {
+export class Storage extends VKConnectProvider {
   /**
    * Requests a value from the storage
    *
