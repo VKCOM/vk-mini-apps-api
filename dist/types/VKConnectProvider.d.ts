@@ -1,4 +1,4 @@
-import { VKConnect, ReceiveMethodName } from '@vkontakte/vk-connect';
+import { VKConnect, ReceiveMethodName, ReceiveData } from '@vkontakte/vk-connect';
 /** @ignore */
 export declare abstract class VKConnectProvider {
     /** @ignore */
@@ -10,5 +10,5 @@ export declare abstract class VKConnectProvider {
     /**
      * Subscribes to listen events and returns unsubscribe function
      */
-    protected createEventListener<T extends ReceiveMethodName>(methodName: T): (callback: (data: import("@vkontakte/vk-connect").ReceiveDataMap[T]) => void) => () => void;
+    protected subscribeEvent<T extends ReceiveMethodName>(methodName: T, callback: (data: ReceiveData<T>) => void): () => void;
 }

@@ -447,20 +447,18 @@
         /**
          * Subscribes to listen events and returns unsubscribe function
          */
-        VKConnectProvider.prototype.createEventListener = function (methodName) {
+        VKConnectProvider.prototype.subscribeEvent = function (methodName, callback) {
             var _this = this;
-            return function (callback) {
-                var fn = function (event) {
-                    if (event.detail &&
-                        event.detail.data &&
-                        event.detail.type.indexOf(methodName) === 0 &&
-                        !event.detail.type.includes('Failed')) {
-                        callback(event.detail.data);
-                    }
-                };
-                _this.connect.subscribe(fn);
-                return function () { return _this.connect.unsubscribe(fn); };
+            var fn = function (event) {
+                if (event.detail &&
+                    event.detail.data &&
+                    event.detail.type.indexOf(methodName) === 0 &&
+                    !event.detail.type.includes('Failed')) {
+                    callback(event.detail.data);
+                }
             };
+            this.connect.subscribe(fn);
+            return function () { return _this.connect.unsubscribe(fn); };
         };
         return VKConnectProvider;
     }());
@@ -489,7 +487,9 @@
              * @param callback Function to pass received data
              * @returns function for unsubscribe
              */
-            _this.onUpdateConfig = _this.createEventListener('VKWebAppUpdateConfig');
+            _this.onUpdateConfig = function (callback) {
+                return _this.subscribeEvent('VKWebAppUpdateConfig', callback);
+            };
             /**
              * Subscribes a function for listening the `VKWebAppViewHide` event.
              *
@@ -498,7 +498,9 @@
              * @param callback Function to pass received data
              * @returns function for unsubscribe
              */
-            _this.onViewHide = _this.createEventListener('VKWebAppViewHide');
+            _this.onViewHide = function (callback) {
+                return _this.subscribeEvent('VKWebAppViewHide', callback);
+            };
             /**
              * Subscribes a function for listening the `VKWebAppViewRestore` event.
              *
@@ -507,7 +509,9 @@
              * @param callback Function to pass received data
              * @returns function for unsubscribe
              */
-            _this.onViewRestore = _this.createEventListener('VKWebAppViewRestore');
+            _this.onViewRestore = function (callback) {
+                return _this.subscribeEvent('VKWebAppViewRestore', callback);
+            };
             /**
              * Disallows notifications
              *
@@ -1621,16 +1625,20 @@
              * @param callback Function to pass received data
              * @returns function for unsubscribe
              */
-            _this.onInitAds = _this.createEventListener('VKWebAppInitAds');
+            _this.onInitAds = function (callback) {
+                return _this.subscribeEvent('VKWebAppInitAds', callback);
+            };
             /**
-             * Subscribes a function for listening the `VKWebAppInitAds` event.
+             * Subscribes a function for listening the `VKWebAppLoadAds` event.
              *
              * @platform iOS, Android, Web
              *
              * @param callback Function to pass received data
              * @returns function for unsubscribe
              */
-            _this.onLoadAds = _this.createEventListener('VKWebAppLoadAds');
+            _this.onLoadAds = function (callback) {
+                return _this.subscribeEvent('VKWebAppLoadAds', callback);
+            };
             return _this;
         }
         return Ads;

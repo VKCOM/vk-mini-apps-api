@@ -12,7 +12,7 @@ export declare class Ads extends VKConnectProvider {
         init: "true" | "false";
     }) => void) => () => void;
     /**
-     * Subscribes a function for listening the `VKWebAppInitAds` event.
+     * Subscribes a function for listening the `VKWebAppLoadAds` event.
      *
      * @platform iOS, Android, Web
      *

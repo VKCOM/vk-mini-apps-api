@@ -1,4 +1,11 @@
-import { PersonalCardType, PersonalCardData, UserInfo, RequestProps } from '@vkontakte/vk-connect';
+import {
+  PersonalCardType,
+  PersonalCardData,
+  UserInfo,
+  RequestProps,
+  VKConnect,
+  ReceiveData
+} from '@vkontakte/vk-connect';
 import { CloseStatus, UserAccessScope, Attachment, WallPostOptions } from '../types';
 import { VKConnectProvider } from '../VKConnectProvider';
 
@@ -30,7 +37,8 @@ export class Common extends VKConnectProvider {
    * @param callback Function to pass received data
    * @returns function for unsubscribe
    */
-  public onUpdateConfig = this.createEventListener('VKWebAppUpdateConfig');
+  public onUpdateConfig = (callback: (data: ReceiveData<'VKWebAppUpdateConfig'>) => void) =>
+    this.subscribeEvent('VKWebAppUpdateConfig', callback);
 
   /**
    * Subscribes a function for listening the `VKWebAppViewHide` event.
@@ -40,7 +48,8 @@ export class Common extends VKConnectProvider {
    * @param callback Function to pass received data
    * @returns function for unsubscribe
    */
-  public onViewHide = this.createEventListener('VKWebAppViewHide');
+  public onViewHide = (callback: (data: ReceiveData<'VKWebAppViewHide'>) => void) =>
+    this.subscribeEvent('VKWebAppViewHide', callback);
 
   /**
    * Subscribes a function for listening the `VKWebAppViewRestore` event.
@@ -50,7 +59,8 @@ export class Common extends VKConnectProvider {
    * @param callback Function to pass received data
    * @returns function for unsubscribe
    */
-  public onViewRestore = this.createEventListener('VKWebAppViewRestore');
+  public onViewRestore = (callback: (data: ReceiveData<'VKWebAppViewRestore'>) => void) =>
+    this.subscribeEvent('VKWebAppViewRestore', callback);
 
   /**
    * Disallows notifications
