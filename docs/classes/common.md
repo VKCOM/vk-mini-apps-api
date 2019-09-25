@@ -47,7 +47,7 @@ Common VK Mini App methods
 
 • **onUpdateConfig**: *(Anonymous function)* =  this.createEventListener('VKWebAppUpdateConfig')
 
-*Defined in [api/Common.ts:33](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Common.ts#L33)*
+*Defined in [api/Common.ts:33](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Common.ts#L33)*
 
 Subscribes a function for listening the `VKWebAppUpdateConfig` event.
 
@@ -63,7 +63,7 @@ ___
 
 • **onViewHide**: *(Anonymous function)* =  this.createEventListener('VKWebAppViewHide')
 
-*Defined in [api/Common.ts:43](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Common.ts#L43)*
+*Defined in [api/Common.ts:43](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Common.ts#L43)*
 
 Subscribes a function for listening the `VKWebAppViewHide` event.
 
@@ -79,7 +79,7 @@ ___
 
 • **onViewRestore**: *(Anonymous function)* =  this.createEventListener('VKWebAppViewRestore')
 
-*Defined in [api/Common.ts:53](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Common.ts#L53)*
+*Defined in [api/Common.ts:53](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Common.ts#L53)*
 
 Subscribes a function for listening the `VKWebAppViewRestore` event.
 
@@ -95,7 +95,7 @@ Subscribes a function for listening the `VKWebAppViewRestore` event.
 
 ▸ **addToFavorites**(): *Promise‹void›*
 
-*Defined in [api/Common.ts:313](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Common.ts#L313)*
+*Defined in [api/Common.ts:313](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Common.ts#L313)*
 
 Requests adding the app to favorites
 
@@ -107,7 +107,7 @@ ___
 
 ▸ **callAPIMethod**(`method`: string, `params`: Record‹string, string | number›): *Promise‹any[]›*
 
-*Defined in [api/Common.ts:79](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Common.ts#L79)*
+*Defined in [api/Common.ts:79](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Common.ts#L79)*
 
 Allows you to call a VK API method on behalf of the application.
 
@@ -126,7 +126,7 @@ ___
 
 ▸ **closeApp**(`status`: [CloseStatus](../globals.md#closestatus), `payload?`: any): *Promise‹void›*
 
-*Defined in [api/Common.ts:95](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Common.ts#L95)*
+*Defined in [api/Common.ts:95](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Common.ts#L95)*
 
 Closes sub app opened via the `openApp` method. Sends data to the parent
 app if needed.
@@ -146,7 +146,7 @@ ___
 
 ▸ **denyNotifications**(): *Promise‹void›*
 
-*Defined in [api/Common.ts:61](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Common.ts#L61)*
+*Defined in [api/Common.ts:61](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Common.ts#L61)*
 
 Disallows notifications
 
@@ -158,7 +158,7 @@ ___
 
 ▸ **getAuthToken**(`appId`: number, `scope?`: [UserAccessScope](../globals.md#useraccessscope)[]): *Promise‹object›*
 
-*Defined in [api/Common.ts:113](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Common.ts#L113)*
+*Defined in [api/Common.ts:113](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Common.ts#L113)*
 
 Requests user's access.
 
@@ -179,7 +179,7 @@ ___
 
 ▸ **getClientVersion**(): *Promise‹object›*
 
-*Defined in [api/Common.ts:136](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Common.ts#L136)*
+*Defined in [api/Common.ts:136](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Common.ts#L136)*
 
 Returns client's platform and version
 
@@ -191,7 +191,7 @@ ___
 
 ▸ **getEmail**(): *Promise‹object›*
 
-*Defined in [api/Common.ts:164](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Common.ts#L164)*
+*Defined in [api/Common.ts:164](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Common.ts#L164)*
 
 Requests user email
 
@@ -205,7 +205,7 @@ ___
 
 ▸ **getFriends**(`isMultiple?`: undefined | false | true): *Promise‹object[]›*
 
-*Defined in [api/Common.ts:177](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Common.ts#L177)*
+*Defined in [api/Common.ts:177](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Common.ts#L177)*
 
 Displays modal with friend select
 
@@ -225,7 +225,7 @@ ___
 
 ▸ **getGeodata**(): *Promise‹object›*
 
-*Defined in [api/Common.ts:191](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Common.ts#L191)*
+*Defined in [api/Common.ts:191](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Common.ts#L191)*
 
 Requests user geodata
 
@@ -239,7 +239,7 @@ ___
 
 ▸ **getPersonalCard**(`types`: PersonalCardType[]): *Promise‹PersonalCardData›*
 
-*Defined in [api/Common.ts:212](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Common.ts#L212)*
+*Defined in [api/Common.ts:212](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Common.ts#L212)*
 
 Requests user to enter some contact data. Depending on the specified
 parameters, it is possible to request: phone, email, address.
@@ -260,7 +260,7 @@ ___
 
 ▸ **getPhoneNumber**(): *Promise‹object›*
 
-*Defined in [api/Common.ts:227](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Common.ts#L227)*
+*Defined in [api/Common.ts:227](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Common.ts#L227)*
 
 Requests user's phone number
 
@@ -277,7 +277,7 @@ ___
 
 ▸ **getUserInfo**(): *Promise‹UserInfo›*
 
-*Defined in [api/Common.ts:244](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Common.ts#L244)*
+*Defined in [api/Common.ts:244](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Common.ts#L244)*
 
 Requests the main user data
 
@@ -291,7 +291,7 @@ ___
 
 ▸ **initApp**(): *void*
 
-*Defined in [api/Common.ts:21](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Common.ts#L21)*
+*Defined in [api/Common.ts:21](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Common.ts#L21)*
 
 Initializes the VK Mini App. Must be called before using any API method
 
@@ -303,7 +303,7 @@ ___
 
 ▸ **openApp**(`appId`: number, `locationHash?`: undefined | string): *Promise‹void›*
 
-*Defined in [api/Common.ts:149](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Common.ts#L149)*
+*Defined in [api/Common.ts:149](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Common.ts#L149)*
 
 Opens sub app
 
@@ -322,7 +322,7 @@ ___
 
 ▸ **openCodeReader**(): *Promise‹string›*
 
-*Defined in [api/Common.ts:256](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Common.ts#L256)*
+*Defined in [api/Common.ts:256](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Common.ts#L256)*
 
 Opens QR codes and barcodes reader
 
@@ -336,7 +336,7 @@ ___
 
 ▸ **openContacts**(): *Promise‹object›*
 
-*Defined in [api/Common.ts:272](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Common.ts#L272)*
+*Defined in [api/Common.ts:272](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Common.ts#L272)*
 
 Opens a selecting contact from the contact list on the user's device.
 If user has closed the contact list, called the `VKWebAppContactsClosed`
@@ -352,7 +352,7 @@ ___
 
 ▸ **postToWall**(`message`: string, `attachments?`: string | string | object[], `options?`: [WallPostOptions](../globals.md#wallpostoptions)): *Promise‹number›*
 
-*Defined in [api/Common.ts:335](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Common.ts#L335)*
+*Defined in [api/Common.ts:335](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Common.ts#L335)*
 
 Requests the user to post to the wall
 
@@ -374,7 +374,7 @@ ___
 
 ▸ **shareLink**(`message`: string): *Promise‹object | object | object›*
 
-*Defined in [api/Common.ts:291](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Common.ts#L291)*
+*Defined in [api/Common.ts:291](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Common.ts#L291)*
 
 Requests the user to share a link on their wall
 
@@ -394,7 +394,7 @@ ___
 
 ▸ **showImages**(`images`: string[], `start_index?`: undefined | number): *Promise‹void›*
 
-*Defined in [api/Common.ts:303](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Common.ts#L303)*
+*Defined in [api/Common.ts:303](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Common.ts#L303)*
 
 Shows specified photos to user
 
@@ -413,7 +413,7 @@ ___
 
 ▸ **showMessageBox**(`peerId`: number, `message`: string, `attachments?`: string | string | object[], `lat?`: undefined | number, `long?`: undefined | number): *Promise‹object›*
 
-*Defined in [api/Common.ts:366](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Common.ts#L366)*
+*Defined in [api/Common.ts:366](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Common.ts#L366)*
 
 **Parameters:**
 

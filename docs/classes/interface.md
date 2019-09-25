@@ -23,7 +23,7 @@
 
 ▸ **resizeWindow**(`width`: number, `height`: number): *Promise‹object›*
 
-*Defined in [api/Interface.ts:16](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Interface.ts#L16)*
+*Defined in [api/Interface.ts:16](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Interface.ts#L16)*
 
 Resizes iframe size in web
 
@@ -44,7 +44,7 @@ ___
 
 ▸ **scrollTo**(`offsetTop`: number, `speed`: number): *Promise‹object›*
 
-*Defined in [api/Interface.ts:31](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Interface.ts#L31)*
+*Defined in [api/Interface.ts:31](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Interface.ts#L31)*
 
 Scrolls window to specified point
 
@@ -65,7 +65,7 @@ ___
 
 ▸ **setLocationHash**(`hash`: string): *Promise‹void›*
 
-*Defined in [api/Interface.ts:40](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Interface.ts#L40)*
+*Defined in [api/Interface.ts:40](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Interface.ts#L40)*
 
 Sets location hash to the app (vk.com/app123#hash)
 
@@ -83,7 +83,7 @@ ___
 
 ▸ **setViewSettings**(`statusBarStyle`: AppearanceType, `actionBarColor?`: undefined | string): *Promise‹void›*
 
-*Defined in [api/Interface.ts:53](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Interface.ts#L53)*
+*Defined in [api/Interface.ts:53](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Interface.ts#L53)*
 
 Changes the appearance of the mini app interface in mobile clients
 

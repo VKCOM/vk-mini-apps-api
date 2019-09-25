@@ -25,7 +25,7 @@ VK Pay methods
 
 ▸ **payToCommunity**(`amount`: number, `communityId`: number, `appId`: number, `description?`: undefined | string, `data?`: undefined | string): *Promise‹object›*
 
-*Defined in [api/VKPay.ts:50](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/VKPay.ts#L50)*
+*Defined in [api/VKPay.ts:50](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/VKPay.ts#L50)*
 
 Requests payment to a specified community of the specified amount
 via VK Pay
@@ -50,7 +50,7 @@ ___
 
 ▸ **payToUser**(`amount`: number, `userId`: number, `appId`: number, `description?`: undefined | string): *Promise‹object›*
 
-*Defined in [api/VKPay.ts:21](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/VKPay.ts#L21)*
+*Defined in [api/VKPay.ts:21](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/VKPay.ts#L21)*
 
 Requests payment to a specified user of the specified amount via VK Pay
 
@@ -73,7 +73,7 @@ ___
 
 ▸ **transferToCommunity**(`communityId`: number, `appId`: number): *Promise‹object›*
 
-*Defined in [api/VKPay.ts:101](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/VKPay.ts#L101)*
+*Defined in [api/VKPay.ts:101](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/VKPay.ts#L101)*
 
 Requests transfer an arbitrary amount to a specified community
 
@@ -94,7 +94,7 @@ ___
 
 ▸ **transferToUser**(`userId`: number, `appId`: number): *Promise‹object›*
 
-*Defined in [api/VKPay.ts:81](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/VKPay.ts#L81)*
+*Defined in [api/VKPay.ts:81](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/VKPay.ts#L81)*
 
 Requests transfer an arbitrary amount to a specified user
 

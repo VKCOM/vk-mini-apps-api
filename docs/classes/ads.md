@@ -21,7 +21,7 @@
 
 • **onInitAds**: *(Anonymous function)* =  this.createEventListener('VKWebAppInitAds')
 
-*Defined in [api/Ads.ts:12](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Ads.ts#L12)*
+*Defined in [api/Ads.ts:12](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Ads.ts#L12)*
 
 Subscribes a function for listening the `VKWebAppInitAds` event.
 
@@ -37,7 +37,7 @@ ___
 
 • **onLoadAds**: *(Anonymous function)* =  this.createEventListener('VKWebAppLoadAds')
 
-*Defined in [api/Ads.ts:22](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Ads.ts#L22)*
+*Defined in [api/Ads.ts:22](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Ads.ts#L22)*
 
 Subscribes a function for listening the `VKWebAppInitAds` event.
 

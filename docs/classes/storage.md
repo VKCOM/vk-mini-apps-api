@@ -25,7 +25,7 @@ Storage API
 
 ▸ **get**(`key`: string): *Promise‹string›*
 
-*Defined in [api/Storage.ts:17](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Storage.ts#L17)*
+*Defined in [api/Storage.ts:17](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Storage.ts#L17)*
 
 Requests a value from the storage
 
@@ -45,7 +45,7 @@ ___
 
 ▸ **getKeys**(`count`: number, `offset`: number): *Promise‹string[]›*
 
-*Defined in [api/Storage.ts:55](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Storage.ts#L55)*
+*Defined in [api/Storage.ts:55](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Storage.ts#L55)*
 
 Request list of keys of some stored values
 
@@ -64,7 +64,7 @@ ___
 
 ▸ **getMultiple**(`keys`: string[]): *Promise‹Record‹string, string››*
 
-*Defined in [api/Storage.ts:37](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Storage.ts#L37)*
+*Defined in [api/Storage.ts:37](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Storage.ts#L37)*
 
 Requests multiple values from the storage
 
@@ -84,7 +84,7 @@ ___
 
 ▸ **set**(`key`: string, `value`: string): *Promise‹void›*
 
-*Defined in [api/Storage.ts:70](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/Storage.ts#L70)*
+*Defined in [api/Storage.ts:70](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/Storage.ts#L70)*
 
 Stores value in storage
 

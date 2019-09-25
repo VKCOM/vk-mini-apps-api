@@ -24,7 +24,7 @@ Taptic Engine methods
 
 ▸ **impactOccurred**(`power`: TapticVibrationPowerType): *Promise‹void›*
 
-*Defined in [api/TapticEngine.ts:14](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/TapticEngine.ts#L14)*
+*Defined in [api/TapticEngine.ts:14](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/TapticEngine.ts#L14)*
 
 Triggers impact feedback in Taptic Engine
 
@@ -42,7 +42,7 @@ ___
 
 ▸ **notificationOccurred**(`type`: TapticNotificationType): *Promise‹void›*
 
-*Defined in [api/TapticEngine.ts:24](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/TapticEngine.ts#L24)*
+*Defined in [api/TapticEngine.ts:24](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/TapticEngine.ts#L24)*
 
 Triggers notification feedback in Taptic Engine
 
@@ -60,7 +60,7 @@ ___
 
 ▸ **selectionChanged**(): *Promise‹void›*
 
-*Defined in [api/TapticEngine.ts:34](https://github.com/VKCOM/vk-mini-apps-api/blob/b7a8e9b/src/api/TapticEngine.ts#L34)*
+*Defined in [api/TapticEngine.ts:34](https://github.com/VKCOM/vk-mini-apps-api/blob/aa96c54/src/api/TapticEngine.ts#L34)*
 
 Triggers selection feedback in Taptic Engine
 
