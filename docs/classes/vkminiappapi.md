@@ -1,4 +1,3 @@
-[vk-mini-apps-api](../README.md) › [Globals](../globals.md) › [VKMiniAppAPI](vkminiappapi.md)
 
 # Class: VKMiniAppAPI
 
@@ -104,11 +103,9 @@ VK Mini apps API. Contains all VK Connect methods separated by categories
 
 ## Common Events
 
-###  initApp
+### <a id="initapp" name="initapp"></a>  initApp
 
 • **initApp**(): *void*
-
-*Defined in [VKMiniAppAPI.ts:25](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L25)*
 
 Initializes the VK Mini App. Must be called before using any API method
 
@@ -118,11 +115,9 @@ Initializes the VK Mini App. Must be called before using any API method
 
 ## Common Methods
 
-###  addToFavorites
+### <a id="addtofavorites" name="addtofavorites"></a>  addToFavorites
 
 ▸ **addToFavorites**(): *Promise‹void›*
-
-*Defined in [VKMiniAppAPI.ts:343](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L343)*
 
 Requests adding the app to favorites
 
@@ -130,11 +125,9 @@ Requests adding the app to favorites
 
 ___
 
-###  callAPIMethod
+### <a id="callapimethod" name="callapimethod"></a>  callAPIMethod
 
 ▸ **callAPIMethod**(`method`: string, `params`: Record‹string, string | number›): *Promise‹any[]›*
-
-*Defined in [VKMiniAppAPI.ts:94](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L94)*
 
 Allows you to call a VK API method on behalf of the application.
 
@@ -149,11 +142,9 @@ Name | Type | Description |
 
 ___
 
-###  closeApp
+### <a id="closeapp" name="closeapp"></a>  closeApp
 
 ▸ **closeApp**(`status`: [CloseStatus](../globals.md#closestatus), `payload?`: any): *Promise‹void›*
-
-*Defined in [VKMiniAppAPI.ts:111](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L111)*
 
 Closes sub app opened via the `openApp` method. Sends data to the parent
 app if needed.
@@ -169,11 +160,9 @@ Name | Type |
 
 ___
 
-###  denyNotifications
+### <a id="denynotifications" name="denynotifications"></a>  denyNotifications
 
 ▸ **denyNotifications**(): *Promise‹void›*
-
-*Defined in [VKMiniAppAPI.ts:75](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L75)*
 
 Disallows notifications
 
@@ -181,11 +170,9 @@ Disallows notifications
 
 ___
 
-###  getAuthToken
+### <a id="getauthtoken" name="getauthtoken"></a>  getAuthToken
 
 ▸ **getAuthToken**(`appId`: number, `scope?`: [UserAccessScope](../globals.md#useraccessscope)[]): *Promise‹object›*
-
-*Defined in [VKMiniAppAPI.ts:130](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L130)*
 
 Requests user's access.
 
@@ -202,11 +189,9 @@ User's access token and list of accessed scopes
 
 ___
 
-###  getClientVersion
+### <a id="getclientversion" name="getclientversion"></a>  getClientVersion
 
 ▸ **getClientVersion**(): *Promise‹object›*
-
-*Defined in [VKMiniAppAPI.ts:154](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L154)*
 
 Returns client's platform and version
 
@@ -214,11 +199,9 @@ Returns client's platform and version
 
 ___
 
-###  getEmail
+### <a id="getemail" name="getemail"></a>  getEmail
 
 ▸ **getEmail**(): *Promise‹object›*
-
-*Defined in [VKMiniAppAPI.ts:184](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L184)*
 
 Requests user email
 
@@ -228,11 +211,9 @@ User email and sign of received data
 
 ___
 
-###  getFriends
+### <a id="getfriends" name="getfriends"></a>  getFriends
 
 ▸ **getFriends**(`isMultiple?`: undefined | false | true): *Promise‹object[]›*
-
-*Defined in [VKMiniAppAPI.ts:198](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L198)*
 
 Displays modal with friend select
 
@@ -248,11 +229,9 @@ List of selected users data
 
 ___
 
-###  getGeodata
+### <a id="getgeodata" name="getgeodata"></a>  getGeodata
 
 ▸ **getGeodata**(): *Promise‹object›*
-
-*Defined in [VKMiniAppAPI.ts:213](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L213)*
 
 Requests user geodata
 
@@ -262,11 +241,9 @@ Object with current user geodata
 
 ___
 
-###  getPersonalCard
+### <a id="getpersonalcard" name="getpersonalcard"></a>  getPersonalCard
 
 ▸ **getPersonalCard**(`types`: VKConnect.PersonalCardType[]): *Promise‹VKConnect.PersonalCardData›*
-
-*Defined in [VKMiniAppAPI.ts:235](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L235)*
 
 Requests user to enter some contact data. Depending on the specified
 parameters, it is possible to request: phone, email, address.
@@ -283,11 +260,9 @@ Entered user data
 
 ___
 
-###  getPhoneNumber
+### <a id="getphonenumber" name="getphonenumber"></a>  getPhoneNumber
 
 ▸ **getPhoneNumber**(): *Promise‹object›*
-
-*Defined in [VKMiniAppAPI.ts:251](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L251)*
 
 Requests user's phone number
 
@@ -300,11 +275,9 @@ field name (`phone_number`) and field value.
 
 ___
 
-###  getUserInfo
+### <a id="getuserinfo" name="getuserinfo"></a>  getUserInfo
 
 ▸ **getUserInfo**(): *Promise‹VKConnect.UserInfo›*
-
-*Defined in [VKMiniAppAPI.ts:269](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L269)*
 
 Requests the main user data
 
@@ -314,11 +287,9 @@ User data
 
 ___
 
-###  onUpdateConfig
+### <a id="onupdateconfig" name="onupdateconfig"></a>  onUpdateConfig
 
 ▸ **onUpdateConfig**(`callback`: function): *(Anonymous function)*
-
-*Defined in [VKMiniAppAPI.ts:39](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L39)*
 
 Subscribes a function for listening the `VKWebAppUpdateConfig` event.
 
@@ -342,11 +313,9 @@ function for unsubscribe
 
 ___
 
-###  onViewHide
+### <a id="onviewhide" name="onviewhide"></a>  onViewHide
 
 ▸ **onViewHide**(`callback`: function): *(Anonymous function)*
-
-*Defined in [VKMiniAppAPI.ts:52](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L52)*
 
 Subscribes a function for listening the `VKWebAppViewHide` event.
 
@@ -370,11 +339,9 @@ function for unsubscribe
 
 ___
 
-###  onViewRestore
+### <a id="onviewrestore" name="onviewrestore"></a>  onViewRestore
 
 ▸ **onViewRestore**(`callback`: function): *(Anonymous function)*
-
-*Defined in [VKMiniAppAPI.ts:65](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L65)*
 
 Subscribes a function for listening the `VKWebAppViewRestore` event.
 
@@ -398,11 +365,9 @@ function for unsubscribe
 
 ___
 
-###  openApp
+### <a id="openapp" name="openapp"></a>  openApp
 
 ▸ **openApp**(`appId`: number, `locationHash?`: undefined | string): *Promise‹void›*
-
-*Defined in [VKMiniAppAPI.ts:168](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L168)*
 
 Opens sub app
 
@@ -417,11 +382,9 @@ Name | Type | Description |
 
 ___
 
-###  openCodeReader
+### <a id="opencodereader" name="opencodereader"></a>  openCodeReader
 
 ▸ **openCodeReader**(): *Promise‹string›*
-
-*Defined in [VKMiniAppAPI.ts:282](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L282)*
 
 Opens QR codes and barcodes reader
 
@@ -431,11 +394,9 @@ Read data
 
 ___
 
-###  openContacts
+### <a id="opencontacts" name="opencontacts"></a>  openContacts
 
 ▸ **openContacts**(): *Promise‹object›*
-
-*Defined in [VKMiniAppAPI.ts:299](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L299)*
 
 Opens a selecting contact from the contact list on the user's device.
 If user has closed the contact list, called the `VKWebAppContactsClosed`
@@ -448,11 +409,9 @@ Selected contact
 
 ___
 
-###  postToWall
+### <a id="posttowall" name="posttowall"></a>  postToWall
 
 ▸ **postToWall**(`message`: string, `attachments?`: string | string | object[], `options?`: [WallPostOptions](../globals.md#wallpostoptions)): *Promise‹number›*
-
-*Defined in [VKMiniAppAPI.ts:366](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L366)*
 
 Requests the user to post to the wall
 
@@ -470,11 +429,9 @@ Published post ID
 
 ___
 
-###  shareLink
+### <a id="sharelink" name="sharelink"></a>  shareLink
 
 ▸ **shareLink**(`message`: string): *Promise‹object | object | object›*
-
-*Defined in [VKMiniAppAPI.ts:319](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L319)*
 
 Requests the user to share a link on their wall
 
@@ -490,11 +447,9 @@ ID of the post with shared link
 
 ___
 
-###  showImages
+### <a id="showimages" name="showimages"></a>  showImages
 
 ▸ **showImages**(`images`: string[], `start_index?`: undefined | number): *Promise‹void›*
-
-*Defined in [VKMiniAppAPI.ts:332](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L332)*
 
 Shows specified photos to user
 
@@ -509,11 +464,9 @@ Name | Type |
 
 ___
 
-###  showMessageBox
+### <a id="showmessagebox" name="showmessagebox"></a>  showMessageBox
 
 ▸ **showMessageBox**(`peerId`: number, `message`: string, `attachments?`: string | string | object[], `lat?`: undefined | number, `long?`: undefined | number): *Promise‹object›*
-
-*Defined in [VKMiniAppAPI.ts:400](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L400)*
 
 **Parameters:**
 
@@ -531,11 +484,9 @@ ___
 
 ## Advertisement Methods
 
-###  onInitAds
+### <a id="oninitads" name="oninitads"></a>  onInitAds
 
 ▸ **onInitAds**(`callback`: function): *(Anonymous function)*
-
-*Defined in [VKMiniAppAPI.ts:637](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L637)*
 
 Subscribes a function for listening the `VKWebAppInitAds` event.
 
@@ -559,11 +510,9 @@ function for unsubscribe
 
 ___
 
-###  onLoadAds
+### <a id="onloadads" name="onloadads"></a>  onLoadAds
 
 ▸ **onLoadAds**(`callback`: function): *(Anonymous function)*
-
-*Defined in [VKMiniAppAPI.ts:650](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L650)*
 
 Subscribes a function for listening the `VKWebAppLoadAds` event.
 
@@ -589,11 +538,9 @@ ___
 
 ## Audio Methods
 
-###  onAudioPaused
+### <a id="onaudiopaused" name="onaudiopaused"></a>  onAudioPaused
 
 ▸ **onAudioPaused**(`callback`: function): *(Anonymous function)*
-
-*Defined in [VKMiniAppAPI.ts:801](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L801)*
 
 Subscribes a function for listening the `VKWebAppAudioPaused` event.
 
@@ -617,11 +564,9 @@ function for unsubscribe
 
 ___
 
-###  onAudioStopped
+### <a id="onaudiostopped" name="onaudiostopped"></a>  onAudioStopped
 
 ▸ **onAudioStopped**(`callback`: function): *(Anonymous function)*
-
-*Defined in [VKMiniAppAPI.ts:814](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L814)*
 
 Subscribes a function for listening the `VKWebAppAudioStopped` event.
 
@@ -645,11 +590,9 @@ function for unsubscribe
 
 ___
 
-###  onAudioTrackChanged
+### <a id="onaudiotrackchanged" name="onaudiotrackchanged"></a>  onAudioTrackChanged
 
 ▸ **onAudioTrackChanged**(`callback`: function): *(Anonymous function)*
-
-*Defined in [VKMiniAppAPI.ts:827](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L827)*
 
 Subscribes a function for listening the `VKWebAppAudioTrackChanged` event.
 
@@ -673,11 +616,9 @@ function for unsubscribe
 
 ___
 
-###  onAudioUnpaused
+### <a id="onaudiounpaused" name="onaudiounpaused"></a>  onAudioUnpaused
 
 ▸ **onAudioUnpaused**(`callback`: function): *(Anonymous function)*
-
-*Defined in [VKMiniAppAPI.ts:840](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L840)*
 
 Subscribes a function for listening the `VKWebAppAudioUnpaused` event.
 
@@ -703,11 +644,9 @@ ___
 
 ## Community Methods
 
-###  addAppToCommunity
+### <a id="addapptocommunity" name="addapptocommunity"></a>  addAppToCommunity
 
 ▸ **addAppToCommunity**(): *Promise‹number›*
-
-*Defined in [VKMiniAppAPI.ts:430](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L430)*
 
 Request to add the app to a community. Opens a community selection dialog
 
@@ -717,11 +656,9 @@ ID of group to which the app was added
 
 ___
 
-###  allowCommunityMessages
+### <a id="allowcommunitymessages" name="allowcommunitymessages"></a>  allowCommunityMessages
 
 ▸ **allowCommunityMessages**(`communityId`: number, `key?`: undefined | string): *Promise‹void›*
-
-*Defined in [VKMiniAppAPI.ts:448](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L448)*
 
 Asks user for permission to send messages from a the community
 
@@ -736,11 +673,9 @@ Name | Type | Description |
 
 ___
 
-###  allowCommunityNotifications
+### <a id="allowcommunitynotifications" name="allowcommunitynotifications"></a>  allowCommunityNotifications
 
 ▸ **allowCommunityNotifications**(): *Promise‹void›*
-
-*Defined in [VKMiniAppAPI.ts:462](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L462)*
 
 Asks the user for permission to send messages from a the community
 
@@ -748,11 +683,9 @@ Asks the user for permission to send messages from a the community
 
 ___
 
-###  getCommunityToken
+### <a id="getcommunitytoken" name="getcommunitytoken"></a>  getCommunityToken
 
 ▸ **getCommunityToken**(`communityId`: number, `appId`: number, `scope?`: [CommunityAccessScope](../globals.md#communityaccessscope)[]): *Promise‹object›*
-
-*Defined in [VKMiniAppAPI.ts:486](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L486)*
 
 Requests community access for working with API on behalf of the community.
 The community access token can only be received by its admin.
@@ -775,11 +708,9 @@ Community access token
 
 ___
 
-###  joinCommunity
+### <a id="joincommunity" name="joincommunity"></a>  joinCommunity
 
 ▸ **joinCommunity**(`communityId`: number): *Promise‹void›*
-
-*Defined in [VKMiniAppAPI.ts:527](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L527)*
 
 Requests for join a community
 
@@ -793,11 +724,9 @@ Name | Type |
 
 ___
 
-###  sendPayloadToCommunity
+### <a id="sendpayloadtocommunity" name="sendpayloadtocommunity"></a>  sendPayloadToCommunity
 
 ▸ **sendPayloadToCommunity**(`communityId`: number, `payload`: any): *Promise‹void›*
-
-*Defined in [VKMiniAppAPI.ts:546](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L546)*
 
 Sends event to a community
 
@@ -812,11 +741,9 @@ Name | Type | Description |
 
 ___
 
-###  showCommunityWidgetPreviewBox
+### <a id="showcommunitywidgetpreviewbox" name="showcommunitywidgetpreviewbox"></a>  showCommunityWidgetPreviewBox
 
 ▸ **showCommunityWidgetPreviewBox**(`communityId`: number, `type`: VKConnect.WidgetType, `code`: string): *Promise‹void›*
-
-*Defined in [VKMiniAppAPI.ts:560](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L560)*
 
 Sens request to open a screen with a preview of the widget for a
 community
@@ -835,11 +762,9 @@ ___
 
 ## Direct Games Methods
 
-###  showInviteBox
+### <a id="showinvitebox" name="showinvitebox"></a>  showInviteBox
 
 ▸ **showInviteBox**(): *Promise‹void›*
-
-*Defined in [VKMiniAppAPI.ts:850](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L850)*
 
 Opens friends list for inviting to the app
 
@@ -847,11 +772,9 @@ Opens friends list for inviting to the app
 
 ___
 
-###  showLeaderBoardBox
+### <a id="showleaderboardbox" name="showleaderboardbox"></a>  showLeaderBoardBox
 
 ▸ **showLeaderBoardBox**(`userResult`: number): *Promise‹void›*
-
-*Defined in [VKMiniAppAPI.ts:868](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L868)*
 
 Shows leaderboard
 
@@ -865,11 +788,9 @@ Name | Type | Description |
 
 ___
 
-###  showOrderBox
+### <a id="showorderbox" name="showorderbox"></a>  showOrderBox
 
 ▸ **showOrderBox**(`itemName`: string): *Promise‹VKConnect.OrderBoxShowingStatus›*
-
-*Defined in [VKMiniAppAPI.ts:884](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L884)*
 
 Shows item order box
 
@@ -885,11 +806,9 @@ Status of ordering
 
 ___
 
-###  showRequestBox
+### <a id="showrequestbox" name="showrequestbox"></a>  showRequestBox
 
 ▸ **showRequestBox**(`userId`: number, `message`: string, `requestKey?`: undefined | string): *Promise‹object›*
-
-*Defined in [VKMiniAppAPI.ts:906](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L906)*
 
 Shows box for sending request to the user
 
@@ -909,11 +828,9 @@ ___
 
 ## Flashlight Methods
 
-###  flashGetInfo
+### <a id="flashgetinfo" name="flashgetinfo"></a>  flashGetInfo
 
 ▸ **flashGetInfo**(): *Promise‹object›*
-
-*Defined in [VKMiniAppAPI.ts:769](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L769)*
 
 Requests device's flashlight information
 
@@ -923,11 +840,9 @@ Availability and level of the flashlight
 
 ___
 
-###  flashSetLevel
+### <a id="flashsetlevel" name="flashsetlevel"></a>  flashSetLevel
 
 ▸ **flashSetLevel**(`level`: number): *Promise‹void›*
-
-*Defined in [VKMiniAppAPI.ts:787](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L787)*
 
 Sets device's flashlight level
 
@@ -943,11 +858,9 @@ ___
 
 ## Interface Methods
 
-###  resizeWindow
+### <a id="resizewindow" name="resizewindow"></a>  resizeWindow
 
 ▸ **resizeWindow**(`width`: number, `height`: number): *Promise‹object›*
-
-*Defined in [VKMiniAppAPI.ts:580](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L580)*
 
 Resizes iframe size in web
 
@@ -964,11 +877,9 @@ Result size of the iframe
 
 ___
 
-###  scrollTo
+### <a id="scrollto" name="scrollto"></a>  scrollTo
 
 ▸ **scrollTo**(`offsetTop`: number, `speed`: number): *Promise‹object›*
-
-*Defined in [VKMiniAppAPI.ts:596](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L596)*
 
 Scrolls window to specified point
 
@@ -985,11 +896,9 @@ Offset top and height of window after scroll
 
 ___
 
-###  setLocationHash
+### <a id="setlocationhash" name="setlocationhash"></a>  setLocationHash
 
 ▸ **setLocationHash**(`hash`: string): *Promise‹void›*
-
-*Defined in [VKMiniAppAPI.ts:606](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L606)*
 
 Sets location hash to the app (vk.com/app123#hash)
 
@@ -1003,11 +912,9 @@ Name | Type |
 
 ___
 
-###  setViewSettings
+### <a id="setviewsettings" name="setviewsettings"></a>  setViewSettings
 
 ▸ **setViewSettings**(`statusBarStyle`: VKConnect.AppearanceType, `actionBarColor?`: undefined | string): *Promise‹void›*
-
-*Defined in [VKMiniAppAPI.ts:620](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L620)*
 
 Changes the appearance of the mini app interface in mobile clients
 
@@ -1024,11 +931,9 @@ ___
 
 ## Storage Methods
 
-###  storageGet
+### <a id="storageget" name="storageget"></a>  storageGet
 
 ▸ **storageGet**(`key`: string): *Promise‹string›*
-
-*Defined in [VKMiniAppAPI.ts:921](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L921)*
 
 Requests a value from the storage
 
@@ -1044,11 +949,9 @@ The stored value or empty string if the value is not found
 
 ___
 
-###  storageGetKeys
+### <a id="storagegetkeys" name="storagegetkeys"></a>  storageGetKeys
 
 ▸ **storageGetKeys**(`count`: number, `offset`: number): *Promise‹string[]›*
-
-*Defined in [VKMiniAppAPI.ts:961](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L961)*
 
 Request list of keys of some stored values
 
@@ -1063,11 +966,9 @@ Name | Type | Default | Description |
 
 ___
 
-###  storageGetMultiple
+### <a id="storagegetmultiple" name="storagegetmultiple"></a>  storageGetMultiple
 
 ▸ **storageGetMultiple**(`keys`: string[]): *Promise‹Record‹string, string››*
-
-*Defined in [VKMiniAppAPI.ts:942](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L942)*
 
 Requests multiple values from the storage
 
@@ -1083,11 +984,9 @@ Map of key-value
 
 ___
 
-###  storageSet
+### <a id="storageset" name="storageset"></a>  storageSet
 
 ▸ **storageSet**(`key`: string, `value`: string): *Promise‹void›*
-
-*Defined in [VKMiniAppAPI.ts:977](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L977)*
 
 Stores value in storage
 
@@ -1104,11 +1003,9 @@ ___
 
 ## Taptic Engine Methods
 
-###  impactOccurred
+### <a id="impactoccurred" name="impactoccurred"></a>  impactOccurred
 
 ▸ **impactOccurred**(`power`: VKConnect.TapticVibrationPowerType): *Promise‹void›*
-
-*Defined in [VKMiniAppAPI.ts:988](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L988)*
 
 Triggers impact feedback in Taptic Engine
 
@@ -1122,11 +1019,9 @@ Name | Type | Default |
 
 ___
 
-###  notificationOccurred
+### <a id="notificationoccurred" name="notificationoccurred"></a>  notificationOccurred
 
 ▸ **notificationOccurred**(`type`: VKConnect.TapticNotificationType): *Promise‹void›*
-
-*Defined in [VKMiniAppAPI.ts:999](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L999)*
 
 Triggers notification feedback in Taptic Engine
 
@@ -1140,11 +1035,9 @@ Name | Type |
 
 ___
 
-###  selectionChanged
+### <a id="selectionchanged" name="selectionchanged"></a>  selectionChanged
 
 ▸ **selectionChanged**(): *Promise‹void›*
-
-*Defined in [VKMiniAppAPI.ts:1010](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L1010)*
 
 Triggers selection feedback in Taptic Engine
 
@@ -1154,11 +1047,9 @@ ___
 
 ## VK Pay Methods
 
-###  payToCommunity
+### <a id="paytocommunity" name="paytocommunity"></a>  payToCommunity
 
 ▸ **payToCommunity**(`amount`: number, `communityId`: number, `appId`: number, `description?`: undefined | string, `data?`: undefined | string): *Promise‹object›*
-
-*Defined in [VKMiniAppAPI.ts:697](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L697)*
 
 Requests payment to a specified community of the specified amount
 via VK Pay
@@ -1179,11 +1070,9 @@ Payment result data
 
 ___
 
-###  payToUser
+### <a id="paytouser" name="paytouser"></a>  payToUser
 
 ▸ **payToUser**(`amount`: number, `userId`: number, `appId`: number, `description?`: undefined | string): *Promise‹object›*
-
-*Defined in [VKMiniAppAPI.ts:667](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L667)*
 
 Requests payment to a specified user of the specified amount via VK Pay
 
@@ -1202,11 +1091,9 @@ Payment result data
 
 ___
 
-###  transferToCommunity
+### <a id="transfertocommunity" name="transfertocommunity"></a>  transferToCommunity
 
 ▸ **transferToCommunity**(`communityId`: number, `appId`: number): *Promise‹object›*
-
-*Defined in [VKMiniAppAPI.ts:750](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L750)*
 
 Requests transfer an arbitrary amount to a specified community
 
@@ -1223,11 +1110,9 @@ Payment result data
 
 ___
 
-###  transferToUser
+### <a id="transfertouser" name="transfertouser"></a>  transferToUser
 
 ▸ **transferToUser**(`userId`: number, `appId`: number): *Promise‹object›*
-
-*Defined in [VKMiniAppAPI.ts:729](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/VKMiniAppAPI.ts#L729)*
 
 Requests transfer an arbitrary amount to a specified user
 

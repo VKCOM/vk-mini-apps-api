@@ -8,5 +8,8 @@
   "includeDeclarations": true,
   "exclude": "**/+(*test*|node_modules)/**",
   "includes": "node_modules/@vkontakte/vk-connect",
-  "categoryOrder": ["Common", "*"]
+  "categoryOrder": ["Common", "*"],
+  "hideBreadcrumbs": true,
+  "namedAnchors": true,
+  "hideSources": true
 }

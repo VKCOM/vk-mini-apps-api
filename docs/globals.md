@@ -1,4 +1,3 @@
-[vk-mini-apps-api](README.md) › [Globals](globals.md)
 
 # vk-mini-apps-api
 
@@ -17,17 +16,11 @@
 * [UserAccessScope](globals.md#useraccessscope)
 * [WallPostOptions](globals.md#wallpostoptions)
 
-### Functions
-
-* [createVKMiniAppAPI](globals.md#const-createvkminiappapi)
-
 ## Type aliases
 
-###  Attachment
+### <a id="attachment" name="attachment"></a>  Attachment
 
 Ƭ **Attachment**: *object*
-
-*Defined in [types.ts:78](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/types.ts#L78)*
 
 Attachment object interface
 
@@ -35,70 +28,42 @@ Attachment object interface
 
 ___
 
-###  AttachmentType
+### <a id="attachmenttype" name="attachmenttype"></a>  AttachmentType
 
 Ƭ **AttachmentType**: *"photo" | "video" | "audio" | "doc" | "page" | "note" | "poll" | "album" | "market" | "market_album" | "audio_playlist"*
-
-*Defined in [types.ts:62](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/types.ts#L62)*
 
 Type of an attachment
 
 ___
 
-###  CloseStatus
+### <a id="closestatus" name="closestatus"></a>  CloseStatus
 
 Ƭ **CloseStatus**: *"success" | "failed"*
-
-*Defined in [types.ts:31](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/types.ts#L31)*
 
 Status of sub app closing
 
 ___
 
-###  CommunityAccessScope
+### <a id="communityaccessscope" name="communityaccessscope"></a>  CommunityAccessScope
 
 Ƭ **CommunityAccessScope**: *"stories" | "photos" | "app_widget" | "messages" | "docs" | "manage"*
-
-*Defined in [types.ts:20](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/types.ts#L20)*
 
 Community access scopes
 
 ___
 
-###  UserAccessScope
+### <a id="useraccessscope" name="useraccessscope"></a>  UserAccessScope
 
 Ƭ **UserAccessScope**: *"friends" | "photos" | "video" | "pages" | "status" | "notes" | "wall" | "docs" | "groups" | "stats" | "market"*
-
-*Defined in [types.ts:4](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/types.ts#L4)*
 
 User access scopes
 
 ___
 
-###  WallPostOptions
+### <a id="wallpostoptions" name="wallpostoptions"></a>  WallPostOptions
 
 Ƭ **WallPostOptions**: *object*
-
-*Defined in [types.ts:36](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/types.ts#L36)*
 
 Options of wall post publish
 
 #### Type declaration:
-
-## Functions
-
-### `Const` createVKMiniAppAPI
-
-▸ **createVKMiniAppAPI**(`options`: VKMiniAppAPIOptions): *[VKMiniAppAPI](classes/vkminiappapi.md)*
-
-*Defined in [index.ts:18](https://github.com/VKCOM/vk-mini-apps-api/blob/0cedf89/src/index.ts#L18)*
-
-Creates instance of VK Mini App API
-
-**Parameters:**
-
-Name | Type | Default | Description |
------- | ------ | ------ | ------ |
-`options` | VKMiniAppAPIOptions |  {} | Options of the instance  |
-
-**Returns:** *[VKMiniAppAPI](classes/vkminiappapi.md)*

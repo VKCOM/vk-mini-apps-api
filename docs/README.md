@@ -1,4 +1,3 @@
-[vk-mini-apps-api](README.md) › [Globals](globals.md)
 
 # vk-mini-apps-api
 

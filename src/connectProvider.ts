@@ -1,12 +1,13 @@
-import { VKConnect, VKConnectEvent, ReceiveMethodName, ReceiveData } from '@vkontakte/vk-connect';
+import vkConnect, { VKConnect, VKConnectEvent, ReceiveMethodName, ReceiveData } from '@vkontakte/vk-connect';
 
 /** @ignore */
 export abstract class VKConnectProvider {
+  protected connect: VKConnect;
+
   /** @ignore */
-  constructor(
-    /** @ignore */
-    protected connect: VKConnect
-  ) {}
+  constructor(customConnect?: VKConnect) {
+    this.connect = customConnect || vkConnect;
+  }
 
   /**
    * Subscribes to listen events and returns unsubscribe function
