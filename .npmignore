@@ -1,0 +1,11 @@
+node_modules/
+temp/
+.rts2_cache*/
+scripts/
+/src/
+
+.prettierrc
+rollup.config.js
+tsconfig.json
+typedoc.json
+*.log
