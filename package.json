@@ -1,6 +1,6 @@
 {
   "name": "@vkontakte/vk-mini-apps-api",
-  "version": "0.0.1-beta.1",
+  "version": "0.0.1-beta.3",
   "description": "VK Mini Apps API",
   "main": "dist/index.js",
   "browser": "dist/index.umd.js",
@@ -11,7 +11,8 @@
   "scripts": {
     "watch": "rollup -c -w",
     "build": "rimraf dist && NODE_ENV=production rollup -c",
-    "doc": "typedoc ./src/index.ts --options ./typedoc.json ./src"
+    "doc": "typedoc ./src/index.ts --options ./typedoc.json ./src",
+    "prepublishOnly": "npm run build"
   },
   "repository": "https://github.com/vkcom/vk-mini-apps-api",
   "author": "vk.com",
