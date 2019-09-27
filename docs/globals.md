@@ -1,5 +1,5 @@
 
-# vk-mini-apps-api
+# @vkontakte/vk-mini-apps-api
 
 ## Index
 
