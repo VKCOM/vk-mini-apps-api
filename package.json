@@ -1,6 +1,6 @@
 {
-  "name": "vk-mini-apps-api",
-  "version": "0.0.1",
+  "name": "@vkontakte/vk-mini-apps-api",
+  "version": "0.0.1-beta.0",
   "description": "VK Mini Apps API",
   "main": "dist/index.js",
   "browser": "dist/index.umd.js",
@@ -31,7 +31,7 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-typescript2": "^0.24.2",
     "rollup-plugin-uglify": "^6.0.3",
-    "ts-node": "^8.3.0",
+    "ts-node": "^8.4.1",
     "typedoc": "^0.15.0",
     "typedoc-plugin-markdown": "^2.1.4",
     "typescript": "^3.6.3"
