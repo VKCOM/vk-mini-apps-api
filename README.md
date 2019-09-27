@@ -31,6 +31,9 @@ import { VKMiniAppAPI } from '@vkontakte/vk-mini-apps-api';
 // Creating API instance
 const api = new VKMiniAppAPI();
 
+// Initializing app
+api.initApp();
+
 // Using methods
 api.getUserInfo().then(userInfo => {
   console.log(userInfo.id);
@@ -47,6 +50,9 @@ For use in a browser, include the file [dist/index.umd.js](http://unpkg.com/@vko
 
   // Creating API instance
   const api = new VKMiniAppAPI();
+
+  // Initializing app
+  api.initApp();
 
   // Using methods
   api.getUserInfo().then(userInfo => {
