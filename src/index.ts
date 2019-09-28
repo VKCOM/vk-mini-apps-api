@@ -625,32 +625,6 @@ export class VKMiniAppAPI extends VKConnectProvider {
   };
 
   /**
-   * Subscribes a function for listening the `VKWebAppInitAds` event.
-   *
-   * @category Advertisement
-   * @event VKWebAppInitAds
-   * @platform iOS, Android, Web
-   *
-   * @param callback Function to pass received data
-   * @returns function for unsubscribe
-   */
-  public onInitAds = (callback: (data: VKConnect.ReceiveData<'VKWebAppInitAds'>) => void) =>
-    this.subscribeEvent('VKWebAppInitAds', callback);
-
-  /**
-   * Subscribes a function for listening the `VKWebAppLoadAds` event.
-   *
-   * @category Advertisement
-   * @event VKWebAppLoadAds
-   * @platform iOS, Android, Web
-   *
-   * @param callback Function to pass received data
-   * @returns function for unsubscribe
-   */
-  public onLoadAds = (callback: (data: VKConnect.ReceiveData<'VKWebAppLoadAds'>) => void) =>
-    this.subscribeEvent('VKWebAppLoadAds', callback);
-
-  /**
    * Requests payment to a specified user of the specified amount via VK Pay
    *
    * @category VK Pay
@@ -787,58 +761,6 @@ export class VKMiniAppAPI extends VKConnectProvider {
   public flashSetLevel = async (level: number): Promise<void> => {
     await this.connect.sendPromise('VKWebAppFlashSetLevel', { level });
   };
-
-  /**
-   * Subscribes a function for listening the `VKWebAppAudioPaused` event.
-   *
-   * @category Audio
-   * @event VKWebAppAudioPaused
-   * @platform iOS, Android
-   *
-   * @param callback Function to pass received data
-   * @returns function for unsubscribe
-   */
-  public onAudioPaused = (callback: (data: VKConnect.ReceiveData<'VKWebAppAudioPaused'>) => void) =>
-    this.subscribeEvent('VKWebAppAudioPaused', callback);
-
-  /**
-   * Subscribes a function for listening the `VKWebAppAudioStopped` event.
-   *
-   * @category Audio
-   * @event VKWebAppAudioStopped
-   * @platform iOS, Android
-   *
-   * @param callback Function to pass received data
-   * @returns function for unsubscribe
-   */
-  public onAudioStopped = (callback: (data: VKConnect.ReceiveData<'VKWebAppAudioStopped'>) => void) =>
-    this.subscribeEvent('VKWebAppAudioStopped', callback);
-
-  /**
-   * Subscribes a function for listening the `VKWebAppAudioTrackChanged` event.
-   *
-   * @category Audio
-   * @event VKWebAppAudioTrackChanged
-   * @platform iOS, Android
-   *
-   * @param callback Function to pass received data
-   * @returns function for unsubscribe
-   */
-  public onAudioTrackChanged = (callback: (data: VKConnect.ReceiveData<'VKWebAppAudioTrackChanged'>) => void) =>
-    this.subscribeEvent('VKWebAppAudioTrackChanged', callback);
-
-  /**
-   * Subscribes a function for listening the `VKWebAppAudioUnpaused` event.
-   *
-   * @category Audio
-   * @event VKWebAppAudioUnpaused
-   * @platform iOS, Android
-   *
-   * @param callback Function to pass received data
-   * @returns function for unsubscribe
-   */
-  public onAudioUnpaused = (callback: (data: VKConnect.ReceiveData<'VKWebAppAudioUnpaused'>) => void) =>
-    this.subscribeEvent('VKWebAppAudioUnpaused', callback);
 
   /**
    * Opens friends list for inviting to the app
