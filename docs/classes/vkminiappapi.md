@@ -488,7 +488,7 @@ ___
 
 ▸ **allowCommunityMessages**(`communityId`: number, `key?`: undefined | string): *Promise‹void›*
 
-Asks user for permission to send messages from a the community
+Asks user for permission to send messages from a community
 
 **Parameters:**
 
@@ -505,7 +505,7 @@ ___
 
 ▸ **allowCommunityNotifications**(): *Promise‹void›*
 
-Asks the user for permission to send messages from a the community
+Asks user for permission to send notifications from a community
 
 **Returns:** *Promise‹void›*
 

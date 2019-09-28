@@ -434,7 +434,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
   };
 
   /**
-   * Asks user for permission to send messages from a the community
+   * Asks user for permission to send messages from a community
    *
    * @category Community
    * @event VKWebAppAllowMessagesFromGroup
@@ -453,7 +453,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
   };
 
   /**
-   * Asks the user for permission to send messages from a the community
+   * Asks user for permission to send notifications from a community
    *
    * @category Community
    * @event VKWebAppAllowNotifications
