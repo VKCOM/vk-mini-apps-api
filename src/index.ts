@@ -414,6 +414,17 @@ export class VKMiniAppAPI extends VKConnectProvider {
   };
 
   /**
+   * Asks user for permission to send notifications from app
+   *
+   * @category Common
+   * @event VKWebAppAllowNotifications
+   * @platform iOS, Android, Web
+   */
+  public allowNotifications = async (): Promise<void> => {
+    await this.connect.sendPromise('VKWebAppAllowNotifications');
+  };
+
+  /**
    * Request to add the app to a community. Opens a community selection dialog
    *
    * @remarks
@@ -450,17 +461,6 @@ export class VKMiniAppAPI extends VKConnectProvider {
       group_id: communityId,
       key
     });
-  };
-
-  /**
-   * Asks user for permission to send notifications from a community
-   *
-   * @category Community
-   * @event VKWebAppAllowNotifications
-   * @platform iOS, Android, Web
-   */
-  public allowCommunityNotifications = async (): Promise<void> => {
-    await this.connect.sendPromise('VKWebAppAllowNotifications');
   };
 
   /**

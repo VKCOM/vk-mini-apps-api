@@ -18,6 +18,7 @@ VK Mini apps API. Contains all VK Connect methods separated by categories
 ### Common Methods
 
 * [addToFavorites](vkminiappapi.md#addtofavorites)
+* [allowNotifications](vkminiappapi.md#allownotifications)
 * [callAPIMethod](vkminiappapi.md#callapimethod)
 * [closeApp](vkminiappapi.md#closeapp)
 * [denyNotifications](vkminiappapi.md#denynotifications)
@@ -44,7 +45,6 @@ VK Mini apps API. Contains all VK Connect methods separated by categories
 
 * [addAppToCommunity](vkminiappapi.md#addapptocommunity)
 * [allowCommunityMessages](vkminiappapi.md#allowcommunitymessages)
-* [allowCommunityNotifications](vkminiappapi.md#allowcommunitynotifications)
 * [getCommunityToken](vkminiappapi.md#getcommunitytoken)
 * [joinCommunity](vkminiappapi.md#joincommunity)
 * [sendPayloadToCommunity](vkminiappapi.md#sendpayloadtocommunity)
@@ -108,6 +108,16 @@ Initializes the VK Mini App. Must be called before using any API method
 ▸ **addToFavorites**(): *Promise‹void›*
 
 Requests adding the app to favorites
+
+**Returns:** *Promise‹void›*
+
+___
+
+### <a id="allownotifications" name="allownotifications"></a>  allowNotifications
+
+▸ **allowNotifications**(): *Promise‹void›*
+
+Asks user for permission to send notifications from app
 
 **Returns:** *Promise‹void›*
 
@@ -496,16 +506,6 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `communityId` | number | Id of a community to request permissions for |
 `key?` | undefined &#124; string | - |
-
-**Returns:** *Promise‹void›*
-
-___
-
-### <a id="allowcommunitynotifications" name="allowcommunitynotifications"></a>  allowCommunityNotifications
-
-▸ **allowCommunityNotifications**(): *Promise‹void›*
-
-Asks user for permission to send notifications from a community
 
 **Returns:** *Promise‹void›*
 
