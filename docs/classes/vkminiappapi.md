@@ -30,9 +30,6 @@ VK Mini apps API. Contains all VK Connect methods separated by categories
 * [getPersonalCard](vkminiappapi.md#getpersonalcard)
 * [getPhoneNumber](vkminiappapi.md#getphonenumber)
 * [getUserInfo](vkminiappapi.md#getuserinfo)
-* [onUpdateConfig](vkminiappapi.md#onupdateconfig)
-* [onViewHide](vkminiappapi.md#onviewhide)
-* [onViewRestore](vkminiappapi.md#onviewrestore)
 * [openApp](vkminiappapi.md#openapp)
 * [openCodeReader](vkminiappapi.md#opencodereader)
 * [openContacts](vkminiappapi.md#opencontacts)
@@ -68,6 +65,12 @@ VK Mini apps API. Contains all VK Connect methods separated by categories
 * [scrollTo](vkminiappapi.md#scrollto)
 * [setLocationHash](vkminiappapi.md#setlocationhash)
 * [setViewSettings](vkminiappapi.md#setviewsettings)
+
+### Lifecycle Methods
+
+* [onUpdateConfig](vkminiappapi.md#onupdateconfig)
+* [onViewHide](vkminiappapi.md#onviewhide)
+* [onViewRestore](vkminiappapi.md#onviewrestore)
 
 ### Storage Methods
 
@@ -282,84 +285,6 @@ Requests the main user data
 **Returns:** *Promise‹VKConnect.UserInfo›*
 
 User data
-
-___
-
-### <a id="onupdateconfig" name="onupdateconfig"></a>  onUpdateConfig
-
-▸ **onUpdateConfig**(`callback`: function): *(Anonymous function)*
-
-Subscribes a function for listening the `VKWebAppUpdateConfig` event.
-
-**Parameters:**
-
-▪ **callback**: *function*
-
-Function to pass received data
-
-▸ (`data`: VKConnect.ReceiveData‹"VKWebAppUpdateConfig"›): *void*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`data` | VKConnect.ReceiveData‹"VKWebAppUpdateConfig"› |
-
-**Returns:** *(Anonymous function)*
-
-function for unsubscribe
-
-___
-
-### <a id="onviewhide" name="onviewhide"></a>  onViewHide
-
-▸ **onViewHide**(`callback`: function): *(Anonymous function)*
-
-Subscribes a function for listening the `VKWebAppViewHide` event.
-
-**Parameters:**
-
-▪ **callback**: *function*
-
-Function to pass received data
-
-▸ (`data`: VKConnect.ReceiveData‹"VKWebAppViewHide"›): *void*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`data` | VKConnect.ReceiveData‹"VKWebAppViewHide"› |
-
-**Returns:** *(Anonymous function)*
-
-function for unsubscribe
-
-___
-
-### <a id="onviewrestore" name="onviewrestore"></a>  onViewRestore
-
-▸ **onViewRestore**(`callback`: function): *(Anonymous function)*
-
-Subscribes a function for listening the `VKWebAppViewRestore` event.
-
-**Parameters:**
-
-▪ **callback**: *function*
-
-Function to pass received data
-
-▸ (`data`: VKConnect.ReceiveData‹"VKWebAppViewRestore"›): *void*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`data` | VKConnect.ReceiveData‹"VKWebAppViewRestore"› |
-
-**Returns:** *(Anonymous function)*
-
-function for unsubscribe
 
 ___
 
@@ -754,6 +679,86 @@ Name | Type | Description |
 `actionBarColor?` | undefined &#124; string | - |
 
 **Returns:** *Promise‹void›*
+
+___
+
+## Lifecycle Methods
+
+### <a id="onupdateconfig" name="onupdateconfig"></a>  onUpdateConfig
+
+▸ **onUpdateConfig**(`callback`: function): *(Anonymous function)*
+
+Subscribes a function for listening the `VKWebAppUpdateConfig` event.
+
+**Parameters:**
+
+▪ **callback**: *function*
+
+Function to pass received data
+
+▸ (`data`: VKConnect.ReceiveData‹"VKWebAppUpdateConfig"›): *void*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`data` | VKConnect.ReceiveData‹"VKWebAppUpdateConfig"› |
+
+**Returns:** *(Anonymous function)*
+
+function for unsubscribe
+
+___
+
+### <a id="onviewhide" name="onviewhide"></a>  onViewHide
+
+▸ **onViewHide**(`callback`: function): *(Anonymous function)*
+
+Subscribes a function for listening the `VKWebAppViewHide` event.
+
+**Parameters:**
+
+▪ **callback**: *function*
+
+Function to pass received data
+
+▸ (`data`: VKConnect.ReceiveData‹"VKWebAppViewHide"›): *void*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`data` | VKConnect.ReceiveData‹"VKWebAppViewHide"› |
+
+**Returns:** *(Anonymous function)*
+
+function for unsubscribe
+
+___
+
+### <a id="onviewrestore" name="onviewrestore"></a>  onViewRestore
+
+▸ **onViewRestore**(`callback`: function): *(Anonymous function)*
+
+Subscribes a function for listening the `VKWebAppViewRestore` event.
+
+**Parameters:**
+
+▪ **callback**: *function*
+
+Function to pass received data
+
+▸ (`data`: VKConnect.ReceiveData‹"VKWebAppViewRestore"›): *void*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`data` | VKConnect.ReceiveData‹"VKWebAppViewRestore"› |
+
+**Returns:** *(Anonymous function)*
+
+function for unsubscribe
 
 ___
 

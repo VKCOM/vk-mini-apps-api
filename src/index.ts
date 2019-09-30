@@ -29,7 +29,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
   /**
    * Subscribes a function for listening the `VKWebAppUpdateConfig` event.
    *
-   * @category Common
+   * @category Lifecycle
    * @event VKWebAppUpdateConfig
    * @platform iOS, Android
    *
@@ -42,7 +42,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
   /**
    * Subscribes a function for listening the `VKWebAppViewHide` event.
    *
-   * @category Common
+   * @category Lifecycle
    * @event VKWebAppViewHide
    * @platform iOS, Android
    *
@@ -55,7 +55,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
   /**
    * Subscribes a function for listening the `VKWebAppViewRestore` event.
    *
-   * @category Common
+   * @category Lifecycle
    * @event VKWebAppViewRestore
    * @platform iOS, Android
    *
