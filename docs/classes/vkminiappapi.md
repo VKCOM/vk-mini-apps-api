@@ -36,7 +36,6 @@ VK Mini apps API. Contains all VK Connect methods separated by categories
 * [postToWall](vkminiappapi.md#posttowall)
 * [shareLink](vkminiappapi.md#sharelink)
 * [showImages](vkminiappapi.md#showimages)
-* [showMessageBox](vkminiappapi.md#showmessagebox)
 
 ### Community Methods
 
@@ -384,24 +383,6 @@ Name | Type |
 `start_index?` | undefined &#124; number |
 
 **Returns:** *Promise‹void›*
-
-___
-
-### <a id="showmessagebox" name="showmessagebox"></a>  showMessageBox
-
-▸ **showMessageBox**(`peerId`: number, `message`: string, `attachments?`: string | string | object[], `lat?`: undefined | number, `long?`: undefined | number): *Promise‹object›*
-
-**Parameters:**
-
-Name | Type | Description |
------- | ------ | ------ |
-`peerId` | number | - |
-`message` | string | - |
-`attachments?` | string &#124; string &#124; object[] | - |
-`lat?` | undefined &#124; number | - |
-`long?` | undefined &#124; number |   |
-
-**Returns:** *Promise‹object›*
 
 ___
 

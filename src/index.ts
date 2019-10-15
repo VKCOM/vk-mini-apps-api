@@ -387,33 +387,6 @@ export class VKMiniAppAPI extends VKConnectProvider {
   };
 
   /**
-   *
-   * @category Common
-   *
-   * @todo Describe me
-   * @param peerId
-   * @param message
-   * @param attachments
-   * @param lat
-   * @param long
-   */
-  public showMessageBox = async (
-    peerId: number,
-    message: string,
-    attachments?: string | (string | Attachment)[],
-    lat?: number,
-    long?: number
-  ) => {
-    return this.connect.sendPromise('VKWebAppShowMessageBox', {
-      peer_id: peerId,
-      message,
-      attachment: Array.isArray(attachments) ? prepareAttachments(attachments) : attachments,
-      lat,
-      lng: long
-    });
-  };
-
-  /**
    * Asks user for permission to send notifications from app
    *
    * @category Common
