@@ -611,7 +611,12 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * be shown in payment dialog
    * @returns Payment result data
    */
-  public payToUser = async (amount: number, userId: number, appId: number, description?: string) => {
+  public payToUser = async (
+    amount: number,
+    userId: number,
+    appId: number,
+    description?: string
+  ): Promise<VKConnect.TransactionResult> => {
     const props: VKConnect.VKPayProps<'pay-to-user'> = {
       action: 'pay-to-user',
       app_id: appId,
@@ -622,7 +627,9 @@ export class VKMiniAppAPI extends VKConnectProvider {
       }
     };
 
-    return this.connect.sendPromise('VKWebAppOpenPayForm', props);
+    const resp = await this.connect.sendPromise('VKWebAppOpenPayForm', props);
+
+    return 'result' in resp ? resp.result : resp;
   };
 
   /**
@@ -647,7 +654,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
     appId: number,
     description?: string,
     data?: string
-  ) => {
+  ): Promise<VKConnect.TransactionResult> => {
     const props: VKConnect.VKPayProps<'pay-to-group'> = {
       action: 'pay-to-group',
       app_id: appId,
@@ -659,7 +666,9 @@ export class VKMiniAppAPI extends VKConnectProvider {
       }
     };
 
-    return this.connect.sendPromise('VKWebAppOpenPayForm', props);
+    const resp = await this.connect.sendPromise('VKWebAppOpenPayForm', props);
+
+    return 'result' in resp ? resp.result : resp;
   };
 
   /**
@@ -673,14 +682,16 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param appId App ID
    * @returns Payment result data
    */
-  public transferToUser = async (userId: number, appId: number) => {
+  public transferToUser = async (userId: number, appId: number): Promise<VKConnect.TransactionResult> => {
     const props: VKConnect.VKPayProps<'transfer-to-user'> = {
       action: 'transfer-to-user',
       app_id: appId,
       params: { user_id: userId }
     };
 
-    return this.connect.sendPromise('VKWebAppOpenPayForm', props);
+    const resp = await this.connect.sendPromise('VKWebAppOpenPayForm', props);
+
+    return 'result' in resp ? resp.result : resp;
   };
 
   /**
@@ -694,14 +705,16 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param appId App ID
    * @returns Payment result data
    */
-  public transferToCommunity = async (communityId: number, appId: number) => {
+  public transferToCommunity = async (communityId: number, appId: number): Promise<VKConnect.TransactionResult> => {
     const props: VKConnect.VKPayProps<'transfer-to-group'> = {
       action: 'transfer-to-group',
       app_id: appId,
       params: { group_id: communityId }
     };
 
-    return this.connect.sendPromise('VKWebAppOpenPayForm', props);
+    const resp = await this.connect.sendPromise('VKWebAppOpenPayForm', props);
+
+    return 'result' in resp ? resp.result : resp;
   };
 
   /**

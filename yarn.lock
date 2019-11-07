@@ -148,10 +148,10 @@
   dependencies:
     "@types/node" "*"
 
-"@vkontakte/vk-connect@^1.6.5":
-  version "1.6.5"
-  resolved "https://registry.yarnpkg.com/@vkontakte/vk-connect/-/vk-connect-1.6.5.tgz#9de256d13cd5b69e4de9a134a406e09028e8ad90"
-  integrity sha512-gWnaLh6DAM0crnoZEGentensWd7ZJ9gmuucGFyC6xr3RIbDK7irh3mUrcHViWuTRVHAtqhRg29FvtKITsWCexw==
+"@vkontakte/vk-connect@^1.6.9":
+  version "1.6.9"
+  resolved "https://registry.yarnpkg.com/@vkontakte/vk-connect/-/vk-connect-1.6.9.tgz#fc0d046b6b6ca35891f47bc4bc0a88e6ee3cd313"
+  integrity sha512-Kbl2FjX4XE8/9DIs0mApvQCAnsPjBfplwSSlSquedcn1jHBbzI1OW3Oev1qlY1chE4jhmOOECPJVlUYWAveYtg==
 
 acorn@^7.0.0:
   version "7.0.0"
