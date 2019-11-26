@@ -81,8 +81,8 @@ export class VKMiniAppAPI extends VKConnectProvider {
    *
    * @remarks
    * Please note: that in order to work with the API, you need to transfer the
-   * user access key with the appropriate rights obtained using `getAuthToken`
-   * @see {@link getAuthToken}.
+   * user access key with the appropriate rights obtained using `getAccessToken`
+   * @see {@link getAccessToken}.
    *
    * @category Common
    * @event VKWebAppCallAPIMethod
@@ -114,7 +114,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
   };
 
   /**
-   * Requests user's access.
+   * Requests user's access and returns access token
    *
    * @remarks
    * Please note: the location from which the token is requested must match
@@ -127,7 +127,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param [scope] List of scopes to request access
    * @returns User's access token and list of accessed scopes
    */
-  public getAuthToken = async (
+  public getAccessToken = async (
     appId: number,
     scope?: UserAccessScope[]
   ): Promise<{ accessToken: string; scope?: string[] }> => {
@@ -143,6 +143,17 @@ export class VKMiniAppAPI extends VKConnectProvider {
       scope: data.scope.split(',')
     };
   };
+
+  /**
+   * Alias of `getAccessToken`
+   * @ignore
+   * @deprecated
+   *
+   * @category Common
+   * @event VKWebAppGetAuthToken
+   * @platform iOS, Android, Web
+   */
+  public getAuthToken = this.getAccessToken;
 
   /**
    * Returns client's platform and version
