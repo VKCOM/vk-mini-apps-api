@@ -22,7 +22,7 @@ VK Mini apps API. Contains all VK Connect methods separated by categories
 * [callAPIMethod](vkminiappapi.md#callapimethod)
 * [closeApp](vkminiappapi.md#closeapp)
 * [denyNotifications](vkminiappapi.md#denynotifications)
-* [getAuthToken](vkminiappapi.md#getauthtoken)
+* [getAccessToken](vkminiappapi.md#getaccesstoken)
 * [getClientVersion](vkminiappapi.md#getclientversion)
 * [getEmail](vkminiappapi.md#getemail)
 * [getFriends](vkminiappapi.md#getfriends)
@@ -36,6 +36,7 @@ VK Mini apps API. Contains all VK Connect methods separated by categories
 * [postToWall](vkminiappapi.md#posttowall)
 * [shareLink](vkminiappapi.md#sharelink)
 * [showImages](vkminiappapi.md#showimages)
+* [showStoryBox](vkminiappapi.md#showstorybox)
 
 ### Community Methods
 
@@ -170,11 +171,11 @@ Disallows notifications
 
 ___
 
-### <a id="getauthtoken" name="getauthtoken"></a>  getAuthToken
+### <a id="getaccesstoken" name="getaccesstoken"></a>  getAccessToken
 
-▸ **getAuthToken**(`appId`: number, `scope?`: [UserAccessScope](../globals.md#useraccessscope)[]): *Promise‹object›*
+▸ **getAccessToken**(`appId`: number, `scope?`: [UserAccessScope](../globals.md#useraccessscope)[]): *Promise‹object›*
 
-Requests user's access.
+Requests user's access and returns access token
 
 **Parameters:**
 
@@ -381,6 +382,22 @@ Name | Type |
 ------ | ------ |
 `images` | string[] |
 `start_index?` | undefined &#124; number |
+
+**Returns:** *Promise‹void›*
+
+___
+
+### <a id="showstorybox" name="showstorybox"></a>  showStoryBox
+
+▸ **showStoryBox**(`storyOptions`: VKConnect.ShowStoryBoxOptions): *Promise‹void›*
+
+Opens story editor
+
+**Parameters:**
+
+Name | Type | Description |
+------ | ------ | ------ |
+`storyOptions` | VKConnect.ShowStoryBoxOptions | Open story options  |
 
 **Returns:** *Promise‹void›*
 
@@ -863,7 +880,7 @@ ___
 
 ### <a id="paytocommunity" name="paytocommunity"></a>  payToCommunity
 
-▸ **payToCommunity**(`amount`: number, `communityId`: number, `appId`: number, `description?`: undefined | string, `data?`: undefined | string): *Promise‹object›*
+▸ **payToCommunity**(`amount`: number, `communityId`: number, `appId`: number, `description?`: undefined | string, `data?`: undefined | string): *Promise‹VKConnect.TransactionResult›*
 
 Requests payment to a specified community of the specified amount
 via VK Pay
@@ -878,7 +895,7 @@ Name | Type | Description |
 `description?` | undefined &#124; string | - |
 `data?` | undefined &#124; string | - |
 
-**Returns:** *Promise‹object›*
+**Returns:** *Promise‹VKConnect.TransactionResult›*
 
 Payment result data
 
@@ -886,7 +903,7 @@ ___
 
 ### <a id="paytouser" name="paytouser"></a>  payToUser
 
-▸ **payToUser**(`amount`: number, `userId`: number, `appId`: number, `description?`: undefined | string): *Promise‹object›*
+▸ **payToUser**(`amount`: number, `userId`: number, `appId`: number, `description?`: undefined | string): *Promise‹VKConnect.TransactionResult›*
 
 Requests payment to a specified user of the specified amount via VK Pay
 
@@ -899,7 +916,7 @@ Name | Type | Description |
 `appId` | number | App ID |
 `description?` | undefined &#124; string | - |
 
-**Returns:** *Promise‹object›*
+**Returns:** *Promise‹VKConnect.TransactionResult›*
 
 Payment result data
 
@@ -907,7 +924,7 @@ ___
 
 ### <a id="transfertocommunity" name="transfertocommunity"></a>  transferToCommunity
 
-▸ **transferToCommunity**(`communityId`: number, `appId`: number): *Promise‹object›*
+▸ **transferToCommunity**(`communityId`: number, `appId`: number): *Promise‹VKConnect.TransactionResult›*
 
 Requests transfer an arbitrary amount to a specified community
 
@@ -918,7 +935,7 @@ Name | Type | Description |
 `communityId` | number | Community ID |
 `appId` | number | App ID |
 
-**Returns:** *Promise‹object›*
+**Returns:** *Promise‹VKConnect.TransactionResult›*
 
 Payment result data
 
@@ -926,7 +943,7 @@ ___
 
 ### <a id="transfertouser" name="transfertouser"></a>  transferToUser
 
-▸ **transferToUser**(`userId`: number, `appId`: number): *Promise‹object›*
+▸ **transferToUser**(`userId`: number, `appId`: number): *Promise‹VKConnect.TransactionResult›*
 
 Requests transfer an arbitrary amount to a specified user
 
@@ -937,6 +954,6 @@ Name | Type | Description |
 `userId` | number | User ID to transfer |
 `appId` | number | App ID |
 
-**Returns:** *Promise‹object›*
+**Returns:** *Promise‹VKConnect.TransactionResult›*
 
 Payment result data
