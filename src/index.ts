@@ -409,6 +409,19 @@ export class VKMiniAppAPI extends VKConnectProvider {
   };
 
   /**
+   * Opens story editor
+   *
+   * @category Common
+   * @event VKWebAppShowStoryBox
+   * @platform iOS, Android, Web
+   *
+   * @param storyOptions Open story options
+   */
+  public showStoryBox = async (storyOptions: VKConnect.ShowStoryBoxOptions): Promise<void> => {
+    await this.connect.sendPromise('VKWebAppShowStoryBox', storyOptions);
+  };
+
+  /**
    * Request to add the app to a community. Opens a community selection dialog
    *
    * @remarks
