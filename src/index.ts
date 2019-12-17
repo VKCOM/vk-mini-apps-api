@@ -613,11 +613,17 @@ export class VKMiniAppAPI extends VKConnectProvider {
    *
    * @param statusBarStyle Status bar style type: `light` or `dark`
    * @param [actionBarColor] HEX Color of action bar
+   * @param [navigationBarColor] HEX color of navigation bar (Android only)
    */
-  public setViewSettings = async (statusBarStyle: VKConnect.AppearanceType, actionBarColor?: string) => {
+  public setViewSettings = async (
+    statusBarStyle: VKConnect.AppearanceType,
+    actionBarColor?: string,
+    navigationBarColor?: string
+  ) => {
     await this.connect.sendPromise('VKWebAppSetViewSettings', {
       status_bar_style: statusBarStyle,
-      action_bar_color: actionBarColor
+      action_bar_color: actionBarColor,
+      navigation_bar_color: navigationBarColor
     });
   };
 
