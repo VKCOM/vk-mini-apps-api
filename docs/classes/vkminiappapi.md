@@ -173,7 +173,7 @@ ___
 
 ### <a id="getaccesstoken" name="getaccesstoken"></a>  getAccessToken
 
-▸ **getAccessToken**(`appId`: number, `scope?`: [UserAccessScope](../globals.md#useraccessscope)[]): *Promise‹object›*
+▸ **getAccessToken**(`appId`: number, `scope?`: [UserAccessScope](../globals.md#useraccessscope)[] | string): *Promise‹object›*
 
 Requests user's access and returns access token
 
@@ -182,7 +182,7 @@ Requests user's access and returns access token
 Name | Type |
 ------ | ------ |
 `appId` | number |
-`scope?` | [UserAccessScope](../globals.md#useraccessscope)[] |
+`scope?` | [UserAccessScope](../globals.md#useraccessscope)[] &#124; string |
 
 **Returns:** *Promise‹object›*
 

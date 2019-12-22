@@ -129,13 +129,13 @@ export class VKMiniAppAPI extends VKConnectProvider {
    */
   public getAccessToken = async (
     appId: number,
-    scope?: UserAccessScope[]
+    scope?: UserAccessScope[] | string
   ): Promise<{ accessToken: string; scope?: string[] }> => {
-    const strScope = Array.isArray(scope) ? scope.join(',') : '';
+    const strScope = Array.isArray(scope) ? scope.join(',') : scope;
 
     const data = await this.connect.sendPromise('VKWebAppGetAuthToken', {
       app_id: appId,
-      scope: strScope
+      scope: strScope != null ? strScope : ''
     });
 
     return {
