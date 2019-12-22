@@ -91,7 +91,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param method API method name
    * @param params Parameters of the method, including access token
    */
-  public callAPIMethod = async (method: string, params: Record<string, string | number>): Promise<any[]> => {
+  public callAPIMethod = async (method: string, params: Record<string, string | number>): Promise<any> => {
     const data = await this.connect.sendPromise('VKWebAppCallAPIMethod', {
       method,
       params

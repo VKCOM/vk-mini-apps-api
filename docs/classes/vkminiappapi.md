@@ -128,7 +128,7 @@ ___
 
 ### <a id="callapimethod" name="callapimethod"></a>  callAPIMethod
 
-▸ **callAPIMethod**(`method`: string, `params`: Record‹string, string | number›): *Promise‹any[]›*
+▸ **callAPIMethod**(`method`: string, `params`: Record‹string, string | number›): *Promise‹any›*
 
 Allows you to call a VK API method on behalf of the application.
 
@@ -139,7 +139,7 @@ Name | Type | Description |
 `method` | string | API method name |
 `params` | Record‹string, string &#124; number› | Parameters of the method, including access token  |
 
-**Returns:** *Promise‹any[]›*
+**Returns:** *Promise‹any›*
 
 ___
 
@@ -665,7 +665,7 @@ ___
 
 ### <a id="setviewsettings" name="setviewsettings"></a>  setViewSettings
 
-▸ **setViewSettings**(`statusBarStyle`: VKConnect.AppearanceType, `actionBarColor?`: undefined | string): *Promise‹void›*
+▸ **setViewSettings**(`statusBarStyle`: VKConnect.AppearanceType, `actionBarColor?`: undefined | string, `navigationBarColor?`: undefined | string): *Promise‹void›*
 
 Changes the appearance of the mini app interface in mobile clients
 
@@ -675,6 +675,7 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `statusBarStyle` | VKConnect.AppearanceType | Status bar style type: `light` or `dark` |
 `actionBarColor?` | undefined &#124; string | - |
+`navigationBarColor?` | undefined &#124; string | - |
 
 **Returns:** *Promise‹void›*
 
