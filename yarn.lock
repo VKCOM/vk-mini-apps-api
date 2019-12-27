@@ -152,10 +152,10 @@
   dependencies:
     "@types/node" "*"
 
-"@vkontakte/vk-connect@^1.7.0":
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/@vkontakte/vk-connect/-/vk-connect-1.7.0.tgz#a29de84c9705baad9fb3a3959a0fba7a7c226fbc"
-  integrity sha512-z99N7KCZreP9aI0VtemHTPJmVC8YWCvagtgcFhk3oFmke1LoqF7BkYkA+Snk1XH6888X04q7ZtW4bClPVLC/Fw==
+"@vkontakte/vk-connect@^1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@vkontakte/vk-connect/-/vk-connect-1.7.2.tgz#763ecb9af35319e33844fcce8e6c3e30880c9a94"
+  integrity sha512-Pt9V9DSGOJ0RUWSTU26YJ9cVMytJ5TW9mhhUlala5f+4wq4Zbn4OdBZJJAB49nGF6yIbGD9a6HkZknhddlMaDw==
 
 acorn@^7.1.0:
   version "7.1.0"
@@ -907,6 +907,11 @@ wrappy@1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
   integrity sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
+
+yarn@^1.21.1:
+  version "1.21.1"
+  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.21.1.tgz#1d5da01a9a03492dc4a5957befc1fd12da83d89c"
+  integrity sha512-dQgmJv676X/NQczpbiDtc2hsE/pppGDJAzwlRiADMTvFzYbdxPj2WO4PcNyriSt2c4jsCMpt8UFRKHUozt21GQ==
 
 yn@^3.0.0:
   version "3.1.1"
