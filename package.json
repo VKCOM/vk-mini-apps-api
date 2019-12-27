@@ -10,8 +10,8 @@
   "types": "dist/types/index.d.ts",
   "scripts": {
     "watch": "rollup -c -w",
-    "build": "rimraf dist && NODE_ENV=production rollup -c",
-    "doc": "typedoc ./src/index.ts --options ./typedoc.json ./src",
+    "build": "rimraf ./dist && NODE_ENV=production rollup -c",
+    "doc": "rimraf ./docs && typedoc ./src/index.ts --options ./typedoc.json ./src && rimraf ./docs/README.md",
     "prepublishOnly": "yarn build && yarn doc"
   },
   "repository": "https://github.com/vkcom/vk-mini-apps-api",
