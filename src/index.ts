@@ -948,4 +948,61 @@ export class VKMiniAppAPI extends VKConnectProvider {
   public selectionChanged = async () => {
     await this.connect.sendPromise('VKWebAppTapticSelectionChanged');
   };
+
+  /**
+   * Calls `VKWebAppAccelerometerStart` method and subscribes a function for
+   * listening the `VKWebAppAccelerometerChanged` event.
+   *
+   * @category Device sensors
+   * @event VKWebAppAccelerometerChanged
+   * @platform iOS
+   *
+   * @param callback Function to pass received data
+   * @returns function for unsubscribe
+   */
+  public onAccelerometerChanged = (callback: (data: VKConnect.ReceiveData<'VKWebAppAccelerometerChanged'>) => void) =>
+    this.subscribeEvent(
+      'VKWebAppAccelerometerChanged',
+      callback,
+      () => this.connect.send('VKWebAppAccelerometerStart'),
+      () => this.connect.send('VKWebAppAccelerometerStop')
+    );
+
+  /**
+   * Calls `VKWebAppGyroscopeStart` method and subscribes a function for
+   * listening the `VKWebAppGyroscopeChanged` event.
+   *
+   * @category Device sensors
+   * @event VKWebAppGyroscopeChanged
+   * @platform iOS
+   *
+   * @param callback Function to pass received data
+   * @returns function for unsubscribe
+   */
+  public onGyroscopeChanged = (callback: (data: VKConnect.ReceiveData<'VKWebAppGyroscopeChanged'>) => void) =>
+    this.subscribeEvent(
+      'VKWebAppGyroscopeChanged',
+      callback,
+      () => this.connect.send('VKWebAppGyroscopeStart'),
+      () => this.connect.send('VKWebAppGyroscopeStop')
+    );
+
+  /**
+   * Calls `VKWebAppDeviceMotionStart` method and subscribes a function for
+   * listening the `VKWebAppDeviceMotionChanged` event.
+   *
+   * @category Device sensors
+   * @event VKWebAppDeviceMotionChanged
+   * @platform iOS
+   *
+   * @param callback Function to pass received data
+   * @returns function for unsubscribe
+   */
+  public onDeviceMotionChanged = (callback: (data: VKConnect.ReceiveData<'VKWebAppDeviceMotionChanged'>) => void) =>
+    this.subscribeEvent(
+      'VKWebAppDeviceMotionChanged',
+      callback,
+      () => this.connect.send('VKWebAppDeviceMotionStart'),
+      () => this.connect.send('VKWebAppDeviceMotionStop')
+    );
 }

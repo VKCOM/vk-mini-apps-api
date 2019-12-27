@@ -12,7 +12,12 @@ export abstract class VKConnectProvider {
   /**
    * Subscribes to listen events and returns unsubscribe function
    */
-  protected subscribeEvent<T extends ReceiveMethodName>(methodName: T, callback: (data: ReceiveData<T>) => void) {
+  protected subscribeEvent<T extends ReceiveMethodName>(
+    methodName: T,
+    callback: (data: ReceiveData<T>) => void,
+    onSubscribe?: () => void,
+    onUnsubscribe?: () => void
+  ) {
     const fn = (event: VKConnectEvent<ReceiveMethodName>) => {
       if (
         event.detail &&
@@ -25,7 +30,16 @@ export abstract class VKConnectProvider {
     };
 
     this.connect.subscribe(fn);
+    if (onSubscribe) {
+      onSubscribe();
+    }
 
-    return () => this.connect.unsubscribe(fn);
+    return () => {
+      this.connect.unsubscribe(fn);
+
+      if (onUnsubscribe) {
+        onUnsubscribe();
+      }
+    };
   }
 }

@@ -47,6 +47,12 @@ VK Mini apps API. Contains all VK Connect methods separated by categories
 * [sendPayloadToCommunity](vkminiappapi.md#sendpayloadtocommunity)
 * [showCommunityWidgetPreviewBox](vkminiappapi.md#showcommunitywidgetpreviewbox)
 
+### Device sensors Methods
+
+* [onAccelerometerChanged](vkminiappapi.md#onaccelerometerchanged)
+* [onDeviceMotionChanged](vkminiappapi.md#ondevicemotionchanged)
+* [onGyroscopeChanged](vkminiappapi.md#ongyroscopechanged)
+
 ### Direct Games Methods
 
 * [showInviteBox](vkminiappapi.md#showinvitebox)
@@ -508,6 +514,89 @@ Name | Type |
 `code` | string |
 
 **Returns:** *Promise‹void›*
+
+___
+
+## Device sensors Methods
+
+### <a id="onaccelerometerchanged" name="onaccelerometerchanged"></a>  onAccelerometerChanged
+
+▸ **onAccelerometerChanged**(`callback`: function): *(Anonymous function)*
+
+Calls `VKWebAppAccelerometerStart` method and subscribes a function for
+listening the `VKWebAppAccelerometerChanged` event.
+
+**Parameters:**
+
+▪ **callback**: *function*
+
+Function to pass received data
+
+▸ (`data`: VKConnect.ReceiveData‹"VKWebAppAccelerometerChanged"›): *void*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`data` | VKConnect.ReceiveData‹"VKWebAppAccelerometerChanged"› |
+
+**Returns:** *(Anonymous function)*
+
+function for unsubscribe
+
+___
+
+### <a id="ondevicemotionchanged" name="ondevicemotionchanged"></a>  onDeviceMotionChanged
+
+▸ **onDeviceMotionChanged**(`callback`: function): *(Anonymous function)*
+
+Calls `VKWebAppDeviceMotionStart` method and subscribes a function for
+listening the `VKWebAppDeviceMotionChanged` event.
+
+**Parameters:**
+
+▪ **callback**: *function*
+
+Function to pass received data
+
+▸ (`data`: VKConnect.ReceiveData‹"VKWebAppDeviceMotionChanged"›): *void*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`data` | VKConnect.ReceiveData‹"VKWebAppDeviceMotionChanged"› |
+
+**Returns:** *(Anonymous function)*
+
+function for unsubscribe
+
+___
+
+### <a id="ongyroscopechanged" name="ongyroscopechanged"></a>  onGyroscopeChanged
+
+▸ **onGyroscopeChanged**(`callback`: function): *(Anonymous function)*
+
+Calls `VKWebAppGyroscopeStart` method and subscribes a function for
+listening the `VKWebAppGyroscopeChanged` event.
+
+**Parameters:**
+
+▪ **callback**: *function*
+
+Function to pass received data
+
+▸ (`data`: VKConnect.ReceiveData‹"VKWebAppGyroscopeChanged"›): *void*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`data` | VKConnect.ReceiveData‹"VKWebAppGyroscopeChanged"› |
+
+**Returns:** *(Anonymous function)*
+
+function for unsubscribe
 
 ___
 
