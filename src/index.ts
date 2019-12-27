@@ -34,7 +34,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @platform iOS, Android
    *
    * @param callback Function to pass received data
-   * @returns function for unsubscribe
+   * @returns Function for unsubscribe
    */
   public onUpdateConfig = (callback: (data: VKConnect.ReceiveData<'VKWebAppUpdateConfig'>) => void) =>
     this.subscribeEvent('VKWebAppUpdateConfig', callback);
@@ -47,7 +47,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @platform iOS, Android
    *
    * @param callback Function to pass received data
-   * @returns function for unsubscribe
+   * @returns Function for unsubscribe
    */
   public onViewHide = (callback: (data: VKConnect.ReceiveData<'VKWebAppViewHide'>) => void) =>
     this.subscribeEvent('VKWebAppViewHide', callback);
@@ -60,7 +60,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @platform iOS, Android
    *
    * @param callback Function to pass received data
-   * @returns function for unsubscribe
+   * @returns Function for unsubscribe
    */
   public onViewRestore = (callback: (data: VKConnect.ReceiveData<'VKWebAppViewRestore'>) => void) =>
     this.subscribeEvent('VKWebAppViewRestore', callback);
@@ -958,7 +958,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @platform iOS
    *
    * @param callback Function to pass received data
-   * @returns function for unsubscribe
+   * @returns Function for unsubscribe
    */
   public onAccelerometerChanged = (callback: (data: VKConnect.ReceiveData<'VKWebAppAccelerometerChanged'>) => void) =>
     this.subscribeEvent(
@@ -977,7 +977,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @platform iOS
    *
    * @param callback Function to pass received data
-   * @returns function for unsubscribe
+   * @returns Function for unsubscribe
    */
   public onGyroscopeChanged = (callback: (data: VKConnect.ReceiveData<'VKWebAppGyroscopeChanged'>) => void) =>
     this.subscribeEvent(
@@ -996,7 +996,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @platform iOS
    *
    * @param callback Function to pass received data
-   * @returns function for unsubscribe
+   * @returns Function for unsubscribe
    */
   public onDeviceMotionChanged = (callback: (data: VKConnect.ReceiveData<'VKWebAppDeviceMotionChanged'>) => void) =>
     this.subscribeEvent(
