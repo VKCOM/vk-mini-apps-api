@@ -2,7 +2,10 @@ import vkConnect, { VKConnect, VKConnectEvent, ReceiveMethodName, ReceiveData } 
 
 /** @ignore */
 export abstract class VKConnectProvider {
-  protected connect: VKConnect;
+  /**
+   * VK Connect interface
+   */
+  public connect: VKConnect;
 
   /** @ignore */
   constructor(customConnect?: VKConnect) {
