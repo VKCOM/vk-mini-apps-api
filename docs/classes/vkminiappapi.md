@@ -15,6 +15,10 @@ VK Mini apps API. Contains all VK Connect methods separated by categories
 
 * [initApp](vkminiappapi.md#initapp)
 
+### Properties
+
+* [connect](vkminiappapi.md#connect)
+
 ### Common Methods
 
 * [addToFavorites](vkminiappapi.md#addtofavorites)
@@ -109,6 +113,16 @@ Initializes the VK Mini App. Must be called before using any API method
 **`platform`** iOS, Android, Web
 
 **Returns:** *void*
+
+## Properties
+
+### <a id="connect" name="connect"></a>  connect
+
+• **connect**: *VKConnect*
+
+*Inherited from void*
+
+VK Connect interface
 
 ## Common Methods
 
@@ -542,7 +556,7 @@ Name | Type |
 
 **Returns:** *(Anonymous function)*
 
-function for unsubscribe
+Function for unsubscribe
 
 ___
 
@@ -569,7 +583,7 @@ Name | Type |
 
 **Returns:** *(Anonymous function)*
 
-function for unsubscribe
+Function for unsubscribe
 
 ___
 
@@ -596,7 +610,7 @@ Name | Type |
 
 **Returns:** *(Anonymous function)*
 
-function for unsubscribe
+Function for unsubscribe
 
 ___
 
@@ -794,7 +808,7 @@ Name | Type |
 
 **Returns:** *(Anonymous function)*
 
-function for unsubscribe
+Function for unsubscribe
 
 ___
 
@@ -820,7 +834,7 @@ Name | Type |
 
 **Returns:** *(Anonymous function)*
 
-function for unsubscribe
+Function for unsubscribe
 
 ___
 
@@ -846,7 +860,7 @@ Name | Type |
 
 **Returns:** *(Anonymous function)*
 
-function for unsubscribe
+Function for unsubscribe
 
 ___
 
