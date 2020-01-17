@@ -78,6 +78,7 @@ VK Mini apps API. Contains all VK Connect methods separated by categories
 
 ### Lifecycle Methods
 
+* [onLocationChanged](vkminiappapi.md#onlocationchanged)
 * [onUpdateConfig](vkminiappapi.md#onupdateconfig)
 * [onViewHide](vkminiappapi.md#onviewhide)
 * [onViewRestore](vkminiappapi.md#onviewrestore)
@@ -785,6 +786,32 @@ Name | Type | Description |
 ___
 
 ## Lifecycle Methods
+
+### <a id="onlocationchanged" name="onlocationchanged"></a>  onLocationChanged
+
+▸ **onLocationChanged**(`callback`: function): *(Anonymous function)*
+
+Subscribes a function for listening the `VKWebAppLocationChanged` event.
+
+**Parameters:**
+
+▪ **callback**: *function*
+
+Function to pass received data
+
+▸ (`data`: VKConnect.ReceiveData‹"VKWebAppLocationChanged"›): *void*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`data` | VKConnect.ReceiveData‹"VKWebAppLocationChanged"› |
+
+**Returns:** *(Anonymous function)*
+
+Function for unsubscribe
+
+___
 
 ### <a id="onupdateconfig" name="onupdateconfig"></a>  onUpdateConfig
 
