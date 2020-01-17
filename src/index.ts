@@ -66,15 +66,17 @@ export class VKMiniAppAPI extends VKConnectProvider {
     this.subscribeEvent('VKWebAppViewRestore', callback);
 
   /**
-   * Disallows notifications
+   * Subscribes a function for listening the `VKWebAppLocationChanged` event.
    *
-   * @category Common
-   * @event VKWebAppDenyNotifications
-   * @platform iOS, Android, Web
+   * @category Lifecycle
+   * @event VKWebAppLocationChanged
+   * @platform Web, iOS, Android
+   *
+   * @param callback Function to pass received data
+   * @returns Function for unsubscribe
    */
-  public denyNotifications = async (): Promise<void> => {
-    await this.connect.sendPromise('VKWebAppDenyNotifications');
-  };
+  public onLocationChanged = (callback: (data: VKConnect.ReceiveData<'VKWebAppLocationChanged'>) => void) =>
+    this.subscribeEvent('VKWebAppLocationChanged', callback);
 
   /**
    * Allows you to call a VK API method on behalf of the application.
@@ -406,6 +408,17 @@ export class VKMiniAppAPI extends VKConnectProvider {
    */
   public allowNotifications = async (): Promise<void> => {
     await this.connect.sendPromise('VKWebAppAllowNotifications');
+  };
+
+  /**
+   * Disallows notifications
+   *
+   * @category Common
+   * @event VKWebAppDenyNotifications
+   * @platform iOS, Android, Web
+   */
+  public denyNotifications = async (): Promise<void> => {
+    await this.connect.sendPromise('VKWebAppDenyNotifications');
   };
 
   /**
