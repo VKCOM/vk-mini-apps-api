@@ -18,7 +18,7 @@
   "author": "vk.com",
   "license": "MIT",
   "dependencies": {
-    "@vkontakte/vk-connect": "^1.8.3"
+    "@vkontakte/vk-connect": "^1.8.4"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",

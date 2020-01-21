@@ -40,7 +40,6 @@ VK Mini apps API. Contains all VK Connect methods separated by categories
 * [postToWall](vkminiappapi.md#posttowall)
 * [shareLink](vkminiappapi.md#sharelink)
 * [showImages](vkminiappapi.md#showimages)
-* [showStoryBox](vkminiappapi.md#showstorybox)
 
 ### Community Methods
 
@@ -89,6 +88,11 @@ VK Mini apps API. Contains all VK Connect methods separated by categories
 * [storageGetKeys](vkminiappapi.md#storagegetkeys)
 * [storageGetMultiple](vkminiappapi.md#storagegetmultiple)
 * [storageSet](vkminiappapi.md#storageset)
+
+### Stories Methods
+
+* [showStoryBox](vkminiappapi.md#showstorybox)
+* [subscribeStoryApp](vkminiappapi.md#subscribestoryapp)
 
 ### Taptic Engine Methods
 
@@ -403,22 +407,6 @@ Name | Type |
 ------ | ------ |
 `images` | string[] |
 `start_index?` | undefined &#124; number |
-
-**Returns:** *Promise‹void›*
-
-___
-
-### <a id="showstorybox" name="showstorybox"></a>  showStoryBox
-
-▸ **showStoryBox**(`storyOptions`: VKConnect.ShowStoryBoxOptions): *Promise‹void›*
-
-Opens story editor
-
-**Parameters:**
-
-Name | Type | Description |
------- | ------ | ------ |
-`storyOptions` | VKConnect.ShowStoryBoxOptions | Open story options  |
 
 **Returns:** *Promise‹void›*
 
@@ -960,6 +948,45 @@ Name | Type | Description |
 `value` | string | Value  |
 
 **Returns:** *Promise‹void›*
+
+___
+
+## Stories Methods
+
+### <a id="showstorybox" name="showstorybox"></a>  showStoryBox
+
+▸ **showStoryBox**(`storyOptions`: VKConnect.ShowStoryBoxOptions): *Promise‹void›*
+
+Opens story editor
+
+**Parameters:**
+
+Name | Type | Description |
+------ | ------ | ------ |
+`storyOptions` | VKConnect.ShowStoryBoxOptions | Open story options  |
+
+**Returns:** *Promise‹void›*
+
+___
+
+### <a id="subscribestoryapp" name="subscribestoryapp"></a>  subscribeStoryApp
+
+▸ **subscribeStoryApp**(`storyOwnerId`: number, `storyId`: number, `stickerId`: number, `accessKey`: string): *Promise‹string›*
+
+Subscribes to a story updates
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`storyOwnerId` | number |
+`storyId` | number |
+`stickerId` | number |
+`accessKey` | string |
+
+**Returns:** *Promise‹string›*
+
+Access key
 
 ___
 

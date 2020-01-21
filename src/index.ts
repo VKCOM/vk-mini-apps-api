@@ -94,7 +94,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param params Parameters of the method, including access token
    */
   public callAPIMethod = async (method: string, params: Record<string, string | number>): Promise<any> => {
-    const data = await this.connect.sendPromise('VKWebAppCallAPIMethod', {
+    const data = await this.connect.send('VKWebAppCallAPIMethod', {
       method,
       params
     });
@@ -112,7 +112,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    */
   public closeApp = async (status: CloseStatus, payload?: any) => {
     // TODO: figure out what openApp's returns
-    await this.connect.sendPromise('VKWebAppClose', { status, payload });
+    await this.connect.send('VKWebAppClose', { status, payload });
   };
 
   /**
@@ -135,7 +135,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
   ): Promise<{ accessToken: string; scope?: string[] }> => {
     const strScope = Array.isArray(scope) ? scope.join(',') : scope;
 
-    const data = await this.connect.sendPromise('VKWebAppGetAuthToken', {
+    const data = await this.connect.send('VKWebAppGetAuthToken', {
       app_id: appId,
       scope: strScope != null ? strScope : ''
     });
@@ -165,7 +165,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @platform iOS, Android, Web
    */
   public getClientVersion = async (): Promise<{ platform: string; version: string }> => {
-    return this.connect.sendPromise('VKWebAppGetClientVersion');
+    return this.connect.send('VKWebAppGetClientVersion');
   };
 
   /**
@@ -179,7 +179,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param locationHash String in location after `#`
    */
   public openApp = async (appId: number, locationHash?: string) => {
-    await this.connect.sendPromise('VKWebAppOpenApp', {
+    await this.connect.send('VKWebAppOpenApp', {
       app_id: appId,
       location: locationHash
     });
@@ -195,7 +195,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns User email and sign of received data
    */
   public getEmail = async (): Promise<{ email: string; sign: string }> => {
-    return this.connect.sendPromise('VKWebAppGetEmail');
+    return this.connect.send('VKWebAppGetEmail');
   };
 
   /**
@@ -209,7 +209,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns List of selected users data
    */
   public getFriends = async (isMultiple?: boolean) => {
-    const data = await this.connect.sendPromise('VKWebAppGetFriends', { multi: isMultiple });
+    const data = await this.connect.send('VKWebAppGetFriends', { multi: isMultiple });
 
     return data.users;
   };
@@ -224,7 +224,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns Object with current user geodata
    */
   public getGeodata = async () => {
-    const data = await this.connect.sendPromise('VKWebAppGetGeodata');
+    const data = await this.connect.send('VKWebAppGetGeodata');
 
     return {
       isAvailable: !!data.available,
@@ -246,7 +246,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns Entered user data
    */
   public getPersonalCard = async (types: VKConnect.PersonalCardType[]): Promise<VKConnect.PersonalCardData> => {
-    return this.connect.sendPromise('VKWebAppGetPersonalCard', { type: types });
+    return this.connect.send('VKWebAppGetPersonalCard', { type: types });
   };
 
   /**
@@ -262,7 +262,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * field name (`phone_number`) and field value.
    */
   public getPhoneNumber = async (): Promise<{ phone: string; sign: string }> => {
-    const data = await this.connect.sendPromise('VKWebAppGetPhoneNumber');
+    const data = await this.connect.send('VKWebAppGetPhoneNumber');
 
     return {
       phone: data.phone_number,
@@ -280,7 +280,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns User data
    */
   public getUserInfo = async (): Promise<VKConnect.UserInfo> => {
-    return this.connect.sendPromise('VKWebAppGetUserInfo');
+    return this.connect.send('VKWebAppGetUserInfo');
   };
 
   /**
@@ -293,7 +293,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns Read data
    */
   public openCodeReader = async (): Promise<string> => {
-    const data = await this.connect.sendPromise('VKWebAppOpenCodeReader');
+    const data = await this.connect.send('VKWebAppOpenCodeReader');
 
     return data.code_data;
   };
@@ -310,7 +310,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns Selected contact
    */
   public openContacts = async (): Promise<{ phone: string; firstName: string; lastName: string }> => {
-    const data = await this.connect.sendPromise('VKWebAppOpenContacts');
+    const data = await this.connect.send('VKWebAppOpenContacts');
 
     return {
       phone: data.phone,
@@ -330,7 +330,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns ID of the post with shared link
    */
   public shareLink = async (message: string) => {
-    const data = await this.connect.sendPromise('VKWebAppShare', { link: message });
+    const data = await this.connect.send('VKWebAppShare', { link: message });
 
     return data;
   };
@@ -343,7 +343,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @platform iOS, Android
    */
   public showImages = async (images: string[], start_index?: number) => {
-    await this.connect.sendPromise('VKWebAppShowImages', { images, start_index });
+    await this.connect.send('VKWebAppShowImages', { images, start_index });
   };
 
   /**
@@ -354,7 +354,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @platform iOS, Android
    */
   public addToFavorites = async () => {
-    await this.connect.sendPromise('VKWebAppAddToFavorites');
+    await this.connect.send('VKWebAppAddToFavorites');
   };
 
   /**
@@ -394,7 +394,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
       })
     };
 
-    const data = await this.connect.sendPromise('VKWebAppShowWallPostBox', params);
+    const data = await this.connect.send('VKWebAppShowWallPostBox', params);
 
     return data.post_id;
   };
@@ -407,7 +407,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @platform iOS, Android, Web
    */
   public allowNotifications = async (): Promise<void> => {
-    await this.connect.sendPromise('VKWebAppAllowNotifications');
+    await this.connect.send('VKWebAppAllowNotifications');
   };
 
   /**
@@ -418,20 +418,46 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @platform iOS, Android, Web
    */
   public denyNotifications = async (): Promise<void> => {
-    await this.connect.sendPromise('VKWebAppDenyNotifications');
+    await this.connect.send('VKWebAppDenyNotifications');
   };
 
   /**
    * Opens story editor
    *
-   * @category Common
+   * @category Stories
    * @event VKWebAppShowStoryBox
    * @platform iOS, Android, Web
    *
    * @param storyOptions Open story options
    */
   public showStoryBox = async (storyOptions: VKConnect.ShowStoryBoxOptions): Promise<void> => {
-    await this.connect.sendPromise('VKWebAppShowStoryBox', storyOptions);
+    await this.connect.send('VKWebAppShowStoryBox', storyOptions);
+  };
+
+  /**
+   * Subscribes to a story updates
+   *
+   * @category Stories
+   * @event VKWebAppSubscribeStoryApp
+   * @platform iOS, Android, Web
+   *
+   *
+   * @param story_owner_id Story owner id
+   * @param story_id Story id
+   * @param sticker_id Clickable sticker id
+   * @param [access_key] Private stories access key
+   *
+   * @returns Access key
+   */
+  public subscribeStoryApp = async (storyOwnerId: number, storyId: number, stickerId: number, accessKey: string) => {
+    const result = await this.connect.send('VKWebAppSubscribeStoryApp', {
+      story_owner_id: storyOwnerId,
+      story_id: storyId,
+      sticker_id: stickerId,
+      access_key: accessKey
+    });
+
+    return result.access_key;
   };
 
   /**
@@ -449,7 +475,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns {Promise<number>} ID of group to which the app was added
    */
   public addAppToCommunity = async (): Promise<number> => {
-    const data = await this.connect.sendPromise('VKWebAppAddToCommunity');
+    const data = await this.connect.send('VKWebAppAddToCommunity');
 
     return data.group_id;
   };
@@ -467,7 +493,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * event.
    */
   public allowCommunityMessages = async (communityId: number, key?: string): Promise<void> => {
-    await this.connect.sendPromise('VKWebAppAllowMessagesFromGroup', {
+    await this.connect.send('VKWebAppAllowMessagesFromGroup', {
       group_id: communityId,
       key
     });
@@ -516,7 +542,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
       throw new Error("Couldn't find available method to get community token");
     }
 
-    const data = await this.connect.sendPromise(availableMethod, {
+    const data = await this.connect.send(availableMethod, {
       app_id: appId,
       group_id: communityId,
       scope: strScope
@@ -535,7 +561,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @platform iOS, Android, Web
    */
   public joinCommunity = async (communityId: number): Promise<void> => {
-    await this.connect.sendPromise('VKWebAppJoinGroup', { group_id: communityId });
+    await this.connect.send('VKWebAppJoinGroup', { group_id: communityId });
   };
 
   /**
@@ -554,7 +580,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param payload Any data to send as JSON
    */
   public sendPayloadToCommunity = async (communityId: number, payload: any) => {
-    await this.connect.sendPromise('VKWebAppSendPayload', {
+    await this.connect.send('VKWebAppSendPayload', {
       group_id: communityId,
       payload
     });
@@ -568,7 +594,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @event VKWebAppShowCommunityWidgetPreviewBox
    */
   public showCommunityWidgetPreviewBox = async (communityId: number, type: VKConnect.WidgetType, code: string) => {
-    const data = await this.connect.sendPromise('VKWebAppShowCommunityWidgetPreviewBox', {
+    const data = await this.connect.send('VKWebAppShowCommunityWidgetPreviewBox', {
       type,
       group_id: communityId,
       code
@@ -588,7 +614,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns Result size of the iframe
    */
   public resizeWindow = async (width: number, height: number): Promise<{ width: number; height: number }> => {
-    return this.connect.sendPromise('VKWebAppResizeWindow', { width, height });
+    return this.connect.send('VKWebAppResizeWindow', { width, height });
   };
 
   /**
@@ -604,7 +630,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns Offset top and height of window after scroll
    */
   public scrollTo = async (offsetTop: number, speed = 0): Promise<{ top: number; height: number }> => {
-    return this.connect.sendPromise('VKWebAppScroll', { top: offsetTop, speed });
+    return this.connect.send('VKWebAppScroll', { top: offsetTop, speed });
   };
 
   /**
@@ -614,7 +640,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @event VKWebAppSetLocation
    */
   public setLocationHash = async (hash: string): Promise<void> => {
-    await this.connect.sendPromise('VKWebAppSetLocation', { location: hash });
+    await this.connect.send('VKWebAppSetLocation', { location: hash });
   };
 
   /**
@@ -633,7 +659,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
     actionBarColor?: string,
     navigationBarColor?: string
   ) => {
-    await this.connect.sendPromise('VKWebAppSetViewSettings', {
+    await this.connect.send('VKWebAppSetViewSettings', {
       status_bar_style: statusBarStyle,
       action_bar_color: actionBarColor,
       navigation_bar_color: navigationBarColor
@@ -670,7 +696,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
       }
     };
 
-    const resp = await this.connect.sendPromise('VKWebAppOpenPayForm', props);
+    const resp = await this.connect.send('VKWebAppOpenPayForm', props);
 
     return 'result' in resp ? resp.result : resp;
   };
@@ -709,7 +735,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
       }
     };
 
-    const resp = await this.connect.sendPromise('VKWebAppOpenPayForm', props);
+    const resp = await this.connect.send('VKWebAppOpenPayForm', props);
 
     return 'result' in resp ? resp.result : resp;
   };
@@ -732,7 +758,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
       params: { user_id: userId }
     };
 
-    const resp = await this.connect.sendPromise('VKWebAppOpenPayForm', props);
+    const resp = await this.connect.send('VKWebAppOpenPayForm', props);
 
     return 'result' in resp ? resp.result : resp;
   };
@@ -755,7 +781,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
       params: { group_id: communityId }
     };
 
-    const resp = await this.connect.sendPromise('VKWebAppOpenPayForm', props);
+    const resp = await this.connect.send('VKWebAppOpenPayForm', props);
 
     return 'result' in resp ? resp.result : resp;
   };
@@ -770,7 +796,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns Availability and level of the flashlight
    */
   public flashGetInfo = async (): Promise<{ isAvailable: boolean; level: number }> => {
-    const data = await this.connect.sendPromise('VKWebAppFlashGetInfo', {});
+    const data = await this.connect.send('VKWebAppFlashGetInfo', {});
 
     return {
       isAvailable: data.is_available,
@@ -788,7 +814,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param level The flashlight level from 0 to 1
    */
   public flashSetLevel = async (level: number): Promise<void> => {
-    await this.connect.sendPromise('VKWebAppFlashSetLevel', { level });
+    await this.connect.send('VKWebAppFlashSetLevel', { level });
   };
 
   /**
@@ -799,7 +825,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @platform iOS, Android
    */
   public showInviteBox = async () => {
-    await this.connect.sendPromise('VKWebAppShowInviteBox');
+    await this.connect.send('VKWebAppShowInviteBox');
   };
 
   /**
@@ -817,7 +843,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param userResult User result
    */
   public showLeaderBoardBox = async (userResult: number) => {
-    await this.connect.sendPromise('VKWebAppShowLeaderBoardBox', {
+    await this.connect.send('VKWebAppShowLeaderBoardBox', {
       user_result: userResult
     });
   };
@@ -833,7 +859,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns Status of ordering
    */
   public showOrderBox = async (itemName: string): Promise<VKConnect.OrderBoxShowingStatus> => {
-    const data = await this.connect.sendPromise('VKWebAppShowOrderBox', {
+    const data = await this.connect.send('VKWebAppShowOrderBox', {
       type: 'item',
       item: itemName
     });
@@ -855,7 +881,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns Success flag and request key
    */
   public showRequestBox = async (userId: number, message: string, requestKey?: string) => {
-    return this.connect.sendPromise('VKWebAppShowRequestBox', { uid: userId, message, requestKey });
+    return this.connect.send('VKWebAppShowRequestBox', { uid: userId, message, requestKey });
   };
 
   /**
@@ -870,7 +896,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns The stored value or empty string if the value is not found
    */
   public storageGet = async (key: string): Promise<string> => {
-    const data = await this.connect.sendPromise('VKWebAppStorageGet', { keys: [key] });
+    const data = await this.connect.send('VKWebAppStorageGet', { keys: [key] });
 
     if (!data || !Array.isArray(data.keys) || data.keys.length === 0) {
       return '';
@@ -891,7 +917,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns Map of key-value
    */
   public storageGetMultiple = async (keys: string[]): Promise<Record<string, string>> => {
-    const data = await this.connect.sendPromise('VKWebAppStorageGet', { keys });
+    const data = await this.connect.send('VKWebAppStorageGet', { keys });
 
     return data && Array.isArray(data.keys) && data.keys.length > 0
       ? data.keys.reduce((acc, item) => ({ ...acc, [item.key]: item.value }), {} as Record<string, string>)
@@ -910,7 +936,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * Default: 0
    */
   public storageGetKeys = async (count: number, offset: number = 0): Promise<string[]> => {
-    const data = await this.connect.sendPromise('VKWebAppStorageGetKeys', { count, offset });
+    const data = await this.connect.send('VKWebAppStorageGetKeys', { count, offset });
 
     return (data && data.keys) || [];
   };
@@ -926,7 +952,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param value Value
    */
   public storageSet = async (key: string, value: string) => {
-    await this.connect.sendPromise('VKWebAppStorageSet', { key, value });
+    await this.connect.send('VKWebAppStorageSet', { key, value });
   };
 
   /**
@@ -937,7 +963,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @platform iOS
    */
   public impactOccurred = async (power: VKConnect.TapticVibrationPowerType = 'medium') => {
-    await this.connect.sendPromise('VKWebAppTapticImpactOccurred', { style: power });
+    await this.connect.send('VKWebAppTapticImpactOccurred', { style: power });
   };
 
   /**
@@ -948,7 +974,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @platform iOS
    */
   public notificationOccurred = async (type: VKConnect.TapticNotificationType) => {
-    await this.connect.sendPromise('VKWebAppTapticNotificationOccurred', { type });
+    await this.connect.send('VKWebAppTapticNotificationOccurred', { type });
   };
 
   /**
@@ -959,7 +985,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @platform iOS
    */
   public selectionChanged = async () => {
-    await this.connect.sendPromise('VKWebAppTapticSelectionChanged');
+    await this.connect.send('VKWebAppTapticSelectionChanged');
   };
 
   /**
