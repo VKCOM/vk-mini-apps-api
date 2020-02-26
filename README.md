@@ -5,9 +5,9 @@
 
 <img width="100" height="100" src="https://avatars3.githubusercontent.com/u/1478241?s=200&v=4" align="right">
 
-Library for quick and efficient development of VK Mini Apps based on [VK Connect](https://github.com/vkcom/vk-connect) methods.
+Library for quick and efficient development of VK Mini Apps based on [VK Bridge](https://github.com/vkcom/vk-bridge) methods.
 
-Unlike VK Connect, VK Mini Apps API already contains all the ready-made Javascript-functionality for interacting with the official clients.
+Unlike VK Bridge, VK Mini Apps API already contains all the ready-made Javascript-functionality for interacting with the official clients.
 
 ## Usage
 
