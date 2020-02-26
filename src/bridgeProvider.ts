@@ -1,15 +1,15 @@
-import vkConnect, { VKConnect, VKConnectEvent, ReceiveMethodName, ReceiveData } from '@vkontakte/vk-connect';
+import bridge, { VKBridge, VKBridgeEvent, ReceiveMethodName, ReceiveData } from '@vkontakte/vk-bridge';
 
 /** @ignore */
-export abstract class VKConnectProvider {
+export abstract class VKBridgeProvider {
   /**
-   * VK Connect interface
+   * VK Bridge interface
    */
-  public connect: VKConnect;
+  public bridge: VKBridge;
 
   /** @ignore */
-  constructor(customConnect?: VKConnect) {
-    this.connect = customConnect || vkConnect;
+  constructor(customBridge?: VKBridge) {
+    this.bridge = customBridge || bridge;
   }
 
   /**
@@ -21,7 +21,7 @@ export abstract class VKConnectProvider {
     onSubscribe?: () => void,
     onUnsubscribe?: () => void
   ) {
-    const fn = (event: VKConnectEvent<ReceiveMethodName>) => {
+    const fn = (event: VKBridgeEvent<ReceiveMethodName>) => {
       if (
         event.detail &&
         event.detail.data &&
@@ -32,13 +32,13 @@ export abstract class VKConnectProvider {
       }
     };
 
-    this.connect.subscribe(fn);
+    this.bridge.subscribe(fn);
     if (onSubscribe) {
       onSubscribe();
     }
 
     return () => {
-      this.connect.unsubscribe(fn);
+      this.bridge.unsubscribe(fn);
 
       if (onUnsubscribe) {
         onUnsubscribe();

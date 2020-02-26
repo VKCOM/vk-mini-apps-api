@@ -1,6 +1,6 @@
-import * as VKConnect from '@vkontakte/vk-connect';
+import * as VKBridge from '@vkontakte/vk-bridge';
 import { CloseStatus, UserAccessScope, Attachment, WallPostOptions, CommunityAccessScope } from './types';
-import { VKConnectProvider } from './connectProvider';
+import { VKBridgeProvider } from './bridgeProvider';
 
 /**
  * Converts attachment list to a attachments string.
@@ -12,9 +12,9 @@ const prepareAttachments = (attachments: (string | Attachment)[]): string =>
   attachments.map(item => (typeof item === 'string' ? item : item.type + item.ownerId + '_' + item.mediaId)).join(',');
 
 /**
- * VK Mini apps API. Contains all VK Connect methods separated by categories
+ * VK Mini apps API. Contains all VK Bridge methods separated by categories
  */
-export class VKMiniAppAPI extends VKConnectProvider {
+export class VKMiniAppAPI extends VKBridgeProvider {
   /**
    * Initializes the VK Mini App. Must be called before using any API method
    *
@@ -23,7 +23,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @platform iOS, Android, Web
    */
   public initApp(): void {
-    this.connect.send('VKWebAppInit', {});
+    this.bridge.send('VKWebAppInit', {});
   }
 
   /**
@@ -36,7 +36,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param callback Function to pass received data
    * @returns Function for unsubscribe
    */
-  public onUpdateConfig = (callback: (data: VKConnect.ReceiveData<'VKWebAppUpdateConfig'>) => void) =>
+  public onUpdateConfig = (callback: (data: VKBridge.ReceiveData<'VKWebAppUpdateConfig'>) => void) =>
     this.subscribeEvent('VKWebAppUpdateConfig', callback);
 
   /**
@@ -49,7 +49,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param callback Function to pass received data
    * @returns Function for unsubscribe
    */
-  public onViewHide = (callback: (data: VKConnect.ReceiveData<'VKWebAppViewHide'>) => void) =>
+  public onViewHide = (callback: (data: VKBridge.ReceiveData<'VKWebAppViewHide'>) => void) =>
     this.subscribeEvent('VKWebAppViewHide', callback);
 
   /**
@@ -62,7 +62,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param callback Function to pass received data
    * @returns Function for unsubscribe
    */
-  public onViewRestore = (callback: (data: VKConnect.ReceiveData<'VKWebAppViewRestore'>) => void) =>
+  public onViewRestore = (callback: (data: VKBridge.ReceiveData<'VKWebAppViewRestore'>) => void) =>
     this.subscribeEvent('VKWebAppViewRestore', callback);
 
   /**
@@ -75,7 +75,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param callback Function to pass received data
    * @returns Function for unsubscribe
    */
-  public onLocationChanged = (callback: (data: VKConnect.ReceiveData<'VKWebAppLocationChanged'>) => void) =>
+  public onLocationChanged = (callback: (data: VKBridge.ReceiveData<'VKWebAppLocationChanged'>) => void) =>
     this.subscribeEvent('VKWebAppLocationChanged', callback);
 
   /**
@@ -94,7 +94,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param params Parameters of the method, including access token
    */
   public callAPIMethod = async (method: string, params: Record<string, string | number>): Promise<any> => {
-    const data = await this.connect.send('VKWebAppCallAPIMethod', {
+    const data = await this.bridge.send('VKWebAppCallAPIMethod', {
       method,
       params
     });
@@ -112,7 +112,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    */
   public closeApp = async (status: CloseStatus, payload?: any) => {
     // TODO: figure out what openApp's returns
-    await this.connect.send('VKWebAppClose', { status, payload });
+    await this.bridge.send('VKWebAppClose', { status, payload });
   };
 
   /**
@@ -135,7 +135,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
   ): Promise<{ accessToken: string; scope?: string[] }> => {
     const strScope = Array.isArray(scope) ? scope.join(',') : scope;
 
-    const data = await this.connect.send('VKWebAppGetAuthToken', {
+    const data = await this.bridge.send('VKWebAppGetAuthToken', {
       app_id: appId,
       scope: strScope != null ? strScope : ''
     });
@@ -165,7 +165,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @platform iOS, Android, Web
    */
   public getClientVersion = async (): Promise<{ platform: string; version: string }> => {
-    return this.connect.send('VKWebAppGetClientVersion');
+    return this.bridge.send('VKWebAppGetClientVersion');
   };
 
   /**
@@ -179,7 +179,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param locationHash String in location after `#`
    */
   public openApp = async (appId: number, locationHash?: string) => {
-    await this.connect.send('VKWebAppOpenApp', {
+    await this.bridge.send('VKWebAppOpenApp', {
       app_id: appId,
       location: locationHash
     });
@@ -195,7 +195,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns User email and sign of received data
    */
   public getEmail = async (): Promise<{ email: string; sign: string }> => {
-    return this.connect.send('VKWebAppGetEmail');
+    return this.bridge.send('VKWebAppGetEmail');
   };
 
   /**
@@ -209,7 +209,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns List of selected users data
    */
   public getFriends = async (isMultiple?: boolean) => {
-    const data = await this.connect.send('VKWebAppGetFriends', { multi: isMultiple });
+    const data = await this.bridge.send('VKWebAppGetFriends', { multi: isMultiple });
 
     return data.users;
   };
@@ -224,7 +224,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns Object with current user geodata
    */
   public getGeodata = async () => {
-    const data = await this.connect.send('VKWebAppGetGeodata');
+    const data = await this.bridge.send('VKWebAppGetGeodata');
 
     return {
       isAvailable: !!data.available,
@@ -245,8 +245,8 @@ export class VKMiniAppAPI extends VKConnectProvider {
    *
    * @returns Entered user data
    */
-  public getPersonalCard = async (types: VKConnect.PersonalCardType[]): Promise<VKConnect.PersonalCardData> => {
-    return this.connect.send('VKWebAppGetPersonalCard', { type: types });
+  public getPersonalCard = async (types: VKBridge.PersonalCardType[]): Promise<VKBridge.PersonalCardData> => {
+    return this.bridge.send('VKWebAppGetPersonalCard', { type: types });
   };
 
   /**
@@ -262,7 +262,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * field name (`phone_number`) and field value.
    */
   public getPhoneNumber = async (): Promise<{ phone: string; sign: string }> => {
-    const data = await this.connect.send('VKWebAppGetPhoneNumber');
+    const data = await this.bridge.send('VKWebAppGetPhoneNumber');
 
     return {
       phone: data.phone_number,
@@ -279,8 +279,8 @@ export class VKMiniAppAPI extends VKConnectProvider {
    *
    * @returns User data
    */
-  public getUserInfo = async (): Promise<VKConnect.UserInfo> => {
-    return this.connect.send('VKWebAppGetUserInfo');
+  public getUserInfo = async (): Promise<VKBridge.UserInfo> => {
+    return this.bridge.send('VKWebAppGetUserInfo');
   };
 
   /**
@@ -293,7 +293,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns Read data
    */
   public openCodeReader = async (): Promise<string> => {
-    const data = await this.connect.send('VKWebAppOpenCodeReader');
+    const data = await this.bridge.send('VKWebAppOpenCodeReader');
 
     return data.code_data;
   };
@@ -310,7 +310,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns Selected contact
    */
   public openContacts = async (): Promise<{ phone: string; firstName: string; lastName: string }> => {
-    const data = await this.connect.send('VKWebAppOpenContacts');
+    const data = await this.bridge.send('VKWebAppOpenContacts');
 
     return {
       phone: data.phone,
@@ -330,7 +330,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns ID of the post with shared link
    */
   public shareLink = async (message: string) => {
-    const data = await this.connect.send('VKWebAppShare', { link: message });
+    const data = await this.bridge.send('VKWebAppShare', { link: message });
 
     return data;
   };
@@ -343,7 +343,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @platform iOS, Android
    */
   public showImages = async (images: string[], start_index?: number) => {
-    await this.connect.send('VKWebAppShowImages', { images, start_index });
+    await this.bridge.send('VKWebAppShowImages', { images, start_index });
   };
 
   /**
@@ -354,7 +354,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @platform iOS, Android
    */
   public addToFavorites = async () => {
-    await this.connect.send('VKWebAppAddToFavorites');
+    await this.bridge.send('VKWebAppAddToFavorites');
   };
 
   /**
@@ -381,7 +381,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
     attachments?: string | (string | Attachment)[],
     options?: WallPostOptions
   ): Promise<number> => {
-    const params: VKConnect.RequestProps<'VKWebAppShowWallPostBox'> = {
+    const params: VKBridge.RequestProps<'VKWebAppShowWallPostBox'> = {
       message,
       attachments: Array.isArray(attachments) ? prepareAttachments(attachments) : attachments,
 
@@ -394,7 +394,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
       })
     };
 
-    const data = await this.connect.send('VKWebAppShowWallPostBox', params);
+    const data = await this.bridge.send('VKWebAppShowWallPostBox', params);
 
     return data.post_id;
   };
@@ -407,7 +407,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @platform iOS, Android, Web
    */
   public allowNotifications = async (): Promise<void> => {
-    await this.connect.send('VKWebAppAllowNotifications');
+    await this.bridge.send('VKWebAppAllowNotifications');
   };
 
   /**
@@ -418,7 +418,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @platform iOS, Android, Web
    */
   public denyNotifications = async (): Promise<void> => {
-    await this.connect.send('VKWebAppDenyNotifications');
+    await this.bridge.send('VKWebAppDenyNotifications');
   };
 
   /**
@@ -430,8 +430,8 @@ export class VKMiniAppAPI extends VKConnectProvider {
    *
    * @param storyOptions Open story options
    */
-  public showStoryBox = async (storyOptions: VKConnect.ShowStoryBoxOptions): Promise<void> => {
-    await this.connect.send('VKWebAppShowStoryBox', storyOptions);
+  public showStoryBox = async (storyOptions: VKBridge.ShowStoryBoxOptions): Promise<void> => {
+    await this.bridge.send('VKWebAppShowStoryBox', storyOptions);
   };
 
   /**
@@ -450,7 +450,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns Access key
    */
   public subscribeStoryApp = async (storyOwnerId: number, storyId: number, stickerId: number, accessKey: string) => {
-    const result = await this.connect.send('VKWebAppSubscribeStoryApp', {
+    const result = await this.bridge.send('VKWebAppSubscribeStoryApp', {
       story_owner_id: storyOwnerId,
       story_id: storyId,
       sticker_id: stickerId,
@@ -475,7 +475,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns {Promise<number>} ID of group to which the app was added
    */
   public addAppToCommunity = async (): Promise<number> => {
-    const data = await this.connect.send('VKWebAppAddToCommunity');
+    const data = await this.bridge.send('VKWebAppAddToCommunity');
 
     return data.group_id;
   };
@@ -493,7 +493,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * event.
    */
   public allowCommunityMessages = async (communityId: number, key?: string): Promise<void> => {
-    await this.connect.send('VKWebAppAllowMessagesFromGroup', {
+    await this.bridge.send('VKWebAppAllowMessagesFromGroup', {
       group_id: communityId,
       key
     });
@@ -531,7 +531,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
       'VKWebAppCommunityToken',
       'VKWebAppGetCommunityAuthToken',
       'VKWebAppGetCommunityToken'
-    ].filter(method => this.connect.supports(method))[0] as
+    ].filter(method => this.bridge.supports(method))[0] as
       | 'VKWebAppCommunityAccessToken'
       | 'VKWebAppCommunityToken'
       | 'VKWebAppGetCommunityAuthToken'
@@ -542,7 +542,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
       throw new Error("Couldn't find available method to get community token");
     }
 
-    const data = await this.connect.send(availableMethod, {
+    const data = await this.bridge.send(availableMethod, {
       app_id: appId,
       group_id: communityId,
       scope: strScope
@@ -561,7 +561,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @platform iOS, Android, Web
    */
   public joinCommunity = async (communityId: number): Promise<void> => {
-    await this.connect.send('VKWebAppJoinGroup', { group_id: communityId });
+    await this.bridge.send('VKWebAppJoinGroup', { group_id: communityId });
   };
 
   /**
@@ -580,7 +580,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param payload Any data to send as JSON
    */
   public sendPayloadToCommunity = async (communityId: number, payload: any) => {
-    await this.connect.send('VKWebAppSendPayload', {
+    await this.bridge.send('VKWebAppSendPayload', {
       group_id: communityId,
       payload
     });
@@ -593,8 +593,8 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @category Community
    * @event VKWebAppShowCommunityWidgetPreviewBox
    */
-  public showCommunityWidgetPreviewBox = async (communityId: number, type: VKConnect.WidgetType, code: string) => {
-    const data = await this.connect.send('VKWebAppShowCommunityWidgetPreviewBox', {
+  public showCommunityWidgetPreviewBox = async (communityId: number, type: VKBridge.WidgetType, code: string) => {
+    const data = await this.bridge.send('VKWebAppShowCommunityWidgetPreviewBox', {
       type,
       group_id: communityId,
       code
@@ -614,7 +614,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns Result size of the iframe
    */
   public resizeWindow = async (width: number, height: number): Promise<{ width: number; height: number }> => {
-    return this.connect.send('VKWebAppResizeWindow', { width, height });
+    return this.bridge.send('VKWebAppResizeWindow', { width, height });
   };
 
   /**
@@ -630,7 +630,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns Offset top and height of window after scroll
    */
   public scrollTo = async (offsetTop: number, speed = 0): Promise<{ top: number; height: number }> => {
-    return this.connect.send('VKWebAppScroll', { top: offsetTop, speed });
+    return this.bridge.send('VKWebAppScroll', { top: offsetTop, speed });
   };
 
   /**
@@ -640,7 +640,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @event VKWebAppSetLocation
    */
   public setLocationHash = async (hash: string): Promise<void> => {
-    await this.connect.send('VKWebAppSetLocation', { location: hash });
+    await this.bridge.send('VKWebAppSetLocation', { location: hash });
   };
 
   /**
@@ -655,11 +655,11 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param [navigationBarColor] HEX color of navigation bar (Android only)
    */
   public setViewSettings = async (
-    statusBarStyle: VKConnect.AppearanceType,
+    statusBarStyle: VKBridge.AppearanceType,
     actionBarColor?: string,
     navigationBarColor?: string
   ) => {
-    await this.connect.send('VKWebAppSetViewSettings', {
+    await this.bridge.send('VKWebAppSetViewSettings', {
       status_bar_style: statusBarStyle,
       action_bar_color: actionBarColor,
       navigation_bar_color: navigationBarColor
@@ -685,8 +685,8 @@ export class VKMiniAppAPI extends VKConnectProvider {
     userId: number,
     appId: number,
     description?: string
-  ): Promise<VKConnect.TransactionResult> => {
-    const props: VKConnect.VKPayProps<'pay-to-user'> = {
+  ): Promise<VKBridge.TransactionResult> => {
+    const props: VKBridge.VKPayProps<'pay-to-user'> = {
       action: 'pay-to-user',
       app_id: appId,
       params: {
@@ -696,7 +696,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
       }
     };
 
-    const resp = await this.connect.send('VKWebAppOpenPayForm', props);
+    const resp = await this.bridge.send('VKWebAppOpenPayForm', props);
 
     return 'result' in resp ? resp.result : resp;
   };
@@ -723,8 +723,8 @@ export class VKMiniAppAPI extends VKConnectProvider {
     appId: number,
     description?: string,
     data?: string
-  ): Promise<VKConnect.TransactionResult> => {
-    const props: VKConnect.VKPayProps<'pay-to-group'> = {
+  ): Promise<VKBridge.TransactionResult> => {
+    const props: VKBridge.VKPayProps<'pay-to-group'> = {
       action: 'pay-to-group',
       app_id: appId,
       params: {
@@ -735,7 +735,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
       }
     };
 
-    const resp = await this.connect.send('VKWebAppOpenPayForm', props);
+    const resp = await this.bridge.send('VKWebAppOpenPayForm', props);
 
     return 'result' in resp ? resp.result : resp;
   };
@@ -751,14 +751,14 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param appId App ID
    * @returns Payment result data
    */
-  public transferToUser = async (userId: number, appId: number): Promise<VKConnect.TransactionResult> => {
-    const props: VKConnect.VKPayProps<'transfer-to-user'> = {
+  public transferToUser = async (userId: number, appId: number): Promise<VKBridge.TransactionResult> => {
+    const props: VKBridge.VKPayProps<'transfer-to-user'> = {
       action: 'transfer-to-user',
       app_id: appId,
       params: { user_id: userId }
     };
 
-    const resp = await this.connect.send('VKWebAppOpenPayForm', props);
+    const resp = await this.bridge.send('VKWebAppOpenPayForm', props);
 
     return 'result' in resp ? resp.result : resp;
   };
@@ -774,14 +774,14 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param appId App ID
    * @returns Payment result data
    */
-  public transferToCommunity = async (communityId: number, appId: number): Promise<VKConnect.TransactionResult> => {
-    const props: VKConnect.VKPayProps<'transfer-to-group'> = {
+  public transferToCommunity = async (communityId: number, appId: number): Promise<VKBridge.TransactionResult> => {
+    const props: VKBridge.VKPayProps<'transfer-to-group'> = {
       action: 'transfer-to-group',
       app_id: appId,
       params: { group_id: communityId }
     };
 
-    const resp = await this.connect.send('VKWebAppOpenPayForm', props);
+    const resp = await this.bridge.send('VKWebAppOpenPayForm', props);
 
     return 'result' in resp ? resp.result : resp;
   };
@@ -796,7 +796,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns Availability and level of the flashlight
    */
   public flashGetInfo = async (): Promise<{ isAvailable: boolean; level: number }> => {
-    const data = await this.connect.send('VKWebAppFlashGetInfo', {});
+    const data = await this.bridge.send('VKWebAppFlashGetInfo', {});
 
     return {
       isAvailable: data.is_available,
@@ -814,7 +814,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param level The flashlight level from 0 to 1
    */
   public flashSetLevel = async (level: number): Promise<void> => {
-    await this.connect.send('VKWebAppFlashSetLevel', { level });
+    await this.bridge.send('VKWebAppFlashSetLevel', { level });
   };
 
   /**
@@ -825,7 +825,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @platform iOS, Android
    */
   public showInviteBox = async () => {
-    await this.connect.send('VKWebAppShowInviteBox');
+    await this.bridge.send('VKWebAppShowInviteBox');
   };
 
   /**
@@ -843,7 +843,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param userResult User result
    */
   public showLeaderBoardBox = async (userResult: number) => {
-    await this.connect.send('VKWebAppShowLeaderBoardBox', {
+    await this.bridge.send('VKWebAppShowLeaderBoardBox', {
       user_result: userResult
     });
   };
@@ -858,8 +858,8 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * of receipt of product information
    * @returns Status of ordering
    */
-  public showOrderBox = async (itemName: string): Promise<VKConnect.OrderBoxShowingStatus> => {
-    const data = await this.connect.send('VKWebAppShowOrderBox', {
+  public showOrderBox = async (itemName: string): Promise<VKBridge.OrderBoxShowingStatus> => {
+    const data = await this.bridge.send('VKWebAppShowOrderBox', {
       type: 'item',
       item: itemName
     });
@@ -881,7 +881,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns Success flag and request key
    */
   public showRequestBox = async (userId: number, message: string, requestKey?: string) => {
-    return this.connect.send('VKWebAppShowRequestBox', { uid: userId, message, requestKey });
+    return this.bridge.send('VKWebAppShowRequestBox', { uid: userId, message, requestKey });
   };
 
   /**
@@ -896,7 +896,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns The stored value or empty string if the value is not found
    */
   public storageGet = async (key: string): Promise<string> => {
-    const data = await this.connect.send('VKWebAppStorageGet', { keys: [key] });
+    const data = await this.bridge.send('VKWebAppStorageGet', { keys: [key] });
 
     if (!data || !Array.isArray(data.keys) || data.keys.length === 0) {
       return '';
@@ -917,7 +917,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @returns Map of key-value
    */
   public storageGetMultiple = async (keys: string[]): Promise<Record<string, string>> => {
-    const data = await this.connect.send('VKWebAppStorageGet', { keys });
+    const data = await this.bridge.send('VKWebAppStorageGet', { keys });
 
     return data && Array.isArray(data.keys) && data.keys.length > 0
       ? data.keys.reduce((acc, item) => ({ ...acc, [item.key]: item.value }), {} as Record<string, string>)
@@ -936,7 +936,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * Default: 0
    */
   public storageGetKeys = async (count: number, offset: number = 0): Promise<string[]> => {
-    const data = await this.connect.send('VKWebAppStorageGetKeys', { count, offset });
+    const data = await this.bridge.send('VKWebAppStorageGetKeys', { count, offset });
 
     return (data && data.keys) || [];
   };
@@ -952,7 +952,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param value Value
    */
   public storageSet = async (key: string, value: string) => {
-    await this.connect.send('VKWebAppStorageSet', { key, value });
+    await this.bridge.send('VKWebAppStorageSet', { key, value });
   };
 
   /**
@@ -962,8 +962,8 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @event VKWebAppTapticImpactOccurred
    * @platform iOS
    */
-  public impactOccurred = async (power: VKConnect.TapticVibrationPowerType = 'medium') => {
-    await this.connect.send('VKWebAppTapticImpactOccurred', { style: power });
+  public impactOccurred = async (power: VKBridge.TapticVibrationPowerType = 'medium') => {
+    await this.bridge.send('VKWebAppTapticImpactOccurred', { style: power });
   };
 
   /**
@@ -973,8 +973,8 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @event VKWebAppTapticNotificationOccurred
    * @platform iOS
    */
-  public notificationOccurred = async (type: VKConnect.TapticNotificationType) => {
-    await this.connect.send('VKWebAppTapticNotificationOccurred', { type });
+  public notificationOccurred = async (type: VKBridge.TapticNotificationType) => {
+    await this.bridge.send('VKWebAppTapticNotificationOccurred', { type });
   };
 
   /**
@@ -985,7 +985,7 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @platform iOS
    */
   public selectionChanged = async () => {
-    await this.connect.send('VKWebAppTapticSelectionChanged');
+    await this.bridge.send('VKWebAppTapticSelectionChanged');
   };
 
   /**
@@ -999,12 +999,12 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param callback Function to pass received data
    * @returns Function for unsubscribe
    */
-  public onAccelerometerChanged = (callback: (data: VKConnect.ReceiveData<'VKWebAppAccelerometerChanged'>) => void) =>
+  public onAccelerometerChanged = (callback: (data: VKBridge.ReceiveData<'VKWebAppAccelerometerChanged'>) => void) =>
     this.subscribeEvent(
       'VKWebAppAccelerometerChanged',
       callback,
-      () => this.connect.send('VKWebAppAccelerometerStart'),
-      () => this.connect.send('VKWebAppAccelerometerStop')
+      () => this.bridge.send('VKWebAppAccelerometerStart'),
+      () => this.bridge.send('VKWebAppAccelerometerStop')
     );
 
   /**
@@ -1018,12 +1018,12 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param callback Function to pass received data
    * @returns Function for unsubscribe
    */
-  public onGyroscopeChanged = (callback: (data: VKConnect.ReceiveData<'VKWebAppGyroscopeChanged'>) => void) =>
+  public onGyroscopeChanged = (callback: (data: VKBridge.ReceiveData<'VKWebAppGyroscopeChanged'>) => void) =>
     this.subscribeEvent(
       'VKWebAppGyroscopeChanged',
       callback,
-      () => this.connect.send('VKWebAppGyroscopeStart'),
-      () => this.connect.send('VKWebAppGyroscopeStop')
+      () => this.bridge.send('VKWebAppGyroscopeStart'),
+      () => this.bridge.send('VKWebAppGyroscopeStop')
     );
 
   /**
@@ -1037,11 +1037,11 @@ export class VKMiniAppAPI extends VKConnectProvider {
    * @param callback Function to pass received data
    * @returns Function for unsubscribe
    */
-  public onDeviceMotionChanged = (callback: (data: VKConnect.ReceiveData<'VKWebAppDeviceMotionChanged'>) => void) =>
+  public onDeviceMotionChanged = (callback: (data: VKBridge.ReceiveData<'VKWebAppDeviceMotionChanged'>) => void) =>
     this.subscribeEvent(
       'VKWebAppDeviceMotionChanged',
       callback,
-      () => this.connect.send('VKWebAppDeviceMotionStart'),
-      () => this.connect.send('VKWebAppDeviceMotionStop')
+      () => this.bridge.send('VKWebAppDeviceMotionStart'),
+      () => this.bridge.send('VKWebAppDeviceMotionStop')
     );
 }
