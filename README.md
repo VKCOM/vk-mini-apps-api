@@ -1,9 +1,9 @@
-[npm]: https://img.shields.io/npm/v/@vkontakte/vk-mini-apps-api.svg
-[npm-url]: https://npmjs.com/package/@vkontakte/vk-mini-apps-api
+[npm-badge]: https://img.shields.io/npm/v/@vkontakte/vk-mini-apps-api.svg
+[npm-link]: https://npmjs.com/package/@vkontakte/vk-mini-apps-api
 
-# VK Mini Apps API [![npm][npm]][npm-url]
+[<img width="134" src="https://vk.com/images/apps/mini_apps/vk_mini_apps_logo.svg">](https://vk.com/services)
 
-<img width="100" height="100" src="https://avatars3.githubusercontent.com/u/1478241?s=200&v=4" align="right">
+# VK Mini Apps API [![NPM][npm-badge]][npm-link]
 
 Library for quick and efficient development of VK Mini Apps based on [VK Bridge](https://github.com/vkcom/vk-bridge) methods.
 
