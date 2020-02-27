@@ -10,7 +10,7 @@ const IS_PROD = process.env.NODE_ENV === 'production';
 
 const INPUT_FILE = 'src/index.ts';
 
-const getPlugins = (tsDeclaration = false, needToResolve = true) => [
+const getPlugins = (tsDeclaration = false) => [
   typescript(
     tsDeclaration
       ? {
@@ -25,13 +25,13 @@ const getPlugins = (tsDeclaration = false, needToResolve = true) => [
       : {}
   ),
   babel(),
-  ...(needToResolve ? [nodeResolve({ mainFields: ['module', 'jsnext'] })] : []),
+  nodeResolve({ mainFields: ['module', 'jsnext'] }),
   commonjs({ include: 'node_modules/**' }),
   bundleSize()
 ];
 
 const cjs = {
-  plugins: getPlugins(true, false),
+  plugins: getPlugins(true),
   input: INPUT_FILE,
   output: {
     file: pkg.main,
@@ -39,18 +39,7 @@ const cjs = {
   }
 };
 
-const es = {
-  plugins: getPlugins(false, false),
-  input: INPUT_FILE,
-  output: [
-    {
-      file: pkg.module,
-      format: 'es'
-    }
-  ]
-};
-
-const umd = {
+const umdAndEs = {
   plugins: getPlugins(),
   input: INPUT_FILE,
   output: [
@@ -58,6 +47,10 @@ const umd = {
       name: pkg.umdName,
       file: pkg.browser,
       format: 'umd'
+    },
+    {
+      file: pkg.module,
+      format: 'es'
     }
   ]
 };
@@ -74,4 +67,4 @@ const umdMin = {
   }
 };
 
-export default IS_PROD ? [cjs, es, umd, umdMin] : cjs;
+export default IS_PROD ? [cjs, umdAndEs, umdMin] : cjs;
