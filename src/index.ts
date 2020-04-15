@@ -667,6 +667,28 @@ export class VKMiniAppAPI extends VKBridgeProvider {
   };
 
   /**
+   * Enables SwipeBack on iOS
+   *
+   * @category Interface
+   * @event VKWebAppEnableSwipeBack
+   * @platform iOS
+   */
+  public enableSwipeBack = async (): Promise<void> => {
+    await this.bridge.send('VKWebAppEnableSwipeBack', {});
+  };
+
+  /**
+   * Disables SwipeBack on iOS
+   *
+   * @category Interface
+   * @event VKWebAppDisableSwipeBack
+   * @platform iOS
+   */
+  public disableSwipeBack = async (): Promise<void> => {
+    await this.bridge.send('VKWebAppDisableSwipeBack', {});
+  };
+
+  /**
    * Requests payment to a specified user of the specified amount via VK Pay
    *
    * @category VK Pay
