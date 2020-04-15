@@ -70,12 +70,12 @@ VK Mini apps API. Contains all VK Bridge methods separated by categories
 
 ### Interface Methods
 
+* [disableSwipeBack](vkminiappapi.md#disableswipeback)
+* [enableSwipeBack](vkminiappapi.md#enableswipeback)
 * [resizeWindow](vkminiappapi.md#resizewindow)
 * [scrollTo](vkminiappapi.md#scrollto)
 * [setLocationHash](vkminiappapi.md#setlocationhash)
 * [setViewSettings](vkminiappapi.md#setviewsettings)
-* [enableSwipeBack](vkminiappapi.md#enableswipeback)
-* [disableSwipeBack](vkminiappapi.md#disableswipeback)
 
 ### Lifecycle Methods
 
@@ -703,6 +703,26 @@ ___
 
 ## Interface Methods
 
+### <a id="disableswipeback" name="disableswipeback"></a>  disableSwipeBack
+
+▸ **disableSwipeBack**(): *Promise‹void›*
+
+Disables SwipeBack on iOS
+
+**Returns:** *Promise‹void›*
+
+___
+
+### <a id="enableswipeback" name="enableswipeback"></a>  enableSwipeBack
+
+▸ **enableSwipeBack**(): *Promise‹void›*
+
+Enables SwipeBack on iOS
+
+**Returns:** *Promise‹void›*
+
+___
+
 ### <a id="resizewindow" name="resizewindow"></a>  resizeWindow
 
 ▸ **resizeWindow**(`width`: number, `height`: number): *Promise‹object›*
@@ -770,26 +790,6 @@ Name | Type | Description |
 `statusBarStyle` | VKBridge.AppearanceType | Status bar style type: `light` or `dark` |
 `actionBarColor?` | undefined &#124; string | - |
 `navigationBarColor?` | undefined &#124; string | - |
-
-**Returns:** *Promise‹void›*
-
-___
-
-### <a id="enableswipeback" name="enableswipeback"></a>  enableSwipeBack
-
-▸ **enableSwipeBack**(): *Promise‹void›*
-
-Enables SwipeBack on iOS
-
-**Returns:** *Promise‹void›*
-
-___
-
-### <a id="disableswipeback" name="disableswipeback"></a>  disableSwipeBack
-
-▸ **disableSwipeBack**(): *Promise‹void›*
-
-Disables SwipeBack on iOS
 
 **Returns:** *Promise‹void›*
 
