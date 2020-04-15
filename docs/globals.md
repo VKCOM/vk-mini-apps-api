@@ -1,5 +1,5 @@
 
-# @vkontakte/vk-mini-apps-api - v0.6.4
+# @vkontakte/vk-mini-apps-api - v0.6.5
 
 ## Index
 
