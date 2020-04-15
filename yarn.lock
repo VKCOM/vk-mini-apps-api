@@ -158,10 +158,10 @@
   dependencies:
     "@types/node" "*"
 
-"@vkontakte/vk-bridge@^2.0.8":
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/@vkontakte/vk-bridge/-/vk-bridge-2.1.2.tgz#732abb78bc2864e37066897ffd726d06439de2a2"
-  integrity sha512-dmuSG7mBQ5ssFs4hXFs+EpSyF50duIY4IZ0fci79s1VFmeSEWfnTfdj17N3H1jWU11JpZVR481BCpNykCelV6Q==
+"@vkontakte/vk-bridge@^2.1.8":
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/@vkontakte/vk-bridge/-/vk-bridge-2.1.8.tgz#7b0f35957a536bd9a0333bef48eb6822a6d8e148"
+  integrity sha512-mPupntwe+Wg4qeM1Q7VOimV4v3fFo+qvtZxACX6l+kDx290vdW7Dxk/ecN8MgXAK4C/7I3QQCmYmQ3aU7dappQ==
 
 acorn@^7.1.0:
   version "7.1.1"
